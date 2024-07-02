@@ -1,0 +1,3557 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_loan_project
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 17.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-06-26 06:27+0000\n"
+"PO-Revision-Date: 2024-06-26 06:27+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_loan_project
+#. odoo-python
+#: code:addons/jt_loan_project/controllers/do_attestation.py:0
+#, python-format
+msgid ""
+"\n"
+" <b>Self Recorded Acceptance</b> <br/>\n"
+" <b>Acceptance Date:</b> %s <br/>\n"
+" <b>Acceptance IP:</b> %s <br/>\n"
+" "
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,subject:jt_loan_project.sign_up_notify_tmp
+msgid " Email Verification "
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,subject:jt_loan_project.custom_meet_mail_template
+msgid " Meeting Invitation to {{ object.event_id.name }}"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "% stamp duty calculated on loan approval, customer bears cost."
+msgstr ""
+
+#. module: jt_loan_project
+#. odoo-python
+#: code:addons/jt_loan_project/controllers/do_attestation.py:0
+#, python-format
+msgid ""
+"%s has created this meeting, <br/><br/>\n"
+" <b>Details of the event:</b> <br/>\n"
+" %s <br/>\n"
+" <b>Attendees:</b> %s <br/>\n"
+" <b>Starting At:</b> %s <br/>\n"
+" <b>Ending At:</b> %s <br/>\n"
+" <b>Duration:</b> %s"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid ", docs"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid ""
+"100%\n"
+"                                                                polyurethane. &amp; 100% polyester,\n"
+"                                                                products\n"
+"                                                                of\n"
+"                                                                Durotan alway choose detail and\n"
+"                                                                safety with customer. Your\n"
+"                                                                sastification is our\n"
+"                                                                reputation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "2500"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "5000"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid ""
+"<br/>\n"
+"\t\t\t                                                <span>Key In your Gross Monthly Income</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid ""
+"<br/>\n"
+"\t\t\t                                                <span>Key in Loan</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid ""
+"<br/>\n"
+"\t\t\t                                                <span>Select Loan Tenure/Duration</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,body_html:jt_loan_project.mail_template_data_loan_approved
+msgid ""
+"<div style=\"margin: 0px; padding: 0px; font-size: 13px;\">\n"
+"                    <table width=\"100%\" style=\"padding-top:40px;padding-bottom:40px;\">\n"
+"                        <tr>\n"
+"                            <td style=\"padding: 30px 30px;\">\n"
+"                                <p style=\"font-weight: 400;font-size: 28px;line-height: 34px;color: rgba(0, 0, 0, 0.7);\">Congrats!\n"
+"                                     <br> \n"
+"                                    <span style=\"font-weight: 700;\">Your loan has been Approved!</span>\n"
+"                                </p>\n"
+"                                <p style=\"font-weight: 600;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Hi\n"
+"                                    <t t-out=\"object.partner_id.name or 'customer'\">Brandon Freeman</t>\n"
+"                                </p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Your Loan has been approved &amp; is Required to do your Attestation.</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Click <span style=\"font-weight: 700;\">Do Attestation </span> below.</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Note : Please accept the loan within <t t-out=\"ctx.get('hours') or '0'\"></t>:<t t-out=\"ctx.get('minutes') or '0'\"></t> Hours</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7); max-width: 49%;\">In the event you do not want to accept the loan - System will automatically cancel loan offer within <t t-out=\"ctx.get('hours') or '0'\"></t>:<t t-out=\"ctx.get('minutes') or '0'\"></t> Hours.</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7); max-width: 50%;\">Attached Below are the Product Disclosure Sheet &amp; Agreement.</p>\n"
+"                                \n"
+"                                <div style=\"display: inline-flex; flex-direction: column;\">                     \n"
+"                                    <a t-att-href=\"object.do_attestation_url\" style=\"border-radius: 26.5px;font-weight: 600;font-size: 16px;line-height: 20px;text-align: center;letter-spacing: 0.2px;color: #FFFFFF; text-decoration: none; width: 300px; padding: 16px 27px; display: inline-block;background-color: #300C46;\"><span>Do Attestation</span></a>\n"
+"                                </div>\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </table>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,body_html:jt_loan_project.stamped_agreement_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <table width=\"100%\" style=\"padding-top:40px;padding-bottom:40px;\">\n"
+"                        <tr>\n"
+"                            <td style=\"padding: 0 30px;\">\n"
+"                                <div style=\"margin-top: -90px;\">\n"
+"                                    <p style=\"font-weight: 400;font-size: 28px;line-height: 34px;color: rgba(0, 0, 0, 0.7);\">Your Loan\n"
+"                                        Agreement\n"
+"                                        <br>\n"
+"                                        <span style=\"font-weight: 700;\">(stamped) is ready</span>\n"
+"                                    </p>\n"
+"                                    <p style=\"font-weight: 600;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Hi\n"
+"                                        <t t-out=\"object.partner_id.name or ''\"></t>,\n"
+"                                    </p>\n"
+"                                    <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);max-width: 50%;\">\n"
+"                                        Attached Below is your Stamped Agreement</p>\n"
+"                                </div>\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </table>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,body_html:jt_loan_project.customer_notify_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <table width=\"100%\" style=\"padding-top:40px;padding-bottom:40px;\">\n"
+"                        <tr>\n"
+"                            <td style=\"padding: 0 30px;\">\n"
+"                                <img t-attf-src=\"/logo.png?company={{ object.company_id.id }}\" style=\"width:245px;margin-top: -25px;\" t-att-alt=\"object.company_id.name\">\n"
+"                                <p style=\"font-weight: 400;font-size: 28px;line-height: 34px;color: rgba(0, 0, 0, 0.7);\">Your Attestation Is Completed.\n"
+"                                     <br> \n"
+"                                    <span style=\"font-weight: 700;\">Last Step E-Sign Loan Agreement</span>\n"
+"                                </p>\n"
+"                                <p style=\"font-weight: 600;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Hi\n"
+"                                    <t t-out=\"object.partner_id.name or ''\"></t>,\n"
+"                                </p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Attestation Has been Completed.</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);max-width: 50%;\">Last Step, Your Signature is required for the Loan Agreement.</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Note : Please sign in <t t-out=\"ctx.get('hours') or '0'\"></t>:<t t-out=\"ctx.get('minutes') or '0'\"></t> hours.</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7); max-width: 49%;\">In the event you do not sign within the timeframe - Loan Will be canceled.</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7); max-width: 50%;\">Attached Below Are the Product Disclosure Sheet &amp; Agreement</p>\n"
+"                                \n"
+"                                <div style=\"display: inline-flex; flex-direction: column;\">                     \n"
+"                                    <a t-att-href=\"object.do_esign_url\" style=\"border-radius: 26.5px; background:#300C46;;font-weight: 600;font-size: 16px;line-height: 20px;text-align: center;letter-spacing: 0.2px;color: #FFFFFF; text-decoration: none; width: 321px; padding: 16px 0 17px 0; display: inline-block;\"><span>e-Sign Loan Agreement</span></a>\n"
+"                                </div>\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </table>\n"
+"                </div>\n"
+"                \n"
+"            "
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,body_html:jt_loan_project.terminate_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                    <table width=\"100%\" style=\"padding-top:40px;padding-bottom:40px;\">\n"
+"                        <tr>\n"
+"                            <td style=\"padding: 0 30px;\">\n"
+"                                <p style=\"font-weight: 400;font-size: 28px;line-height: 34px;color: rgba(0, 0, 0, 0.7);\">Your Loan has been\n"
+"                                     <br> \n"
+"                                    <span style=\"font-weight: 700;\">Rejected</span>\n"
+"                                </p>\n"
+"                                <p style=\"font-weight: 600;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Hi\n"
+"                                    <t t-out=\"object.name or ''\"></t>,\n"
+"                                </p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7); margin: 0;\">We are Sorry,</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7); margin: 0 0 30px 0;\">Your Loan has been Rejected.</p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7); margin: 0;\">Application No. : <t t-out=\"object.loan_pro_id.name or ''\"></t></p>\n"
+"                                <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7); margin: 0;\">Date Applied :<t t-out=\"ctx.get('a_date') or ''\"></t></p>\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </table>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,body_html:jt_loan_project.sign_up_notify_tmp
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"            <table width=\"100%\" style=\"padding-top:40px;padding-bottom:40px;\">\n"
+"                <tr>\n"
+"                    <td style=\"text-align: center; padding: 0 10px;\">\n"
+"                        <img style=\"filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.25));border-radius: 20px;transform: matrix(-1, 0, 0, 1, 0, 0);width: 365px;height: 393px;\" src=\"/jt_loan_project/static/src/img/wc1.jpg\" class=\"img img-fluid\">\n"
+"                    </td>\n"
+"                    <td style=\"padding: 0 10px;\">\n"
+"                        <img t-attf-src=\"/logo.png?company={{ object.company_id.id }}\" style=\"width:245px;margin-top: -25px;\" t-att-alt=\"object.company_id.name\">\n"
+"                        <p style=\"font-weight: 700;font-size: 28px;line-height: 34px;color: rgba(0, 0, 0, 0.7);\">Verify<br><spa style=\"font-weight: 400;\">Email Address</spa></p>\n"
+"                        <p style=\"font-weight: 600;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Hi <t t-out=\"object.name or ''\"></t>,</p>\n"
+"                        <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">Please Verify your Email Address by<br>clicking <span style=\"font-weight: 600;\">Verify Email</span> below.</p>\n"
+"                        <p style=\"font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);\">If you do not see the verification button,<br> please click on the link <a t-att-href=\"object.verify_email_url\">here</a></p>\n"
+"                        <div class=\"pt-2\">\n"
+"                            <a class=\"btn\" t-att-href=\"object.verify_email_url\" style=\"text-decoration:none;height:45px;background:#300C46;border-radius: 26.5px;padding: 10px; padding: 12px 50px;\"><span style=\"font-weight: 600;font-size: 16px;line-height: 20px;text-align: center;letter-spacing: 0.2px;color: #FFFFFF;\">Verify Email</span>\n"
+"                        </a>\n"
+"                        </div>\n"
+"                    </td>\n"
+"                </tr>\n"
+"            </table>\n"
+"            </div>\n"
+"        "
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,body_html:jt_loan_project.custom_meet_mail_template
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;text-align:center;\">\n"
+"                    <table width=\"100%\" style=\"padding-top:40px;padding-bottom:40px;\">\n"
+"                        <tr>\n"
+"                            <td style=\"padding: 30px 28px;\">\n"
+"                                <img t-attf-src=\"/logo.png?company={{ object.company_id.id }}\" style=\"width:245px;margin-top: -25px; margin-bottom:25px;\" t-att-alt=\"object.company_id.name\">\n"
+"                               \n"
+"                                <div style=\"background-color: rgba(0, 0, 0, 0.05);border-radius: 5px; padding: 13px 26px; position: relative; margin-bottom: 29px; width: 100%;text-align:center;\">\n"
+"                                    <table style=\"text-align: left; width: 100%;\">\n"
+"                                        <tr>\n"
+"                                          <th style=\"color: #00B5DB; display: inline-block;\">Agenda</th>\n"
+"                                          <td style=\"padding: 0 0 15px 0;\">Video Call with Assester</td>\n"
+"                                        </tr>\n"
+"                                        <tr>\n"
+"                                            <th style=\"color: #00B5DB; display: inline-block;\">When</th>\n"
+"                                            <td style=\"padding: 0 0 15px 0;\">\n"
+"                                                <t t-out=\"format_time(time=object.event_id.start, tz=object.mail_tz, time_format='short', lang_code=object.env.lang) or ''\"></t> \n"
+"                                                - <t t-out=\"format_time(time=object.event_id.stop, tz=object.mail_tz, time_format='short', lang_code=object.env.lang) or ''\"></t>\n"
+"                                                <t t-out=\"format_datetime(dt=object.event_id.start, tz=object.mail_tz if not object.event_id.allday else None, dt_format='EEE', lang_code=object.env.lang) or ''\"></t> \n"
+"                                                <t t-out=\"format_datetime(dt=object.event_id.start, tz=object.mail_tz if not object.event_id.allday else None, dt_format='MMMM dd, y', lang_code=object.env.lang) or ''\"></t>\n"
+"                                            </td>\n"
+"                                        </tr>\n"
+"                                        <tr>\n"
+"                                          <th style=\"color: #00B5DB; display: inline-block;\">Where</th>\n"
+"\n"
+"                                          <td style=\"padding: 0 0 0 0;\"><a style=\"color:rgba(0,0,0,0.7);\" t-att-href=\"object.event_id.videocall_location\" target=\"_blank\" t-out=\"object.event_id.videocall_location or ''\"></a></td>\n"
+"                                        </tr>\n"
+"                                      </table>\n"
+"                                </div>\n"
+"                                <div style=\"\">\n"
+"                                    <a t-att-href=\"object.event_id.videocall_location\" style=\"border-radius: 26.5px; background:#300C46;font-weight: 600;font-size: 16px;line-height: 20px;text-align: center;letter-spacing: 0.2px;color: #FFFFFF; text-decoration: none; width: 506px; padding: 16px 27px; display: inline-block;\"><span>Join Meeting</span></a>\n"
+"                                </div>\n"
+"                            </td>\n"
+"                        </tr>\n"
+"                    </table>\n"
+"                </div>\n"
+"            "
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "<option value=\"\">Select Bank</option>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "<option value=\"\">Select Country</option>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "<option value=\"\">Select Month</option>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "<option value=\"\">Select State</option>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid ""
+"<option value=\"Choose here\">Select\n"
+"                                                                    Employee type</option>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "<option value=\"Choose here\">Select Relationship</option>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "<span class=\"amnt\">00</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid ""
+"<span class=\"btn-a-txt-st\">Need More Assistance? Schedule an In-Person "
+"Attestation</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+msgid ""
+"<span class=\"carousel-control-next-icon\"/>\n"
+"                        <span class=\"visually-hidden o_default_snippet_text\">Next</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+msgid ""
+"<span class=\"carousel-control-prev-icon\"/>\n"
+"                        <span class=\"visually-hidden o_default_snippet_text\">Previous</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "<span class=\"counter\">10</span>K+"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "<span class=\"counter\">12</span>K+"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid ""
+"<span class=\"fail_mandatory_input\">Mandatory field.</span><span> You need "
+"to fill this up to proceed</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.web_login_temp_inherit
+msgid "<span class=\"login-letter\">Log In</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "<span class=\"ml_edit\"> Months</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid ""
+"<span class=\"o_default_snippet_text text-center verify-otp\">Check your "
+"email inbox </span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid ""
+"<span class=\"otp-link-exp\">*Verification link will be expired in 24 "
+"hours.</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "<span class=\"theme_color o_default_snippet_text\">Tenure/Duration</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "<span class=\"theme_color o_default_snippet_text\">Total Interest</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid ""
+"<span class=\"theme_color\">Interest Rate</span>\n"
+"\t\t                                                                <br/>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "<span class=\"theme_color\">Monthly Payment</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid ""
+"<span class=\"theme_color\">Other Charges\n"
+"\t\t\t                                                                    (Stamping Free)</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid ""
+"<span class=\"theme_color\">Principal Sum</span>\n"
+"\t\t                                                                <br/>\n"
+"\t\t                                                                <strong class=\"color_gray_light font_size_28\">\n"
+"\t\t                                                                    <span id=\"amount_set\"/>\n"
+"\t\t                                                                </strong>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid ""
+"<span style=\"font-weight: 600;font-size: 18px;line-height: 20px;text-align:"
+" center;letter-spacing: 0.2px;\"> Resend Email Verification</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid ""
+"<span style=\"font-weight: 600;font-size: 18px;line-height: 20px;text-align:"
+" center;letter-spacing: 0.2px;\">Create an Account</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "<span> About Us </span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_application_history_view_form
+msgid "<span> Months</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "<span> Services </span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "<span>Accordion</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "<span>Check Your Loan Interest &amp; Repayment</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+msgid "<span>Lorem, ipsum.</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "<span>Product List</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "<span>Product</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+msgid "<span>User Dashboard Approved</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_rejected
+msgid "<span>User Dashboard</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "<span>User Info</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "<span>Why choose</span>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid ""
+"<strong class=\"color_gray_light font_size_28\">\n"
+"\t\t                                                                        <span id=\"interest_rate_id\"/>0.0%*</strong>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid ""
+"<strong class=\"color_gray_light\">\n"
+"\t\t                                                                        <span class=\"font_size_28\" id=\"loan_month_set\">0</span>\n"
+"\t\t                                                                        <span class=\"font_size_18 o_default_snippet_text\">Months</span>\n"
+"\t\t                                                                    </strong>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid ""
+"<strong>\n"
+"                                                <span>Lorem, ipsum.</span>\n"
+"                                                <br/> dolor sit. </strong>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,help:jt_loan_project.field_product_product__detailed_type
+#: model:ir.model.fields,help:jt_loan_project.field_product_template__detailed_type
+msgid ""
+"A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A consumable product is a product for which stock is not managed.\n"
+"A service is a non-material product you provide."
+msgstr ""
+"Un producto almacenable es un producto para el que gestiona stock. La aplicación de inventario debe estar instalada.\n"
+"Un producto consumible es un producto para el que no se gestionan las existencias.\n"
+"Un servicio es un producto no material."
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid ""
+"A verification email has been sent!<br/>You’re just a click away from "
+"completing your<br/> Account Creation."
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__accept_attestation_date
+msgid "Accept Attestation Date"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__accept_attestation_ip
+msgid "Accept Attestation IP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid "Accepted"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Account Number"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Active loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__bussiness_address_line_1
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__bussiness_address_line_1
+msgid "Address 1"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__bussiness_address_line_2
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__bussiness_address_line_2
+msgid "Address 2"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Address Line 1"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Address Line 2"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+msgid "Also, throw that Gollum too"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Analytics by"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid ""
+"Anim pariatur cliche reprehenderit, enim eiusmod\n"
+"                                                    high life accusamus terry richardson ad squid. 3\n"
+"                                                    wolf moon officia aute, non cupidatat skateboard\n"
+"                                                    dolor brunch. Food truck quinoa nesciunt laborum\n"
+"                                                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua\n"
+"                                                    put a bird on it squid single-origin coffee\n"
+"                                                    nulla assumenda shoreditch et. Nihil anim\n"
+"                                                    keffiyeh helvetica, craft beer labore wes\n"
+"                                                    anderson cred nesciunt sapiente ea proident. Ad\n"
+"                                                    vegan excepteur butcher vice lomo. Leggings\n"
+"                                                    occaecat craft beer farm-to-table, raw denim\n"
+"                                                    aesthetic synth nesciunt you probably haven't\n"
+"                                                    heard of them accusamus labore sustainable VHS."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Application Form"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__app_form_date
+msgid "Application Form Date"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__app_form_ip
+msgid "Application Form IP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.ui.menu,name:jt_loan_project.loan_application_history_menu
+msgid "Application History"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid ""
+"Apply\n"
+"                                                                Now"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+msgid "Apply Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__apply_now
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "Apply Now"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Approval Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Approve"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Approve Video verification"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__approved_dashbord
+msgid "Approved Dashbord"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.attestation_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid "Approved Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:res.groups,name:jt_loan_project.cg_group_approver
+msgid "Approver Officer"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+msgid "Attach Signed Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.attestation_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid "Attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__attestation_completed
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+msgid "Attestation Completed"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__attestation_date
+msgid "Attestation Date"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__attestation_ip
+msgid "Attestation IP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__attestation_method
+msgid "Attestation Method"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__attestation_step_next
+msgid "Attestation Step Next"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.attestation_success
+msgid "Attestation Success"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__attestation_video
+#: model:ir.model.fields,field_description:jt_loan_project.field_upload_wizard__attestation_video
+msgid "Attestation Video"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__attestation_video_file
+#: model:ir.model.fields,field_description:jt_loan_project.field_upload_wizard__attestation_video_file
+msgid "Attestation Video File Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__be_form_tax_receipts
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__be_form_tax_receipts
+msgid "BE Form with Tax Receipts"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__be_form_tax_receipts_file
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__be_form_tax_receipts_file
+msgid "BE Form with Tax Receipts File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+msgid "Back"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__is_back_failed
+msgid "Back Failed"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__back_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Back ID"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__back_id_file
+msgid "Back ID File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__back_image_file
+msgid "Back Image File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__back_image_name
+msgid "Back Image Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Balance To Be Paid"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Balance tobe Paid"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__bank_info
+msgid "Bank Info"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Bank Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__bank_statement_pdf_file
+msgid "Bank Statement (1st Month) File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__bank_statement_pdf
+msgid "Bank Statement (last 6 Month)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+msgid "Bank Statement (last 6th Month)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__bank_statement_1_pdf
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__comp_info_bank_statement_1_pdf
+msgid "Bank Statement 01"
+msgstr "Estado de Cuenta 01"
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__bank_statement_1_pdf_file
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__comp_info_bank_statement_1_pdf_file
+msgid "Bank Statement 01 File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__bank_statement_2_pdf
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__comp_info_bank_statement_2_pdf
+msgid "Bank Statement 02"
+msgstr "Estado de Cuenta 02"
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__bank_statement_2_pdf_file
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__comp_info_bank_statement_2_pdf_file
+msgid "Bank Statement 02 File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__bank_statement_3_pdf
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__comp_info_bank_statement_3_pdf
+msgid "Bank Statement 03"
+msgstr "Estado de Cuenta 03"
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__bank_statement_3_pdf_file
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__comp_info_bank_statement_3_pdf_file
+msgid "Bank Statement 03 File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "Banner Image"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Blog"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+msgid "Book Now"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Bootstrap 4"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Bootstrap 5"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Bootstrap team"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+msgid "Business Info"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:product.template,name:jt_loan_project.product_business_loan_product_template
+msgid "Business Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+msgid "Business Registration Document"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__registeration_no
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__registeration_no
+msgid "Business Registration Number"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+msgid "Bussiness Employment Document"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "CC BY 3.0"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "CORPORATE LOAN"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,name:jt_loan_project.custom_meet_mail_template
+msgid "Calendar:Meeting Invitation Template"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.terminate_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.upload_video_form_view
+msgid "Cancel"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Car Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.module.category,description:jt_loan_project.module_category_loan
+msgid "Category For Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+msgid "Check Your Email for Google Meet Details"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Choice and value"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__city
+msgid "City"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+msgid "Click next to e-KYC verification"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+msgid "Close"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Code licensed"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "Collapsible Group Item #1"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "Collapsible Group Item #2"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "Collapsible Group Item #3"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:res.groups,name:jt_loan_project.cg_group_collection
+msgid "Collection Officer"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Community"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Community matters"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__company_bank_statement_pdf_file
+msgid "Company Bank Statement (1st Month) File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__company_bank_statement_pdf
+msgid "Company Bank Statement (6 Months)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+msgid "Company Bank Statement (last 6 Month)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Company Information"
+msgstr "Información Persona Moral"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Company Registeration No."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Company/Business Address"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__com_bussiness_contact_no
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__com_bussiness_contact_no
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Company/Business Contact"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__company_business_name
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__company_business_name
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Company/Business Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__product_template__interest_type__compound
+msgid "Compound Interest"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model,name:jt_loan_project.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.res_config_expire_sign_attestation_time_view_form
+msgid "Configure Expire/Sign Attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid "Confirm Password"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Confirmed Documents"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+msgid ""
+"Congratulations 🎉 Your\n"
+"                                            Loan has been Approved"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model,name:jt_loan_project.model_res_partner
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__emergency_contact_relationship
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__emergency_contact_relationship
+msgid "Contact Relationship"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Corporate sponsors"
+msgstr ""
+
+#. module: jt_loan_project
+#. odoo-python
+#: code:addons/jt_loan_project/controllers/auth_user.py:0
+#, python-format
+msgid "Could not reset your password"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__country_id
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__company_country_id
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__company_country_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Country"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid "Create an Account"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid ""
+"Create pages with ease with a help of the best page builder\n"
+"                                                plugin."
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__create_uid
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_month__create_uid
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_reason__create_uid
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__create_uid
+#: model:ir.model.fields,field_description:jt_loan_project.field_upload_wizard__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__create_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_month__create_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_reason__create_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__create_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_upload_wizard__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:res.groups,name:jt_loan_project.cg_group_credit_officer
+msgid "Credit Officer"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__currency_id
+msgid "Currency"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Currently v5.0.2."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.snippets_option_inherit
+msgid "Custom Theme Footer"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.snippets_option_inherit
+msgid "Custom Theme Header"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:res.groups,name:jt_loan_project.cg_group_borrower
+msgid "Customer"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.web_login_temp_inherit
+msgid "Database"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Designed and built with all the love in the world by the"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__disbursment_amount
+msgid "Disbursement Amount"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__disbursment_date
+msgid "Disbursement Date"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Disbursement Done"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__disbursment_ip
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__loan_disbused_ip
+msgid "Disbursement IP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Discussions"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__display_name
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_month__display_name
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_reason__display_name
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__display_name
+#: model:ir.model.fields,field_description:jt_loan_project.field_upload_wizard__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__company_district
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__company_district
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "District"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+msgid "Do Attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__document_form
+msgid "Document Form"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_application_history_view_form
+msgid "Documents"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+msgid "Don't enter the caves!!"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+msgid "Don't forget the ring"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.web_login_temp_inherit
+msgid "Don’t Have an account?"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Due Amount"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Due Date"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid ""
+"Durotan\n"
+"                                                                free shipping for all orders over\n"
+"                                                                $199 in\n"
+"                                                                domestic\n"
+"                                                                &amp; over $399 for worldwide"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,subject:jt_loan_project.customer_notify_mail_template
+msgid "E-Sign Loan Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+msgid "E-sign Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__e_sign_otp
+msgid "E-sign OTP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__e_sign_done
+msgid "E-sign Veri"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__ea_statement
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__ea_statement
+msgid "EA Statement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__ea_statement_file
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__ea_statement_file
+msgid "EA Statement File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__epf_statement
+msgid "EPF Statement (with minimum 12 months contribution)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Education Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__project_task__stage_loan__ekyc
+#: model:project.task.type,name:jt_loan_project.project_loan_stage_0
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Ekyc"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__date_ekyc
+msgid "Ekyc Date"
+msgstr "Fecha de envio de Docs"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.web_login_temp_inherit
+msgid "Email"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid "Email Address"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.res_partner_form_id_inherited
+msgid "Emergency Contact"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__emergency_contact_name
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__emergency_contact_name
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "Emergency Contact Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__emergency_contact_no
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__emergency_contact_no
+msgid "Emergency Contact Number"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__self_employed_ssm_register_1_pdf
+msgid "Employee SSM Registration"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__self_employed_ssm_register_1_pdf_file
+msgid "Employee SSM Registration File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__self_employed_latest_utility_bill_pdf
+msgid "Employee Utility Bill"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__self_employed_latest_utility_bill_pdf_file
+msgid "Employee Utility Bill File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+msgid "Employee ment and Bank Account"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Employeement and Bank Account Info"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.res_partner_form_id_inherited
+msgid "Employment Info"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__employment_letter
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__employment_letter
+msgid "Employment Letter"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__employment_letter_file
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__employment_letter_file
+msgid "Employment Letter File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.attestation_success
+msgid "Esign Now"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__esign_pdf
+msgid "Esign PDF File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__esign_pdf_file
+msgid "Esign PDF File Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__esign_sign_file
+msgid "Esign Sign File Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__project_task__stage_loan__esign
+#: model:project.task.type,name:jt_loan_project.project_loan_stage_5
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Esignature"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__esign_date
+msgid "Esignature Date"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__esign_ip
+msgid "Esignature IP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+msgid "Esignature Required"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_success
+msgid "Esignature Success"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__cale_event_id
+msgid "Events link"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Examples"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_config_settings__expire_inperson_att_time
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.res_config_expire_sign_attestation_time_view_form
+msgid "Expiry To In-person Attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_config_settings__sign_attestation_time
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.res_config_expire_sign_attestation_time_view_form
+msgid "Expiry To Sign Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_config_settings__expire_attestation_time
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.res_config_expire_sign_attestation_time_view_form
+msgid "Expiry to Review and Agree Attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__expiry_to_sign_agreement_expiry_date
+msgid "Expiry to sign agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__video_inperson_expiry_date
+msgid "Expiry to upload In-Person attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__video_attestation_expiry_date
+msgid "Expiry to upload video attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__is_face_failed
+msgid "Face Failed"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__face_id
+msgid "Face ID"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__face_image_file
+msgid "Face Image File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__face_image_name
+msgid "Face Image Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Fail"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__res_partner__emergency_contact_relationship__father
+msgid "Father"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Fathom"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__fill_loan_details
+msgid "Fill Loan Details"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:res.groups,name:jt_loan_project.cg_group_finance
+msgid "Finance Officer"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+msgid "Financial Documents"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__product_template__stamp_duty_type__fixed
+msgid "Fixed"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "Free shipping"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__is_front_failed
+msgid "Front Failed"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__fron_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Front ID"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__front_id_file
+msgid "Front ID File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__front_image_file
+msgid "Front Image File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__front_image_name
+msgid "Front Image Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__partner_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Full Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "GET FUNDS IN SECOND"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+msgid "GMT+8"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Get Started"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Getting started"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:product.template,name:jt_loan_project.product_gold_loan_product_template
+msgid "Gold Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "Gross Monthly Income"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Guides"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Happy Client"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:product.template,name:jt_loan_project.product_home_loan_product_template
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Home Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__id
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_month__id
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_reason__id
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__id
+#: model:ir.model.fields,field_description:jt_loan_project.field_upload_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__in_person_attestation_sch
+msgid "IN Person Attestation Sch"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__current_ip
+msgid "IP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__ekyc_ip
+msgid "IP Address"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Icons"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__in_person_attestation
+msgid "In Person Attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__project_task__attestation_method__in_person
+msgid "In-Person"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+msgid "In-Person Attestation Scheduled"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_product__inst_due_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_template__inst_due_date
+msgid "Installment Due Date(Days)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Insurance Policies"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid ""
+"Insurence Solution\n"
+"                                                    With Experts"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__interest_rate
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_product__interest_rate
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_template__interest_rate
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__interest_rate
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.approve_loan_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_rejected
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+msgid "Interest Rate"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_product__interest_type
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_template__interest_type
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Interest Type"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__is_disbursed
+msgid "Is Disbursed?"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__is_verified_user
+msgid "Is Verified User"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Issues"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Item"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid "John Doe"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Key in your Bank Details"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+msgid "Kill some Orcs"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__write_uid
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_month__write_uid
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_reason__write_uid
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__write_uid
+#: model:ir.model.fields,field_description:jt_loan_project.field_upload_wizard__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__write_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_month__write_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_reason__write_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__write_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_upload_wizard__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+msgid "Latest Utility Bill"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__lst_utility_bill
+msgid "Latest Utility Bill (as per home address)"
+msgstr "Comprobante de Domicilio"
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__lst_utility_bill_file
+msgid "Latest Utility Bill (as per home address) File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:res.groups,name:jt_loan_project.cg_group_legal
+msgid "Legal Officer"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "Lend a hand"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid ""
+"Leverage agile frameworks provide\n"
+"                                                    synopsis for high level overviews\n"
+"                                                    Iterative approaches."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid ""
+"Leverage agile frameworks provide\n"
+"                                                synopsis for high level overviews\n"
+"                                                Iterative approaches."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Links"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__loan_pro_id
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__product_template__detailed_type__loan
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__product_template__type__loan
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.attestation_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+msgid "Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__loan_amt
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__loan_amt
+msgid "Loan Amount"
+msgstr "Monto del préstamo"
+
+#. module: jt_loan_project
+#: model:ir.module.category,name:jt_loan_project.module_category_loan
+msgid "Loan Application"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.actions.act_window,name:jt_loan_project.loan_application_history_action
+#: model:ir.model,name:jt_loan_project.model_loan_application_history
+msgid "Loan Application History"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__loan_approval_date
+msgid "Loan Approval Date"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__loan_approval_ip
+msgid "Loan Approval Ip"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__is_loan_approve
+msgid "Loan Approve"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,subject:jt_loan_project.mail_template_data_loan_approved
+msgid "Loan Approved Latter"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "Loan Calculator"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "Loan Detail Summary*"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Loan Details"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__project_task__stage_loan__disbursed
+#: model:project.task.type,name:jt_loan_project.project_loan_stage_6
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Loan Disbursement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Loan Duration"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Loan Management"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:project.project,name:jt_loan_project.project_project_loan
+msgid "Loan Process"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__is_loan_reject
+msgid "Loan Reject"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__month_id
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__month_id
+msgid "Loan Tenure"
+msgstr "Plazo del Crédito"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "Loan Tenure/Duration"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,name:jt_loan_project.customer_notify_mail_template
+msgid "Loan: Customer Notify Mail Template"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,name:jt_loan_project.mail_template_data_loan_approved
+msgid "Loan: Loan Approved Latter"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,subject:jt_loan_project.terminate_mail_template
+msgid "Loan: Rejected"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,name:jt_loan_project.terminate_mail_template
+msgid "Loan: Rejected Mail Template"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,subject:jt_loan_project.stamped_agreement_mail_template
+msgid "Loan:Stamped Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Local knowledge"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_header_layout
+msgid "Login"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.web_login_temp_inherit
+msgid "Login to Your Account"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_header_layout
+msgid "Logo"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_header_layout
+msgid "Logout"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur\n"
+"                                                    adipiscing elit, sed do eiusmod tempor\n"
+"                                                    incididunt ut\n"
+"                                                    laboris nisi ut aliquip ex ea commodo\n"
+"                                                    consequat.."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur\n"
+"                                                adipiscing."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur\n"
+"                                        adipiscing elit, sed do eiusmod tempor\n"
+"                                        incididunt ut\n"
+"                                        laboris nisi ut aliquip ex ea commodo\n"
+"                                        consequat.."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\n"
+"                                                laboris nisi ut aliquip ex ea commodo consequat.."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut\n"
+"                                            laboris nisi ut aliquip ex ea commodo consequat.."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid ""
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod "
+"tempor incididunt utlaboris nisi ut aliquip ex ea commodo consequat.."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "Lorem ipsum dolor sit amet."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid ""
+"Lorem ipsum dolor sit, amet consectetur adipisicing\n"
+"                                                elit. Odio, sequi."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+#: model_terms:product.template,description:jt_loan_project.product_business_loan_product_template
+#: model_terms:product.template,description:jt_loan_project.product_gold_loan_product_template
+#: model_terms:product.template,description:jt_loan_project.product_home_loan_product_template
+#: model_terms:product.template,description:jt_loan_project.product_personal_loan_product_template
+#: model_terms:product.template,description:jt_loan_project.product_property_loan_product_template
+#: model_terms:product.template,description:jt_loan_project.product_vehicle_loan_product_template
+msgid ""
+"Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, "
+"explicabo?"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid ""
+"Lorem, ipsum\n"
+"                                                dolor sit amet consectetur adipisicing elit.\n"
+"                                                Quia doloremque aperiam voluptas consequuntur\n"
+"                                                obcaecati fuga neque, earum illum architecto quas\n"
+"                                                quibusdam, eaque numquam! Perspiciatis ullam ipsum\n"
+"                                                laborum ex optio dolores. Lorem ipsum dolor\n"
+"                                                sit amet consectetur adipisicing elit. Nostrum, quod\n"
+"                                                illum nisi consectetur veniam eos officia\n"
+"                                                sunt quae necessitatibus asperiores accusamus optio\n"
+"                                                voluptatum. Tempora, ea!"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.attestation_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+msgid ""
+"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, expedita ab. Dolore\n"
+"                                                        doloremque repudiandae, iure unde quidem excepturi molestiae, et ad provident rerum mollitia\n"
+"                                                        delectus dolores, deserunt repellat natus perferendis."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+msgid "Lorem, ipsum dolor."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid "Lorem, ipsum."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "MIT"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__meeting_link
+msgid "Meeting Link"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__phone
+msgid "Mobile"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "Mobile Number"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_month__name
+msgid "Month"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__monthly_repayment
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__monthly_repayment
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.approve_loan_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_rejected
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+msgid "Monthly Repayment"
+msgstr "Pago Mensual"
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__res_partner__emergency_contact_relationship__mother
+msgid "Mother"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_header_layout
+msgid "My Account"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "My Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+msgid "My Loan (Submit DOC)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_header_layout
+msgid "My Loans"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__name
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid "Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Name as per bank Statement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid "Need help? Contact us Now!"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "Next"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+msgid "Next Step sign Loan Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.actions.act_window,help:jt_loan_project.loan_application_history_action
+msgid "No data found for Loan Application History"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "ONE FIX FEE"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+msgid "OTP Verification Successful"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+msgid "OTP Verified"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__select_employee_type
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__select_employee_type
+msgid "Occupation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "On the other hand we den noun with righteous"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid ""
+"On the other hand we denounce righteous\n"
+"                                                            indignation beguiled demoralized."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid ""
+"On the other hand we denounce with righteous indig nation and dislike men who are\n"
+"                                                sbeguiled and demor alized bite the finan charms blinded."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid ""
+"On the other hand we denounce with righteous indignation and dislike men who are so beguiled and\n"
+"                                    demoralized bite the finan charms of pleasure of blinded."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Open Collective"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:website.menu,name:jt_loan_project.product_page_menu
+msgid "Our Loans"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Paid On"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Parcel"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Pass"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.web_login_temp_inherit
+msgid "Password"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Pay Bills"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Pay Now"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__payslips_pdf
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+msgid "Payslip (1st Month)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__payslips_pdf_file
+msgid "Payslip (1st Month) File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__payslip_2_pdf
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+msgid "Payslip (2nd Month)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__payslip_2_pdf_file
+msgid "Payslip (2nd Month) File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__payslip_3_pdf
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+msgid "Payslip (3rd Month)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__payslip_3_pdf_file
+msgid "Payslip (3rd Month) File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__product_template__stamp_duty_type__percentage
+msgid "Percentage"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_product__stamp_duty_percentage
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_template__stamp_duty_percentage
+msgid "Percentage(%)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__personal_bank_statement_pdf_file
+msgid "Personal Bank Statement (last 6 Month) File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__personal_bank_statement_pdf
+msgid "Personal Bank Statement (last 6 Months)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+msgid "Personal Bank Statement (last 6 month)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+msgid "Personal Emergency Info"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__personal_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+msgid "Personal Info"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Personal Information"
+msgstr "Información Persona Física"
+
+#. module: jt_loan_project
+#: model:product.template,name:jt_loan_project.product_personal_loan_product_template
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Personal Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+msgid "Phone"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Photo"
+msgstr ""
+
+#. module: jt_loan_project
+#. odoo-python
+#: code:addons/jt_loan_project/models/project_task.py:0
+#, python-format
+msgid "Please Upload All ekyc Documents."
+msgstr ""
+
+#. module: jt_loan_project
+#. odoo-python
+#: code:addons/jt_loan_project/models/project_task.py:0
+#: code:addons/jt_loan_project/models/res_user.py:0
+#, python-format
+msgid "Please configure email server!"
+msgstr ""
+
+#. module: jt_loan_project
+#. odoo-python
+#: code:addons/jt_loan_project/models/project_task.py:0
+#, python-format
+msgid "Please create a product."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+msgid ""
+"Please select one of the available slots as given for the next 2 days in\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\torder to complete your loan application. Our friendly attester will be ready to guide you\n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tthrough."
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__position_designation_type
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__position_designation_type
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Position/Designation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__company_postcode
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__company_postcode
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "Postcode"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+msgid "Previous"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.approve_loan_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_rejected
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+msgid "Principal Sum"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_success
+msgid "Process"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.attestation_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid "Processing Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model,name:jt_loan_project.model_product_template
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__product_id
+msgid "Product"
+msgstr "Plantilla de producto"
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_config_settings__product_disclosure
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.res_config_expire_sign_attestation_time_view_form
+msgid "Product Disclosure"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__product_id
+msgid "Product Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_product__detailed_type
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_template__detailed_type
+msgid "Product Type"
+msgstr "Tipo de producto"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Projects"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:product.template,name:jt_loan_project.product_property_loan_product_template
+msgid "Property Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Protect Income"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid ""
+"Quality\n"
+"                                                                materials"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "REPAY AS YOU GET PAID"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "RFS"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Read More"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Read more"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_reason__name
+msgid "Reason"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model,name:jt_loan_project.model_terminate_reason
+msgid "Reason for laon Termination"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Recommend Approval"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__is_recommend
+msgid "Recommended?"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.web_login_temp_inherit
+msgid "Register Now!"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "Registered Address"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Reject"
+msgstr ""
+
+#. module: jt_loan_project
+#. odoo-python
+#: code:addons/jt_loan_project/models/res_user.py:0
+#, python-format
+msgid "Reset password: invalid username or email"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.attestation_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid "Review &amp; Agree"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__review_agree_attestation
+msgid "Review Agree Attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+msgid "Review Submit"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__review_submit_ekyc
+msgid "Review Submit Ekyc"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+msgid "Review and Agree"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+msgid "Review your Information"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "SEND STAMPED AGREEMENT"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__res_binary
+msgid "SIGN PDF"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+msgid "SSM Registration"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__res_partner__select_employee_type__salaried_employed
+msgid "Salaried Employee"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__salary_slip
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__salary_slip
+msgid "Salary slip"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__salary_slip_file
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__salary_slip_file
+msgid "Salary slip File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__savings_account_statement
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__savings_account_statement
+msgid "Savings Account Statement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__savings_account_statement_file
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__savings_account_statement_file
+msgid "Savings Account Statement File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:project.task.type,name:jt_loan_project.project_loan_stage_4
+msgid "Schedule Atestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__project_task__stage_loan__sch_att
+msgid "Schedule Attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "Secure payment"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.web_login_temp_inherit
+msgid ""
+"Select \n"
+"\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t<i class=\"fa fa-database\" role=\"img\" aria-label=\"Database\" title=\"Database\"/>"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+msgid "Select Bank"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+msgid "Select a Slot of In Person Attestation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__res_partner__select_employee_type__self_employed
+msgid "Self Employed"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__project_task__attestation_method__self_recorded
+msgid "Self Recorded"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+msgid "Send OTP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Services"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__res_partner__emergency_contact_relationship__siblings
+msgid "Siblings"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__sign_image
+#: model:mail.template,name:jt_loan_project.sign_up_notify_tmp
+msgid "Sign"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__sign_completed
+msgid "Sign Completed"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__sign_file_name
+msgid "Sign PDF Name"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__sign_upload
+msgid "Sign Upload"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__esign_sign
+msgid "Signature"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__product_template__interest_type__simple
+msgid "Simple Interest"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Slider 1"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Slider 2"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Slider 3"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__res_partner__emergency_contact_relationship__spouse
+msgid "Spouse"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid ""
+"Stack\n"
+"                                        Overflow"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__stage_loan
+msgid "Stage Loan"
+msgstr "Estado del Préstamo"
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_product__stamp_duty_type
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_template__stamp_duty_type
+msgid "Stamp Duty Type"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:mail.template,name:jt_loan_project.stamped_agreement_mail_template
+msgid "Stamped Loan Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__stamping_fee
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__stamping_fee
+msgid "Stamping Fee"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.approve_loan_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_rejected
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+msgid "Stampping Fee"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_product__start_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_template__start_date
+msgid "Start Date(Days)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+msgid "Start from Shire"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Starter template"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__state_id
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_partner__company_state_id
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__company_state_id
+msgid "State"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,help:jt_loan_project.field_product_product__installment_time
+#: model:ir.model.fields,help:jt_loan_project.field_product_template__installment_time
+msgid "State here the time between 2 installments, in months"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__stages
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Status"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+msgid "Submit"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__submit_doc_dashbord
+msgid "Submit Doc Dashbord"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__project_task__stage_loan__submit_doc
+#: model:project.task.type,name:jt_loan_project.project_loan_stage_1
+msgid "Submit Docs & Fill Form"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+msgid "Submit Docs Success"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__submit_document
+msgid "Submit Document"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__submit_document_close
+msgid "Submit Document Close"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+msgid "Submit Documents"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+msgid "Submit Signed Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.attestation_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_salarised_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.doc_self_emp
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.emp_bank_acc_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.in_person_attestation_sch_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid "Success"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Swag Store"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:res.groups,name:jt_loan_project.cg_group_system
+msgid "System Officer"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_application_history_view_form
+msgid "Tags"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model,name:jt_loan_project.model_project_task
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__task_id
+#: model:ir.model.fields,field_description:jt_loan_project.field_upload_wizard__task_id
+msgid "Task"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:project.project,label_tasks:jt_loan_project.project_project_loan
+msgid "Tasks"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__temp_password
+msgid "Temp Password"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.actions.act_window,name:jt_loan_project.action_tenure_month
+#: model:ir.ui.menu,name:jt_loan_project.tenure_month_menu
+msgid "Tenure Month"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model,name:jt_loan_project.model_loan_month
+msgid "Tenure Month Model"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.approve_loan_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_rejected
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+msgid "Tenure/Duration"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.actions.act_window,name:jt_loan_project.terminate_wizard_action
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.terminate_wizard_form_view
+msgid "Terminate"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__terminate_date
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__terminate_date
+msgid "Terminate Date"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.terminate_wizard_form_view
+msgid "Terminate Details"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__terminate_ip
+msgid "Terminate IP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.actions.act_window,name:jt_loan_project.action_terminate_reason
+#: model:ir.ui.menu,name:jt_loan_project.menu_terminate_reason
+msgid "Terminate Reason"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__project_task__stage_loan__terminate
+#: model:project.task.type,name:jt_loan_project.project_loan_stage_7
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Terminated"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__terminate_reason_id
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__terminate_reason_id
+msgid "Termination Reason"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model,name:jt_loan_project.model_terminate_wizard
+msgid "Termination from loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Themes"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.start_attestation
+msgid "Throw that goddamn ring in the lava"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_product__installment_time
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_template__installment_time
+msgid "Time between two installments(In Month)"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__project_task__stage_loan__to_approve
+msgid "To Approve"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:project.task.type,name:jt_loan_project.project_loan_stage_3
+msgid "To Approve Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.approve_loan_dashboard
+msgid "To do Approval Process Take 2-3 working days"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.approve_loan_dashboard
+msgid "To do Esign verification Process Take 2-3 working days"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_header_layout
+msgid "Toggle navigation"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Total Amount"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__total_int_get
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__total_int_get
+msgid "Total Interest"
+msgstr "Total de Intereses"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.my_loan_calculation
+msgid "Total Loan Amount"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__salary_amt
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__salary_amt
+msgid "Total Monthly Income"
+msgstr "Ingresos Mensuales"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Total No. of Instalments"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__total_repayment
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__total_repayment
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.approve_loan_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_rejected
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_agree_attestation
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_submit_doc
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+msgid "Total Repayment"
+msgstr "Monto total con Intereses"
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_product__type
+#: model:ir.model.fields,field_description:jt_loan_project.field_product_template__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.active_loan_details
+msgid "Type of Interest"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__attestation_no_url
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__attestation_url
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__do_attestation_url
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__do_esign_url
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__rejected_url
+msgid "URL"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.upload_video_form_view
+msgid "Upload"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+msgid "Upload Agreement with signature"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Upload Back ID"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+msgid "Upload Back Side of ID"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Upload Front ID"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+msgid "Upload Front Side of ID"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+msgid "Upload Image"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+msgid "Upload Passport Size Photo"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Upload Photo"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.actions.act_window,name:jt_loan_project.upload_video_action
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.project_task_view_form_inh
+msgid "Upload Video"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.upload_video_form_view
+msgid "Upload Video Details"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_dashboard
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_success
+msgid "Upload signed Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model,name:jt_loan_project.model_upload_wizard
+msgid "Upload video"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model,name:jt_loan_project.model_res_users
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__terminate_user_id
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__user_id
+msgid "User"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.submit_doc_dashboard
+msgid "User Dashboard"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__is_info_failed
+msgid "User Info Failed"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.web_login_temp_inherit
+msgid "Username"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:product.template,name:jt_loan_project.product_vehicle_loan_product_template
+msgid "Vehical Loan"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+msgid "Verification Code"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__back_id
+msgid "Verify Back ID"
+msgstr "Verificar ID de atrás"
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__face_verify
+msgid "Verify Face"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__face_verify_file
+msgid "Verify Face File"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_project_task__front_id
+msgid "Verify Front ID"
+msgstr "Verificar ID de Frente"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+msgid "Verify Identity"
+msgstr "Verificar"
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.back_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.front_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.identity_success
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.photo_document
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "Verify Info"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+msgid "Verify OTP"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "View All Services"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.esign_agreement
+msgid "View and Download unsigned Agreement"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__loan_application_history__stages__watch_att_video
+msgid "Watch Att Video"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid ""
+"We\n"
+"                                                                guarantee 100% secure with online\n"
+"                                                                payment on\n"
+"                                                                our site.\n"
+"                                                                In case if you have any problems\n"
+"                                                                with our product, you can return it\n"
+"                                                                back in 30\n"
+"                                                                days"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.demo_page
+msgid ""
+"We have sent a verification code\n"
+"                                                to your mobile number"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.loan_approval_rejected
+msgid ""
+"We're Sorry 😔 Your Loan\n"
+"                                            has been Rejected"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "Wealth Protection"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "Webpack"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid ""
+"With The Experience\n"
+"                                                    Comes Excellence."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid ""
+"With The Experience\n"
+"                                        Comes Excellence."
+msgstr ""
+
+#. module: jt_loan_project
+#. odoo-python
+#: code:addons/jt_loan_project/models/project_task.py:0
+#, python-format
+msgid "You can not delete task Loan is already Validated."
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.video_attestation
+msgid "YouTube video player"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_loan_application_history__email
+msgid "Your Email"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.approve_loan_dashboard
+msgid "Your Loan is Processing"
+msgstr ""
+
+#. module: jt_loan_project
+#. odoo-python
+#: code:addons/jt_loan_project/controllers/auth_user.py:0
+#, python-format
+msgid "Your email address has not been verified. Please check your inbox"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "city"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "footer logo"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "image"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.create_account_page
+msgid "johndoe@mail.com"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "npm starter"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.terminate_wizard_form_view
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.upload_video_form_view
+msgid "or"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields.selection,name:jt_loan_project.selection__res_partner__emergency_contact_relationship__others
+msgid "others"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "our contributors"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "postalcode"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.product_page
+msgid "product details"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.In_Person_Attestation_page
+msgid "profile1"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_terminate_wizard__task_id
+msgid "project Task"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.review_identity
+msgid "state"
+msgstr ""
+
+#. module: jt_loan_project
+#: model:ir.model.fields,field_description:jt_loan_project.field_res_users__verify_email_url
+msgid "vertify email url"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.home_page_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.index_page
+msgid "why choose?"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.jt_loan_web_footer_layout
+msgid "with the help of"
+msgstr ""
+
+#. module: jt_loan_project
+#: model_terms:ir.ui.view,arch_db:jt_loan_project.per_emergency_info
+msgid "wrong"
+msgstr ""

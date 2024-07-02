@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--Email template -->
+    <record id="sign_up_notify_tmp" model="mail.template">
+        <field name="name">Sign</field>
+        <field name="model_id" ref="base.model_res_users"/>
+        <field name="subject"> Email Verification </field>
+        <field name="email_to">{{ object.login }}</field>
+        <field name="body_html" type="html">
+            <div style="margin: 0px; padding: 0px;">
+            <table width="100%" style="padding-top:40px;padding-bottom:40px;">
+                <tr>
+                    <td style="text-align: center; padding: 0 10px;">
+                        <img style="filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.25));border-radius: 20px;transform: matrix(-1, 0, 0, 1, 0, 0);width: 365px;height: 393px;" src="/jt_loan_project/static/src/img/wc1.jpg" class="img img-fluid"/>
+                    </td>
+                    <td style="padding: 0 10px;">
+                        <img t-attf-src="/logo.png?company={{ object.company_id.id }}" style="width:245px;margin-top: -25px;" t-att-alt="object.company_id.name"/>
+                        <p style="font-weight: 700;font-size: 28px;line-height: 34px;color: rgba(0, 0, 0, 0.7);">Verify<br/><spa style="font-weight: 400;">Email Address</spa></p>
+                        <p style="font-weight: 600;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);">Hi <t t-out="object.name or ''"/>,</p>
+                        <p style="font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);">Please Verify your Email Address by<br/>clicking <span style="font-weight: 600;">Verify Email</span> below.</p>
+                        <p style="font-weight: 400;font-size: 18px;line-height: 22px;color: rgba(0, 0, 0, 0.7);">If you do not see the verification button,<br/> please click on the link <a t-att-href="object.verify_email_url">here</a></p>
+                        <div class="pt-2">
+                            <a class="btn" t-att-href="object.verify_email_url" style="text-decoration:none;height:45px;background:#300C46;border-radius: 26.5px;padding: 10px; padding: 12px 50px;"><span style="font-weight: 600;font-size: 16px;line-height: 20px;text-align: center;letter-spacing: 0.2px;color: #FFFFFF;">Verify Email</span>
+                        </a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </field>
+    </record>​
+</odoo>

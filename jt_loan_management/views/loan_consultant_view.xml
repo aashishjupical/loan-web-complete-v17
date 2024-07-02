@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+	<record id="loan_consultant_tree" model="ir.ui.view">
+        <field name="name">consultant.account.loan.tree</field>
+        <field name="model">account.loan</field>
+        <field name="arch" type="xml">
+            <tree string="Loans Consultant">
+            	<field name="name"/>
+            	<field name="ln_agent_fee"/>
+            	<field name="commission_amount"/>
+            </tree>
+        </field>
+    </record>
+
+
+	<record id="action_loan_consultant" model="ir.actions.act_window">
+        <field name="name">Loan Consultant</field>
+        <field name="res_model">account.loan</field>
+        <field name="view_mode">tree</field>
+        <field name="domain">[('ln_consultant_id', '=', active_id)]</field>
+        <field name="view_id" ref="jt_loan_management.loan_consultant_tree"/>
+    </record>
+</odoo>

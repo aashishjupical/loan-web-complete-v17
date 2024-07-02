@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <data>
+        <record id="res_config_settings_view_form" model="ir.ui.view">
+            <field name="name">loan.settings.view.form</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="5"/>
+            <field name="inherit_id" ref="base.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                 <xpath expr="//form" position="inside">
+                    <app data-string="Loans" string="Loans" name="jt_loan_management">
+                        <block title="Bad Debt Accounts for Loans" id="bad_debt_account_loan">
+                            <setting id="write_off_account" string="Write-Off Account" help="Account used to write-off the unpaid amount from the invoices, which need to
+                                            be cancelled when loan was Cancelled / Closed.">
+                                <field name="loan_counter" invisible="1"/>
+                                <field name="write_off_account_id" domain="[('company_id','=',company_id)]" readonly="loan_counter > 0"/>
+                            </setting>
+                        </block>
+                        <block title="Loan Invoice Type" id="loan_invoice_type">
+                            <setting id="invoice_type_val" string="Invoice Type">
+                               <field name="invoice_type" readonly="loan_counter > 0"/>
+                            </setting>
+                        </block>
+                        <block title="Loan Down Payment" id="down_payment">
+                            <setting string="Enable Loan Down Payment">
+                                    <field name="down_payment"/>
+                            </setting>
+                        </block>
+                        <block title="Loans Accounts and Products" id="loan_account_and_product">
+                            <setting id="interest_product" string="Interest Product" help="Product used to invoice as the interest of the loans.">
+                                <field name="interest_prod_id"  readonly="loan_counter > 0" domain="[('type', '!=', 'property'),'|',('company_id','=',company_id),('company_id','=',False)]"/>
+                            </setting>
+                            <setting id="processing_fee_product" string="Processing Fee Product" help="Product used to invoice as processing fee from the loans.">
+                                <field name="processing_fee_prod_id" readonly="loan_counter > 0" domain="[('type', '!=', 'property'),'|',('company_id','=',company_id),('company_id','=',False)]"/>
+                            </setting>
+                            <setting id="current_assets" string="Current Assets" help="Current Assets for Counter entry of Account Receivable towards Principal on loan invoices.">
+                                <field name="acc_rec_id" readonly="loan_counter > 0" domain="[('company_id','=',company_id)]"/>
+                            </setting>
+                            <setting id="loan_income_account" string="Loan Income Account" help="Income Account used in loan invoice items.">
+                               <field name="income_acc_id" readonly="loan_counter > 0" domain="[('company_id','=',company_id)]"/>
+                            </setting>
+                            <setting id="loan_journals" string="Loan Journal" help="Journal used in loan invoice.">
+                               <field name="loan_jou_id" readonly="loan_counter > 0" domain="[('company_id','=',company_id),('type','=','sale')]"/>
+                            </setting>
+                            <setting id="disbursement_account" string="Disbursement Account" help="Disbursement Account used in loan amount entry.">
+                               <field name="disbursement_acc_id" readonly="loan_counter > 0" domain="[('company_id','=',company_id)]"/>
+                            </setting>
+                            <setting id="disbursement_journal" string="Disbursement Journal" help="Disbursement Journal used in loan amount entry.">
+                               <field name="disbursement_journal_id" required='1' readonly="loan_counter > 0" domain="[('type','=','general'),('company_id','=',company_id)]"/>
+                            </setting>
+                            <setting id="penalty_product" string="Penalty Product" help="Select the product that will be used as penalty product on due invoices.">
+                               <field name="penalty_product_id" required='1' domain="[('type','=','service')]"/>
+                            </setting>
+                            <setting id="principal_product" string="Principal Product" help="Select the product that will be used as penalty product on due invoices.">
+                               <field name="principal_product_id" required='1' domain="[('type','=','service')]"/>
+                            </setting>
+                            <setting id="j_inv_create_date" string="Auto Invoice Create Date" help="Installment Invoice Create Date before how much days from installment due date.">
+                               <field name="inv_create_date"/>
+                            </setting>
+                        </block>
+                        <block title="Penalty on Due Invoices" id="penalty_due_inv">
+                            <setting id="charge_penalty_int" string="Charge Penalty Or Interest :">
+                               <field name="penalty_option"/>
+                            </setting>
+                            <div class="row" invisible="penalty_option != 'penalty'">
+                                <setting id="charge_penalty_with" string="Charge penalty with :" invisible="penalty_option != 'penalty'" required="penalty_option">
+                                    <field name="charge_option"/> 
+                                </setting>
+                            </div>
+                            <!-- <div class="row">
+                                <setting id="daily_" string="Daily Interest Rate (%)" invisible="penalty_option != 'interest'">
+                                    <field name="charge"/>
+                                </setting>
+                                <setting id="fixed_amt" string="Fixed amount" invisible="charge_option != 'fixed'">
+                                    <field name="charge"/>
+                                </setting>
+                                <setting id="in_percentage" string="In Percentage (%)" invisible="penalty_option != 'penalty' or charge_option != 'percentage'">
+                                    <field name="charge"/>
+                                </setting>
+                            </div> -->
+                            <div class="row">
+                                <setting string="Allow # of days after due" invisible="penalty_option != 'penalty' and penalty_option != 'interest'">
+                                    <field name="of_days"/>
+                                </setting>
+                            </div>
+                        </block>
+                    </app>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_loan_configuration" model="ir.actions.act_window">
+             <field name="name">Settings</field>
+             <field name="res_model">res.config.settings</field>
+             <field name="view_mode">form</field>
+             <field name="target">inline</field>
+             <field name="context">{'module' : 'jt_loan_management', 'bin_size': False}</field>
+        </record>
+
+        <menuitem id="account_config"
+            name="Configurations"
+            parent="jt_loan_management.menu_loans"
+            sequence="6"
+        />
+
+         <menuitem id="account_setting"
+            name="Settings"
+            parent="jt_loan_management.account_config"
+            sequence="6"
+            action="jt_loan_management.action_loan_configuration"
+        />
+
+    </data>
+</odoo>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="start_attestation" model="ir.ui.view">
+            <field name="name">Start Attestation</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.start_attestation</field>
+            <field name="arch" type="xml">
+                <t name="Start Attestation" priority="19" t-name="jt_loan_project.start_attestation">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+                            <section class="progress-area">
+                                <div class="container">
+                                    <ul class="list-unstyled multi-steps pt80 pb80">
+                                        <li id="step-1" >Processing Loan<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-2">Approved Loan <div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-3" class="is-active">Attestation<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>                                    
+                                            </div>
+                                        </li>                                       
+                                        <li id="step-4">Review &amp; Agree<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>                                    
+                                            </div>
+                                        </li>                                       
+                                        <li id="step-5">Success</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="attestation-start-area px80">
+                                <div class="container">
+                                    
+                                    <div class="row justify-content-center align-items-center flx9">
+                                    <form enctype="multipart/form-data" method="post">    
+                                            <div class="col-lg-12 col-md-12">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-lg-6 col-md-6 col-sm-6 align-self-center">
+                                                <div class="history-tl-container">
+                                                    <ul class="tl">
+                                                        <li class="tl-item" ng-repeat="item in retailer_history">
+                                                            <div class="timestamp">
+                                                                1
+                                                            </div>
+                                                            <div class="item-title">Start from Shire</div>
+                                                            <div class="item-detail">Don't forget the ring</div>
+                                                        </li>
+                                                        <li class="tl-item" ng-repeat="item in retailer_history">
+                                                            <div class="timestamp">
+                                                                2
+                                                            </div>
+                                                            <div class="item-title">Kill some Orcs</div>
+                                                            <div class="item-detail">Don't enter the caves!!</div>
+                                                        </li>
+                                                        <li class="tl-item" ng-repeat="item in retailer_history">
+                                                            <div class="timestamp">
+                                                                3
+                                                            </div>
+                                                            <div class="item-title">Throw that goddamn ring in the lava</div>
+                                                            <div class="item-detail">Also, throw that Gollum too</div>
+                                                        </li>
+
+                                                    </ul>
+                                                    <div class="progress_btn text-center">
+                                                        <button class="btn btn-ctm-blue" type="submit">Do Attestation</button>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-1"></div>
+                                            <div class="col-lg-5 col-md-6">
+                                                <img class="img-fluid" src="/jt_loan_project/static/src/img/sucess.jpg" alt="Loan"/>
+                                            </div>
+                                                </div>
+                                            </div>
+                                    </form>    
+                                    </div>
+                                    
+                                </div>
+                            </section>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

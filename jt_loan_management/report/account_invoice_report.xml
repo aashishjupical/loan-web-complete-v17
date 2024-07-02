@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="ln_account_invoice_report_inht" inherit_id="account.report_invoice_document">
+		<xpath expr="//th[@name='th_quantity']" position="replace"/>
+		<xpath expr="//td[@name='td_quantity']" position="replace"/>
+		<xpath expr="//th[@name='th_taxes']" position="replace"/>
+		<xpath expr="//td[@name='td_taxes']" position="replace"/>
+	</template>
+</odoo>

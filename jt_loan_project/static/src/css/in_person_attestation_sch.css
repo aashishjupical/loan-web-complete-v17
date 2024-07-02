@@ -1,0 +1,100 @@
+.in-person-sch {
+    padding: 53px 0 163px 0;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.mb-29 {
+    margin-bottom: 29px;
+}
+
+.schedule p {
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.schedule p.sch-day {
+    font-weight: 700;
+}
+
+.btn-theme {
+    width: 300;
+}
+
+.mb-18 {
+    margin-bottom: 18px;
+}
+
+.mb-19 {
+    margin-bottom: 19px;
+}
+
+@media (max-width:991px) {
+    .btn-theme{
+        width: 100% !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .titles p {
+        padding-top: 30px;
+    }
+
+    .titles h2 {
+        font-size: 32px;
+        line-height: 38px;
+    }
+
+    .section-text {
+        height: unset;
+    }
+
+    .mb-24 {
+        margin-bottom: 8px;
+    }
+
+    .mb-19 {
+        margin-bottom: 6px;
+    }
+
+    .mb-18 {
+        margin-bottom: 10px;
+    }
+
+    .mb-29 {
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width:575px) {
+    .txt-theme-blue {
+        font-size: 14px !important;
+    }
+
+    .section-title {
+        line-height: 32px;
+    }
+
+    .btn-theme {
+        width: 100%;
+    }
+
+    .titles h2 {
+        font-size: 22px;
+        line-height: 30px;
+    }
+
+    .section-text2 {
+        font-size: 15px;
+    }
+
+    .schedule p {
+        font-size: 14px;
+        line-height: 20px;
+    }
+}

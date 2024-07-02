@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="per_emergency_info" model="ir.ui.view">
+            <field name="name">per_emergency_info</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.per_emergency_info</field>
+            <field name="arch" type="xml">
+                <t name="per_emergency_info" priority="18"
+                    t-name="jt_loan_project.per_emergency_info">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+                            <!-- html content start -->
+                            <section class="progress-area">
+                                <div class="container">
+                                    <ul class="list-unstyled multi-steps pt80 pb80">
+                                        <li id="step-1">Apply Loan<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-2" class="is-active">Personal Info <div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>
+                                            </div>
+                                        </li>
+                                        <li id="step-3">Business Info<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/> 
+                                            </div>
+                                        </li>
+                                        <li id="step-4">Financial Documents<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>
+                                            </div>
+                                        </li>
+                                        <li id="step-5">Review Submit<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>
+                                            </div>
+                                        </li>
+                                        <li id="step-6">Success</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="form-area px80 jt_portal_details">
+                                <div class="container">
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-10 col-md-12">
+                                            <div class="in-section-title-1 headline wow fadeInUp"
+                                                data-wow-delay="100ms" data-wow-duration="1000ms"
+                                                style="visibility: visible; animation-duration: 1000ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                                                <div
+                                                    class="sub-title position-relative text-uppercase">
+                                                    <span>User Info</span>
+                                                </div>
+                                                <h2>Personal Emergency Info</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing elit, sed do eiusmod tempor
+                                                    incididunt ut
+                                                    laboris nisi ut aliquip ex ea commodo
+                                                    consequat..</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-12 col-lg-10 jt_country_state_details">
+                                            <form class="apply-form" enctype="multipart/form-data" method="post">
+                                                <div class="row list-input">
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="text" name="full_name" 
+                                                                t-att-value="full_name"
+                                                                placeholder="Full Name" required="" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="text" name="email" t-att-value="email"
+                                                                placeholder="Email" required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="text" name="add_1"  t-att-value="add_1"
+                                                                placeholder="Registered Address"
+                                                                required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="text" name="person_district"
+                                                            t-att-value="person_district"
+                                                                placeholder="District" required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="text" name="person_postcode"
+                                                                t-att-value="person_postcode"
+                                                                placeholder="Postcode" required="" />
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div class="col-md-12 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="text" name="c_add2" 
+                                                                t-att-value="c_add2"
+                                                                placeholder="Address Line 2"
+                                                                required="" />
+                                                            <div t-if="error_address_line_2" class="mandatory_input_error">
+                                                                <span class="fail_mandatory_input">Mandatory field.</span><span> You need to fill this up to proceed</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="text" name="fill_district" t-att-value="fill_district"
+                                                                placeholder="District" required="" />
+                                                            <div t-if="error_fill_district" class="mandatory_input_error">
+                                                                <span class="fail_mandatory_input">Mandatory field.</span><span> You need to fill this up to proceed</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="text" name="fill_postcode" 
+                                                                t-att-value="fill_postcode"
+                                                                placeholder="Postcode" required="" />
+                                                            <div t-if="error_fill_postcode" class="mandatory_input_error">
+                                                                <span class="fail_mandatory_input">Mandatory field.</span><span> You need to fill this up to proceed</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="single-get-touch">
+                                                            <t t-set="states" t-value="request.env['res.country.state'].sudo().search([])" />
+                                                            <select name="state_id" t-attf-class="form-control badge-pill input_tag_h form_input_f_14 border-color-sty">
+                                                                <option value="">Select State</option>
+                                                                <t t-as="state" t-foreach="states or []">
+                                                                    <option t-att-selected="state.id == state_id" t-att-data-country_id="state.country_id.id"
+                                                                        t-att-value="state.id">
+                                                                        <t t-esc="state.name" />
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="single-get-touch">
+                                                            <t t-set="countries" t-value="request.env['res.country'].sudo().search([])" />
+                                                            <select class="form-control" name="country">
+                                                                <option value="">Select Country</option>
+                                                                <t t-as="country" t-foreach="countries or []">
+                                                                    <option t-att-selected="country.id == country_id if country_id else country.id == current_country"
+                                                                        t-att-value="country.id">
+                                                                        <t t-esc="country.name" />
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+
+                                                    <h5 class="mt-3 px-3">Emergency Contact Name</h5>
+                                                    <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+
+                                                    <div class="col-md-12 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="text" name="person_full_name" t-att-value="person_full_name"
+                                                                placeholder="Full Name" required="" />
+                                                            <div t-if="error_person_full_name" class="mandatory_input_error">
+                                                                <span class="fail_mandatory_input">Mandatory field.</span><span> You need to fill this up to proceed</span>
+                                                                <img class="mandatory_img img-fluid" src="/jt_loan_project/static/src/img/wrong.png" alt="wrong"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input class="form-control" type="tel" name="emergency_phone_no" t-att-value="emergency_phone_no"
+                                                                placeholder="Mobile Number"
+                                                                required="" />
+                                                            <div t-if="error_emergency_phone_no" class="mandatory_input_error">
+                                                                <span class="fail_mandatory_input">Mandatory field.</span><span> You need to fill this up to proceed</span>
+                                                                <img class="mandatory_img img-fluid" src="/jt_loan_project/static/src/img/wrong.png" alt="wrong"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="single-get-touch">
+                                                            <select id="selection_option" class="form-control" name="select_relationship" required="">
+                                                                <option value="Choose here">Select Relationship</option>
+                                                                <t t-as="emg_cont_rela_type" t-foreach="emg_cont_relationship or []">
+                                                                    <option t-att-selected="emg_cont_rela_type == select_relationship" t-att-value="emg_cont_rela_type">
+                                                                        <t t-esc="emg_cont_rela_type_value"/>
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                            <div t-if="error_select_relationship" class="mandatory_input_error">
+                                                                <span class="fail_mandatory_input">Mandatory field.</span><span> You need to fill this up to proceed</span>
+                                                                <img class="mandatory_img img-fluid" src="/jt_loan_project/static/src/img/wrong.png" alt="wrong"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 text-center">
+                                                        <div class="single-get-touch mt-3">
+                                                            <button id="per_emg_btn" type="submit"
+                                                                name="submit"
+                                                                class="btn btn-dark btn-submit-ctm">Next</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- html content end -->
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

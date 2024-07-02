@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="my_loan_calculation" name="My Loan Details Page">
+		<t t-call="website.layout">
+			<div class="oe_structure" id="wrap">
+				<div class="oe_structure"/>
+				<section class="progress-area">
+                    <div class="container">
+                        <ul class="list-unstyled multi-steps pt80 pb80">
+                            <li id="step-1" class="is-active">Apply Loan<div
+                                    class="progress-bar progress-bar__success">
+                                    <div class="progress-bar__bar"/>                                    
+                                </div>
+                            </li>
+                            <li id="step-2" >Personal Info <div
+                                    class="progress-bar progress-bar__success">
+                                    <div class="progress-bar__bar"/>                                    
+                                </div>
+                            </li>
+                            <li id="step-3">Business Info<div
+                                    class="progress-bar progress-bar__success">
+                                    <div class="progress-bar__bar"/>                                    
+                                </div>
+                            </li>
+                            <li id="step-4">Financial Documents<div
+                                    class="progress-bar progress-bar--success">
+                                    <div class="progress-bar__bar"/>
+                                </div>
+                            </li>
+                            <li id="step-5">Review Submit<div
+                                    class="progress-bar progress-bar--success">
+                                    <div class="progress-bar__bar"/>
+                                </div>
+                            </li>
+                            <li id="step-6">Success</li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="form-area jt_portal_details">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10 col-md-12">
+                                
+                                <div class="in-section-title-1 headline wow fadeInUp"
+                                    data-wow-delay="100ms" data-wow-duration="1000ms"
+                                    style="visibility: visible; animation-duration: 1000ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                                    <div
+                                        class="sub-title position-relative text-uppercase">
+                                        <span>Check Your Loan Interest &amp; Repayment</span>
+                                    </div>
+                                    <h2>Loan Calculator</h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur
+                                        adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut
+                                        laboris nisi ut aliquip ex ea commodo
+                                        consequat..</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+				<section class="form-area jt_portal_details">
+		            <div class="container">
+		                <div class="row justify-content-center">
+		                    <div class="col-lg-10 col-md-12">
+		                        <section class="s_text_image pt32 pb32">
+		                            <div class="container">
+		                                <form method="post" id="loan_calculator_form">
+		                                    <div class="row">
+		                                		<t t-set="product_get" t-value="request.env['product.product'].sudo().search([('id', '=',product)],limit=1)"/>
+		                                        <div class="pt16 pb16 col-md-12 app_mobile_sty">
+		                                            <div class="row">
+		                                            	<div class="col-md-4">
+			                                                <label class="color_gray_light">Total Loan Amount</label>
+			                                                <br/>
+			                                                <span>Key in Loan</span>
+			                                                <input class="badge-pill form-control account_mt_mb loan_ap_in_txt" id="loan_amount" name="loan_amount" placeholder="5000" required="" t-att-value="loan_amount" type="text"/>
+			                                                <div t-if="err_msg_loan_amount" class="alert alert-danger">
+			                                                	<t t-esc="err_msg_loan_amount"/>
+			                                                </div>
+			                                            </div>
+		                                            	<div class="col-md-4">
+		                                                	<label class="color_gray_light">Loan Tenure/Duration</label>
+			                                                <br/>
+			                                                <span>Select Loan Tenure/Duration</span>
+			                                                <select id="get_loan_id" name="loan_id" required="" t-attf-class="badge-pill form-control account_mt_mb loan_ap_in_txt">
+			                                                    <option value="">Select Month</option>
+			                                                    <t t-as="loan" t-foreach="request.env['loan.month'].sudo().search([]) or []">
+			                                                        <option t-att-selected="loan.id == loan_id" t-att-value="loan.id">
+			                                                            <t t-esc="loan.name"/>
+			                                                        </option>
+			                                                    </t>
+			                                                </select>
+			                                            </div>
+			                                            <div class="col-md-4">
+		                                                	<label class="color_gray_light">Gross Monthly Income</label>
+			                                                <br/>
+			                                                <span>Key In your Gross Monthly Income</span>
+			                                                <input class="badge-pill form-control account_mt_mb loan_ap_in_txt" id="monthly_income" name="monthly_income" placeholder="2500" required="" t-att-value="monthly_income" type="text"/>
+			                                                <div t-if="err_msg_monthly_income" class="alert alert-danger">
+			                                                	<t t-esc="err_msg_monthly_income"/>
+			                                                </div>
+			                                            </div>
+			                                        </div>
+		                                        </div>
+		                                    </div>
+		                                    <div  class="row">
+		                                        <div class="pt16 pb16 col-md-12">
+		                                            <div class="card apply_form_width">
+		                                                <div class="card-body">
+		                                                    <div class="container">
+		                                                        <p class="font-weight-bold font_size_28 color_gray_light pl-3 apply_line_height">Loan Detail Summary*</p>
+		                                                        <div class="d-flex justify-content-between pl-3 pr-4 row">
+		                                                            <div class="col-md-3">
+		                                                                <span class="theme_color">Principal Sum</span>
+		                                                                <br/>
+		                                                                <strong class="color_gray_light font_size_28">
+		                                                                    <span id="amount_set"/>
+		                                                                </strong>
+		                                                                <input type="hidden" id="loan_amount" name="loan_amount" class="form-control" t-att-value="loan_amount"/>
+		                                                                <hr style="width: 130px;"/>
+		                                                            </div>
+		                                                            <div class="col-md-3">
+		                                                                <div>
+		                                                                    <span class="theme_color o_default_snippet_text">Tenure/Duration</span>
+		                                                                </div>
+		                                                                <div>
+		                                                                    <strong class="color_gray_light">
+		                                                                        <span class="font_size_28" id="loan_month_set">0</span>
+		                                                                        <span class="font_size_18 o_default_snippet_text">Months</span>
+		                                                                    </strong>
+		                                                                    <hr style="width: 130px;"/>
+		                                                                </div>
+		                                                            </div>
+		                                                        
+			                                                        
+		                                                            <div class="col-md-3">
+		                                                                <span class="theme_color">Interest Rate</span>
+		                                                                <br/>
+		                                                                <t t-if="product_get and product_get.interest_rate">
+		                                                                    <strong class="color_gray_light font_size_28">
+		                                                                        <span id="interest_rate_id" t-esc="product_get.interest_rate"/>%*</strong>
+		                                                                    <input type="hidden" id="interest_rate_get" name="interest_rate_get" class="form-control" t-att-value="product_get.interest_rate" />
+		                                                                    <hr style="width: 130px;"/>
+		                                                                </t>
+		                                                                <t t-else="">
+		                                                                    <strong class="color_gray_light font_size_28">
+		                                                                        <span id="interest_rate_id"/>0.0%*</strong>
+		                                                                    <hr style="width: 130px;"/>
+		                                                                </t>
+		                                                            </div>
+		                                                            <div class="col-md-3">
+		                                                                <div>
+		                                                                    <span class="theme_color o_default_snippet_text">Total Interest</span>
+		                                                                </div>
+		                                                                <div>
+		                                                                    <strong class="color_gray_light">
+		                                                                        <span class="font_size_28" id="total_int"></span>
+		                                                                    </strong>
+		                                                                    <input type="hidden" id="total_int_get" name="total_int_get" class="form-control" t-att-value="total_int_get"/>
+		                                                                    <hr style="width:130px;"/>
+		                                                                </div>
+		                                                            </div>
+			                                                    </div>
+		                                                        <div class="d-flex justify-content-between pl-3 pr-4 row">
+		                                                        	<div class="col-md-4">
+			                                                            <div class="pt-2">
+			                                                                <span class="theme_color">Monthly Payment</span>
+			                                                            </div>
+			                                                            <div>
+			                                                                <strong class="color_gray_light">
+			                                                                    <span class="font_size_28" id="calculation_set"/>
+			                                                                </strong>
+			                                                                <input type="hidden" id="calculation_set_get" name="calculation_set_get" class="form-control" t-att-value="calculation_set_get"/>
+			                                                            </div>
+			                                                            <hr/>
+			                                                        </div>
+		                                                        
+			                                                        <div>
+				                                                        <t t-set="product_stmp_price" t-value="product_stmp_price"/>
+				                                                        <t t-set="product_stmp_per" t-value="0.00"/>
+				                                                        <t t-set="product_stamping_type" t-value=""/>
+				                                                        <t t-if="product_stamping">
+				                                                       
+				                                                         	
+				                                                        <t t-set="product_stmp_price" t-value=" product_stamping.lst_price"/>
+
+			                                                        
+			                                                        	<t t-if="product_stamping.stamp_duty_type=='percentage'" t-set="product_stmp_per" t-value="product_stmp_per + product_stamping.stamp_duty_percentage"/>
+
+				                                                        <!---Set Stampy Duty Type-->
+				                                                       	<t t-set="product_stamping_type" t-value="product_stamping.stamp_duty_type"/>
+			                                                        
+				                                                        <input type="hidden" id="product_stamping_type_id" class="form-control" name="product_stamping_type" t-att-value="product_stamping_type"/>
+
+				                                                        <input type="hidden" id="product_stamp_duty_percentage_id" class="form-control" name="stamp_duty_percentage" t-att-value="product_stmp_per"/>
+				                                                        <!--- END-->
+
+				                                                        <t t-set="product_interest_type" t-value="product_stamping.interest_type"/>
+				                                                        </t>
+				                                                        <input type="hidden" id="product_interest_type_id" class="form-control" name="product_interest_type" t-att-value="product_interest_type"/>
+				                                                    </div>				                                                    
+				                                                    <div class="col-md-4">
+			                                                            <div class="pt-2">
+			                                                                <span class="theme_color">Other Charges
+			                                                                    (Stamping Free)</span>
+			                                                            </div>
+			                                                            <div>
+		                                                                     <strong class="color_gray_light">         <span id="product_stmp_per_id" class="font_size_28" t-esc="product_stmp_price"/>
+		                                                                    </strong>
+		                                                                    <input type="hidden" id="other_chargers" name="other_chargers" t-att-value="product_stmp_price" class="form-control"/>
+			                                                            </div>
+				                                                        <hr/>
+				                                                        <p t-if="product_stamping_type=='percentage'" class="text-center font_size_14">*<span t-esc="product_stmp_per"/>% stamp duty calculated on loan approval, customer bears cost.
+				                                                        </p>
+				                                                    </div>
+				                                                    <div class="text-center col-md-4">
+								                                        <button id="btn_cal_app_id" class="btn btn-ctm-blue" style="width: 300px;" type="submit">Apply Now</button>
+								                                    </div>
+		                                                    	</div>
+		                                                	</div>
+		                                           		</div>
+		                                        	</div>
+		                                    	</div>
+		                                    </div>		                                    
+		                                </form>
+		                            </div>
+		                        </section>
+		                    </div>
+		                </div>
+		            </div>
+		        </section>
+			</div>
+		</t>
+	</template>
+</odoo>

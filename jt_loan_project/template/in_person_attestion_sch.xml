@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+		<record id="in_person_attestation_sch_page" model="ir.ui.view">
+			<field name="name">Confirmation of Person Attestation</field>
+			<field name="type">qweb</field>
+			<field name="key">jt_loan_project.in_person_attestation_sch_page</field>
+			<field name="arch" type="xml">
+				<t name="Confirmation of Person Attestation" priority="11" t-name="jt_loan_project.in_person_attestation_sch_page">
+					<t t-call="website.layout">
+						<t t-set="pageName" t-value="'in_person_attestation_sch_page'"/>
+						<div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+							<section class="progress-area">
+				                                <div class="container">
+				                                    	<ul class="list-unstyled multi-steps pt80 pb80">
+					                                        <li id="step-1" >Processing Loan<div
+					                                                class="progress-bar progress-bar__success">
+					                                            </div>
+					                                        </li>
+					                                        <li id="step-2">Approved Loan <div
+					                                                class="progress-bar progress-bar__success">
+					                                            </div>
+					                                        </li>
+					                                        <li id="step-3" class="is-active">Attestation<div
+					                                                class="progress-bar progress-bar__success">
+					                                                <div class="progress-bar__bar"/>                     
+					                                            </div>
+					                                        </li>                                       
+					                                        <li id="step-4">Review &amp; Agree<div
+					                                                class="progress-bar progress-bar__success">
+					                                                <div class="progress-bar__bar"/>              
+					                                            </div>
+					                                        </li>                                       
+				                                       		<li id="step-5">Success</li>
+				                                    	</ul>
+				                                </div>
+				                        </section>
+			
+							<section>
+								<form enctype="multipart/form-data" id="in_person_attestation_sch_id" method="post">
+									<div class="in-person-sch">
+								        <div class="container">
+								            <div class="row">
+								                <div class="col-lg-5 col-md-6 col-sm-12">
+								                    <img style="filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));border-radius: 20px;" class="img-fluid" src="/jt_loan_project/static/src/img/wc1.jpg" alt="Attestation Completed"/>
+								                </div>
+								                <div class="col-lg-7 col-md-6 col-sm-12">
+								                    <div class="titles">
+								                      
+								                        <h2 class="mb-24 section-title">In-Person Attestation Scheduled</h2>
+								                        <div class="schedule mb-29">
+								                            <p class="sch-day mb-0 p-0"><span t-esc="week_days"/></p>
+								                            <p class="sch-date mb-18 p-0"><span t-esc="booking_date" /></p>
+								                            <p class="sch-time mb-0 p-0"><span t-esc="booking_time" /> GMT+8</p>
+								                        </div>
+								                        <p class="section-text2 mb-12 p-0 mb-24">Check Your Email for Google Meet Details</p>
+								                    </div>
+								                    
+								                    <button type="submit" class="btn btn-submit-ctm">My Loans</button>
+								                </div>
+								            </div>
+								        </div>
+								    </div>
+								</form>
+							</section>
+						</div>
+					</t>
+				</t>
+			</field>
+		</record>
+	</data>
+</odoo>

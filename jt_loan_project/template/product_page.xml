@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="product_page" model="ir.ui.view">
+            <field name="name">product page</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.product_page</field>
+            <field name="arch" type="xml">
+                <t name="product page" priority="18" t-name="jt_loan_project.product_page">
+                    <t t-call="website.layout">
+                        <t t-set="pageName" t-value="'product_page'"/>
+                        <div class="oe_structure" id="wrap">
+                        <div class="oe_structure"/>
+                            <!-- html start -->
+                            <!-- inner page banner start -->
+                            <section class="ban_sec">
+                                <div class="container-fluid p-0">
+                                    <div class="ban_img">
+                                        <div class="product-banner-overlay">
+                                            <img
+                                                src="/jt_loan_project/static/src/img/inner-banner.jpg"
+                                                alt="Banner Image" />
+                                        </div>
+                                        <div class="ban_text">
+                                            <strong>
+                                                <span>Lorem, ipsum.</span>
+                                                <br /> dolor sit. </strong>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing
+                                                elit. Odio, sequi.</p>
+                                            <a href="#">Lend a hand</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- inner page banner end -->
+
+                            <!-- product page start -->
+                            <div class="home-about-us">
+                                <!-- Container -->
+                                <div class="container container--type-2">
+                                    <!-- Background -->
+                                    <div class="home-about-us__background">
+                                        <!-- Container -->
+                                        <div class="container">
+                                            <!-- Title -->
+                                            <!-- <h4 class="home-about-us__title">Products</h4> -->
+                                            <div class="in-section-title-1 headline wow fadeInUp"
+                                                data-wow-delay="100ms"
+                                                data-wow-duration="1000ms"
+                                                style="visibility: visible; animation-duration: 1000ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                                                <div
+                                                    class="sub-title position-relative text-uppercase">
+                                                    <span>Product</span>
+                                                </div>
+                                                <h2>With The Experience
+                                                    Comes Excellence. </h2>
+                                            </div>
+
+                                            <div class="home-about-us__description">Lorem, ipsum
+                                                dolor sit amet consectetur adipisicing elit.
+                                                Quia doloremque aperiam voluptas consequuntur
+                                                obcaecati fuga neque, earum illum architecto quas
+                                                quibusdam, eaque numquam! Perspiciatis ullam ipsum
+                                                laborum ex optio dolores. Lorem ipsum dolor
+                                                sit amet consectetur adipisicing elit. Nostrum, quod
+                                                illum nisi consectetur veniam eos officia
+                                                sunt quae necessitatibus asperiores accusamus optio
+                                                voluptatum. Tempora, ea!</div>
+
+                                            <div class="row">
+                                                <div class="col-lg-7">
+                                                    <div class="home-about-us__feature d-flex">
+                                                        <div class="feature__content">
+                                                            <h6 class="feature__h6">Quality
+                                                                materials</h6>
+                                                            <div class="feature__description">100%
+                                                                polyurethane. &amp; 100% polyester,
+                                                                products
+                                                                of
+                                                                Durotan alway choose detail and
+                                                                safety with customer. Your
+                                                                sastification is our
+                                                                reputation</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="home-about-us__feature d-flex">
+                                                        <div class="feature__content">
+                                                            <h6 class="feature__h6">Free shipping</h6>
+                                                            <div class="feature__description">Durotan
+                                                                free shipping for all orders over
+                                                                $199 in
+                                                                domestic
+                                                                &amp; over $399 for worldwide</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="home-about-us__feature d-flex">
+                                                   
+                                                        <div class="feature__content">
+                                                            <h6 class="feature__h6">Secure payment</h6>
+                                                            <div class="feature__description">We
+                                                                guarantee 100% secure with online
+                                                                payment on
+                                                                our site.
+                                                                In case if you have any problems
+                                                                with our product, you can return it
+                                                                back in 30
+                                                                days
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-lg-5 mt-5">
+                                                    <img class="img-fluid"
+                                                        src="/jt_loan_project/static/src/img/product-about3.jpg"
+                                                        alt="product details" />
+                                                    <img class="img-fluid mt-5"
+                                                        src="/jt_loan_project/static/src/img/product-about2.jpg"
+                                                        alt="product details" />
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- product page end -->
+
+                            <!-- product list start -->
+                            <section>
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="in-section-title-1 headline wow fadeInUp"
+                                            data-wow-delay="100ms" data-wow-duration="1000ms"
+                                            style="visibility: visible; animation-duration: 1000ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                                            <div class="sub-title position-relative text-uppercase">
+                                                <span>Product List</span>
+                                            </div>
+                                            <h2>Lorem ipsum dolor sit amet.</h2>
+                                        </div>
+
+                                        <div
+                                            class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 mt-5">
+                                            <div class="mt-n6 mb-10">
+                                                <div class="row">
+                                                    <t t-set="products" t-value="request.env['product.product'].sudo().search([('detailed_type','=','loan')])"/>
+                                                        
+                                                    <t t-as="product" t-foreach="products or []">
+                                                        <t t-set="product_val" t-value="product.id"/>
+                                                        <div
+                                                            class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-12">
+                                                            <div class="card mb-5 text-center border-0 smooth-shadow-sm">
+                                                                <div class="card-img">
+                                                                    <a t-attf-href="/my_loan?product_val={{product_val}}"
+                                                                        class="imghover"> 
+                                                                        <img t-if="product.image_1920" style="width: 300px;height: 250px;" t-attf-src="data:image/*;base64,{{product.image_1920}}" itemprop="image"/>
+                                                                        <img t-else="" style="width: 300px;height: 250px;" src="/jt_loan_project/static/src/img/placeholder.png"/>
+                                                                    </a>
+                                                                </div>
+                                                                <div class="card-body">
+                                                                    <h3>
+                                                                        <t t-esc="product.name"/>
+                                                                    </h3>
+                                                                    <p><t t-esc="product.description"/></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </t>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- product list end -->
+
+                            <!-- accordion start -->
+                            <section class="accordion-area">
+                                <div class="container">
+                                    <div class="in-section-title-1 headline wow fadeInUp"
+                                        data-wow-delay="100ms" data-wow-duration="1000ms"
+                                        style="visibility: visible; animation-duration: 1000ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                                        <div class="sub-title position-relative text-uppercase">
+                                            <span>Accordion</span>
+                                        </div>
+                                        <h2>Lorem ipsum dolor sit amet.</h2>
+                                    </div>
+                                    <div id="accordion" class="pb-5">
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+
+                                                <button class="btn btn-link"
+                                                    data-toggle="collapse"
+                                                    data-target="#collapseOne"
+                                                    aria-expanded="true"
+                                                    aria-controls="collapseOne">
+                                                    <h5 class="mb-0">
+                                                        Collapsible Group Item #1
+                                                    </h5>
+                                                </button>
+                                            </div>
+
+                                            <div id="collapseOne" class="collapse show"
+                                                aria-labelledby="headingOne"
+                                                data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod
+                                                    high life accusamus terry richardson ad squid. 3
+                                                    wolf moon officia aute, non cupidatat skateboard
+                                                    dolor brunch. Food truck quinoa nesciunt laborum
+                                                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
+                                                    put a bird on it squid single-origin coffee
+                                                    nulla assumenda shoreditch et. Nihil anim
+                                                    keffiyeh helvetica, craft beer labore wes
+                                                    anderson cred nesciunt sapiente ea proident. Ad
+                                                    vegan excepteur butcher vice lomo. Leggings
+                                                    occaecat craft beer farm-to-table, raw denim
+                                                    aesthetic synth nesciunt you probably haven't
+                                                    heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <button class="btn btn-link collapsed"
+                                                    data-toggle="collapse"
+                                                    data-target="#collapseTwo"
+                                                    aria-expanded="false"
+                                                    aria-controls="collapseTwo">
+                                                    <h5 class="mb-0">
+                                                        Collapsible Group Item #2
+                                                    </h5>
+                                                </button>
+                                            </div>
+                                            <div id="collapseTwo" class="collapse"
+                                                aria-labelledby="headingTwo"
+                                                data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod
+                                                    high life accusamus terry richardson ad squid. 3
+                                                    wolf moon officia aute, non cupidatat skateboard
+                                                    dolor brunch. Food truck quinoa nesciunt laborum
+                                                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
+                                                    put a bird on it squid single-origin coffee
+                                                    nulla assumenda shoreditch et. Nihil anim
+                                                    keffiyeh helvetica, craft beer labore wes
+                                                    anderson cred nesciunt sapiente ea proident. Ad
+                                                    vegan excepteur butcher vice lomo. Leggings
+                                                    occaecat craft beer farm-to-table, raw denim
+                                                    aesthetic synth nesciunt you probably haven't
+                                                    heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card">
+                                            <div class="card-header" id="headingThree">
+                                                <button class="btn btn-link collapsed"
+                                                    data-toggle="collapse"
+                                                    data-target="#collapseThree"
+                                                    aria-expanded="false"
+                                                    aria-controls="collapseThree">
+                                                    <h5 class="mb-0">
+                                                        Collapsible Group Item #3
+                                                    </h5>
+                                                </button>
+                                            </div>
+                                            <div id="collapseThree" class="collapse"
+                                                aria-labelledby="headingThree"
+                                                data-parent="#accordion">
+                                                <div class="card-body">
+                                                    Anim pariatur cliche reprehenderit, enim eiusmod
+                                                    high life accusamus terry richardson ad squid. 3
+                                                    wolf moon officia aute, non cupidatat skateboard
+                                                    dolor brunch. Food truck quinoa nesciunt laborum
+                                                    eiusmod. Brunch 3 wolf moon tempor, sunt aliqua
+                                                    put a bird on it squid single-origin coffee
+                                                    nulla assumenda shoreditch et. Nihil anim
+                                                    keffiyeh helvetica, craft beer labore wes
+                                                    anderson cred nesciunt sapiente ea proident. Ad
+                                                    vegan excepteur butcher vice lomo. Leggings
+                                                    occaecat craft beer farm-to-table, raw denim
+                                                    aesthetic synth nesciunt you probably haven't
+                                                    heard of them accusamus labore sustainable VHS.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- accordion end -->
+                            <!-- html end -->
+                    </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model='ir.ui.view' id='view_appointment_calendar_form'>
+        <field name='name'>view.appointment.calendar.from</field>
+        <field name='model'>appointment.calendar</field>
+        <field name='arch' type='xml'>
+            <form string="Appointment Calendar">
+                <sheet>
+                    <h1>
+                        <field name="name" />
+                    </h1>
+                    <notebook>
+                        <page string="Appointment Calendar">
+                            <group>
+                                <group>
+                                    <field name="tz" required="1" readonly="1" />
+                                    <field name="minutes_slot" />
+                                    <field name="alarm_ids" widget="many2many_tags" />
+                                </group>
+                                <group>
+                                    <field name="start_date" />
+                                    <field name="start_time" widget="float_time" />
+                                    <field name="end_time" widget="float_time" />
+                                    <field name="duration" />
+                                </group>
+                            </group>
+                            <!-- <group> -->
+                                <field name='calendar_line_ids' nolabel="1">
+                                    <tree string="Calendar Lines" editable="bottom">
+                                        <field name='start_datetime' />
+                                        <field name='end_datetime' />
+                                        <field name='duration' />
+                                    </tree>
+                                </field>
+                            <!-- </group> -->
+                        </page>
+                        <page string="Other Info" name="other_info">
+                            <!-- <group string="Holidays"> -->
+                                <field name='holiday_ids' nolabel="1">
+                                    <tree string="Holidays" editable="bottom">
+                                        <field name='name' />
+                                        <field name='jt_start_date' />
+                                        <field name='jt_end_date' />
+                                    </tree>
+                                </field>
+                            <!-- </group> -->
+                            <group string="Weekoff">
+                                <field name="weekoff_ids" widget="many2many_tags" />
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model='ir.ui.view' id='view_appointment_calendar_tree'>
+        <field name='name'>view.appointment.calendar.tree</field>
+        <field name='model'>appointment.calendar</field>
+        <field name='arch' type='xml'>
+            <tree string='Appointment Calendar'>
+                <field name='name' />
+                <field name="tz" required="1" readonly="1" />
+                <field name="minutes_slot" />
+            </tree>
+        </field>
+    </record>
+    <record id="action_appointmnet_calendar" model="ir.actions.act_window">
+        <field name="name">Appointment Calendar</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">appointment.calendar</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_appointment_calendar_tree" />
+    </record>
+    <menuitem id="menu_apppointment_calendar" name="My Appointments" sequence="1" groups="base.group_erp_manager"/>
+    <menuitem id="menu_apppointment_calendar_second_menu" parent="menu_apppointment_calendar" name="Calendar" sequence="1" action="calendar.action_calendar_event" />
+    <menuitem id="menu_apppointment_config" name="Configuration" sequence="2" parent="menu_apppointment_calendar" />
+    <menuitem id="menu_exception_calendar_submenu" name="Calendar Configuration" parent="menu_apppointment_config" action="appointment_calendar.action_appointmnet_calendar" sequence="1" />
+</odoo>

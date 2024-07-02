@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="terminate_reason_view_form" model="ir.ui.view">
+        <field name="name">terminate.reason.view.form</field>
+        <field name="model">terminate.reason</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="terminate_reason_view_tree" model="ir.ui.view">
+        <field name="name">terminate.reason.view.tree</field>
+        <field name="model">terminate.reason</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_terminate_reason">
+        <field name="name">Terminate Reason</field>
+        <field name="res_model">terminate.reason</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="menu_terminate_reason" name="Terminate Reason" parent="project.menu_project_config" action="action_terminate_reason"/>
+
+</odoo>

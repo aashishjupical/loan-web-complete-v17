@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="review_submit_doc" model="ir.ui.view">
+            <field name="name">Review Identity</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.review_submit_doc</field>
+            <field name="arch" type="xml">
+                <t name="Review Submit Doc Page" priority="19"
+                    t-name="jt_loan_project.review_submit_doc">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+                            <section class="progress-area">
+                                <div class="container">
+                                    <ul class="list-unstyled multi-steps pt80 pb80">
+                                        <li id="step-1">Apply Loan<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-2" >Personal Info <div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-3">Business Info<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-4" >Financial Documents<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-5" class="is-active">Review Submit<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>
+                                            </div>
+                                        </li>
+                                        <li id="step-6">Success</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section class="submit-doc-area px80">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="in-section-title-1 headline wow fadeInUp"
+                                            data-wow-delay="100ms" data-wow-duration="1000ms"
+                                            style="visibility: visible; animation-duration: 1000ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                                            <div
+                                                class="sub-title position-relative text-uppercase">
+                                                <span>Lorem, ipsum.</span>
+                                            </div>
+                                            <h2>Lorem, ipsum dolor.</h2>
+                                            <p>Lorem ipsum dolor sit amet, consectetur
+                                                adipiscing.</p>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <ul class="sd-iconic-details mt-40">
+                                                <li class="s-docs">Personal Emergency Info </li>
+                                                <li class="s-docs">Employee ment and Bank Account</li>
+                                                <li class="s-docs">Bussiness Employment Document</li>
+                                            </ul>
+                                        </div>
+                                       <form class="apply-form" enctype="multipart/form-data" method="post">
+                                            <h4 class="ld-summary my-3">Review your Information</h4>
+                                             <div class="row justify-content-center">
+                                                <div class="col-md-12 col-lg-10">
+                                                    <form enctype="multipart/form-data" method="post">
+                                                        <div class="row list-input">
+                                                            <div class="col-md-4 mr0">
+                                                                <p>Monthly Repayment</p>
+                                                                <div class="single-get-touch">
+                                                                    <input type="text" class="form-control" t-att-value="monthly_repayment" name="monthly_repayment" placeholder="Monthly Repayment" t-att-readonly="'readonly'" required="" />
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <p>Principal Sum</p>
+                                                                <div class="single-get-touch">
+                                                                    <input type="text" class="form-control" t-att-value="principal_sum" name="principal_sum" placeholder="Principal Sum" t-att-readonly="'readonly'" required=""/>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="col-md-4 mr0">
+                                                                <p>Total Repayment</p>
+                                                                <div class="single-get-touch">
+                                                                    <input type="text" class="form-control" t-att-value="total_repayment" name="total_repayment" placeholder="Total Repayment" t-att-readonly="'readonly'" required=""/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <p>Interest Rate</p>
+                                                                <div class="single-get-touch">
+                                                                    <input type="text" class="form-control" t-att-value="interest_rate" name="interest_rate" placeholder="Interest Rate" required="" t-att-readonly="'readonly'"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <p>Tenure/Duration</p>
+                                                                <div class="single-get-touch">
+                                                                    <input type="text" class="form-control" t-att-value="tenure_duration" name="tenure" placeholder="Tenure/Duration" required="" t-att-readonly="'readonly'"/>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4 mr0">
+                                                                <p>Stampping Fee</p>
+                                                                <div class="single-get-touch">
+                                                                    <input type="text" class="form-control" t-att-value="stamping_fee" name="stamping_fee" placeholder="Stampping Fee" required="" t-att-readonly="'readonly'"/>
+                                                                </div>
+                                                            </div>                                                        
+
+                                                            <div class="col-md-12 text-center">
+                                                                <div class="single-get-touch mt-3">
+                                                                    <button type="submit" name="submit" class="btn btn-submit-ctm">Submit</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>                                       
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

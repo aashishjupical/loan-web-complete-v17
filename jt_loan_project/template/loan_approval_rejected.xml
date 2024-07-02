@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="loan_approval_rejected" model="ir.ui.view">
+            <field name="name">loan_approval_rejected</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.loan_approval_rejected</field>
+            <field name="arch" type="xml">
+                <t name="loan_approval_rejected" priority="18" t-name="jt_loan_project.loan_approval_rejected">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+                            <!-- html start -->
+                            <section class="loan-approval-rejected-area px80">
+                                <div class="container">
+                                    <div class="in-section-title-1 headline wow fadeInUp"
+                                        data-wow-delay="550ms" data-wow-duration="1000ms"
+                                        style="visibility: visible; animation-duration: 1000ms; animation-delay: 550ms; animation-name: fadeInUp;">
+                                        <div class="sub-title position-relative text-uppercase">
+                                            <span>User Dashboard</span>
+                                        </div>
+                                        <h2 class="mt-2 text-danger">We're Sorry &#128532; Your Loan
+                                            has been Rejected</h2>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <form>
+                                            <div class="row list-input">
+                                                <div class="col-md-4 mr0">
+                                                    <p>Monthly Repayment</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="monthly_repayment" name="monthly_repayment" t-att-readonly="'readonly'" placeholder="Monthly Repayment" required="" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p>Principal Sum</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="principal_sum" t-att-readonly="'readonly'" name="principal_sum" placeholder="Principal Sum" required=""/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 mr0">
+                                                    <p>Total Repayment</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="total_repayment" name="total_repayment" t-att-readonly="'readonly'" placeholder="Total Repayment" required=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p>Interest Rate</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="interest_rate" t-att-readonly="'readonly'" name="interest_rate" placeholder="Interest Rate" required=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p>Tenure/Duration</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="tenure_duration" t-att-readonly="'readonly'" name="tenure" placeholder="Tenure/Duration" required=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mr0">
+                                                    <p>Stampping Fee</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="stamping_fee" t-att-readonly="'readonly'" name="stamping_fee" placeholder="Stampping Fee" required=""/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- html end -->
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

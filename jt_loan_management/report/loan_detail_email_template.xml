@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <record id="email_template_loan_details" model="mail.template">
+            <field name="name">Loan Details - Send by Email</field>
+            <field name="email_from">{{ (user.email or '') }}</field>
+            <field name="subject">{{ object.name }} - Details</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="model_id" ref="jt_loan_management.model_account_loan"/>
+            <field name="auto_delete" eval="True"/>
+            <!-- <field name="report_template" ref="jt_loan_management.action_report_loan_details"/> -->
+            <field name="report_template_ids" eval="[(4, ref('jt_loan_management.action_report_loan_details'))]"/>
+            <!-- <field name="report_name">{{ (object.name or '').replace('/','_') }}</field> -->
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="body_html" type="html">
+              <div style="margin: 0px; padding: 0px;">
+                <p>Dear 
+					<t t-if="object.partner_id.parent_id">
+						<t t-out="object.partner_id.name or ''">Brandon Freeman</t> (<t t-out="object.partner_id.parent_id.name or ''">Azure Interior</t>),
+					</t>
+					<t t-else="">
+						<t t-out="object.partner_id.name or ''">Brandon Freeman</t>,
+					</t>
+				<br/>
+               	Here is the details of <strong><t t-out="object.name or ''"></t></strong>
+                  <t t-if="object.name">
+                    with reference: 
+                      <t t-out="object.name or ''"></t> of amount
+                      <t t-out="object.loan_amount or ''"></t> <t t-out="object.currency_id.name or ''"></t>,
+                  </t>
+               
+                from <t t-out="object.company_id.name or ''"></t>,
+                </p>
+              </div>
+            </field>
+        </record>
+
+        <record id="email_template_update_rate_loan_details" model="mail.template">
+            <field name="name">Loan Interest Rate Update Details - Send by Email</field>
+            <field name="email_from">{{ (user.email or '') }}</field>
+            <field name="subject">{{ object.name }} - Update Rate Details</field>
+            <field name="partner_to">{{ object.partner_id.id }}</field>
+            <field name="model_id" ref="jt_loan_management.model_account_loan"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="report_template_ids" eval="[(4, ref('jt_loan_management.action_report_loan_details'))]"/>
+            <!-- <field name="report_name">{{ (object.name or '').replace('/','_') }}</field> -->
+            <field name="lang">{{ object.partner_id.lang }}</field>
+            <field name="body_html" type="html">
+              <div style="margin: 0px; padding: 0px;">
+                <p>Dear 
+          <t t-if="object.partner_id.parent_id">
+            <t t-out="object.partner_id.name or ''">Brandon Freeman</t> (<t t-out="object.partner_id.parent_id.name or ''">Azure Interior</t>),
+          </t>
+          <t t-else="">
+            <t t-out="object.partner_id.name or ''">Brandon Freeman</t>,
+          </t>
+        <br/>
+        <br/>
+                Here is the details of <strong><t t-out="object.name or ''"></t></strong>
+                  <t t-if="object.name">
+                    with reference: 
+                      <t t-out="object.name or ''"></t> of amount
+                      <t t-out="object.loan_amount or ''"></t> <t t-out="object.currency_id.name or ''"></t>.
+                  </t>
+                <br/>
+                The interest rate on your loan has been changed. Please refer attached document for more details.
+                <br/>
+                <br/>
+               
+                from <t t-out="object.company_id.name or ''"></t>,
+                </p>
+              </div>
+            </field>
+        </record>
+
+        <record id="jt_loan_management.mail_template_data_notification_email_loan_details" model="mail.template">
+            <field name="name">Loan Details Notification Email</field>
+            <field name="subject">{{ object.subject }}</field>
+            <field name="model_id" ref="mail.model_mail_message"/>
+            <field name="auto_delete" eval="True"/>
+            <field name="body_html"><![CDATA[<html>
+               <![CDATA[<html>
+                <head></head>
+                % set record = ctx.get('record')
+                % set company = record and record.company_id or ctx.get('company')
+                <body style="margin: 0; padding: 0;">
+                <table border="0" width="100%" cellpadding="0" bgcolor="#ededed" style="padding: 20px; background-color: #ededed; border-collapse:separate;" summary="o_mail_notification">
+                    <tbody>
+
+                      <!-- HEADER -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#875A7B" style="min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;">
+                            <tr>
+                              <td valign="middle">
+                                  <span style="font-size:20px; color:white; font-weight: bold;">
+                                      ${object.record_name}
+                                  </span>
+                              </td>
+                              <td valign="middle" align="right">
+                                  <img src="/logo.png?company=${company.id}" style="padding: 0px; margin: 0px; height: auto; width: 80px;" alt="${company.name}">
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <!-- CONTENT -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#ffffff" style="min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px; border-collapse:separate;">
+                            <tbody>
+                              <td valign="top" style="font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;">
+                                ${object.body | safe}
+                              </td>
+                            </tbody>
+                          </table>
+                        </td>
+                      </tr>
+
+                      <!-- FOOTER -->
+                      <tr>
+                        <td align="center" style="min-width: 590px;">
+                          <table width="590" border="0" cellpadding="0" bgcolor="#875A7B" style="min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;">
+                            <tr>
+                              <td valign="middle" align="left" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                ${company.name}<br/>
+                                ${company.phone or ''}
+                              </td>
+                              <td valign="middle" align="right" style="color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;">
+                                % if company.email:
+                                <a href="mailto:${company.email}" style="text-decoration:none; color: white;">${company.email}</a><br/>
+                                % endif
+                                % if company.website:
+                                    <a href="${company.website}" style="text-decoration:none; color: white;">
+                                        ${company.website}
+                                    </a>
+                                % endif
+                              </td>
+                            </tr>
+                          </table>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="center">
+                            Powered by <a target="_blank" href="https://www.odoo.com">Odoo</a>.
+                        </td>
+                      </tr>
+                    </tbody>
+                </table>
+                </body>
+                </html>
+            ]]></field>
+        </record>
+
+    </data>
+</odoo>

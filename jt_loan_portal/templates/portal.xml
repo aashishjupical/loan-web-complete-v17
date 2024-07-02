@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="jt_eduction_portal_access" name="Portal My Home : Education" inherit_id="portal.portal_my_home" priority="30">
+        <xpath expr="//div[hasclass('o_portal_docs')]" position="inside">
+            <t t-call="portal.portal_docs_entry">
+                <t t-set="icon" t-value="'/jt_loan_portal/static/src/img/loan.png'"/>
+                <t t-set="title">All Loan</t>
+                <t t-set="url" t-value="'/my/my_loan'"/>
+                <t t-set="text">Follow, All Loan</t>
+                <t t-set="placeholder_count" t-value="'loan_count'"/>
+            </t>
+        </xpath>
+    </template>
+
+    <template id="portal_loan_list" name="Loans List">
+        <t t-call="website.layout">
+            <t t-set="additional_title">Loan List</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+                        <br/>
+                        <table class="table" style="margin-top: 100px !important;">
+                            <thead style="background-color: #6bb1b0; color: black;">
+                                <th style="text-align:left">Loan</th>
+                                <th style="text-align:left">Product</th>
+                                <th style="text-align:left">Start Date</th>
+                                <th style="text-align:right">Principal Payment</th>
+                                <th style="text-align:right">No of Intallments</th>
+                                <th style="text-align:left">State</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="loan_list" t-as="info">
+                                    <tr>
+                                        <td style="text-align:left"><a t-att-href="info"><t t-esc="info_value.name"/></a></td>
+                                        <td style="text-align:left"><span><t t-esc="info_value.product_id.name"/></span></td>
+                                        <td style="text-align:left"><span><t t-esc="info_value.start_date"/></span></td>
+                                        <td style="text-align:right"><span><t t-esc="info_value.total_principal_balance" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span></td>
+                                        <td style="text-align:right"><span><t t-esc="info_value.periods"/></span></td>
+                                        <td style="text-align:left">
+                                            <span><t t-if="info_value.state == 'draft'">Draft</t>
+                                            <t t-if="info_value.state == 'posted'">Validated</t>
+                                            <t t-if="info_value.state == 'cancelled'">Cancelled</t>
+                                            <t t-if="info_value.state == 'closed'">Closed</t></span>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <template id="portal_my_loan_details" name="Portal loan details">
+        <t t-call="website.layout">
+            <t t-set="additional_title">My loan Details</t>
+            <div class="oe_structure">
+                <div class="container">
+                    <div id="wrap">
+
+                        <br/>
+                        <t  t-set="loan" t-value="loan_detail"/>
+                        <table class="table table-bordered" style="border:none; margin-top: 100px !important;margin-top: 70px !important;">
+                            <tr style="padding:10px;">
+                                <td style="border-bottom: 5px solid black;">
+                                    <h2><t t-esc="loan.name"/></h2>
+                                </td>
+                            </tr>
+                        </table>
+
+                        <table class="table" style="border:none;">
+                           
+                            <tr>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Date of Start:</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                    <span><t t-esc="loan.start_date"/></span>
+                                </td>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Date of Close:</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                    <span><t t-esc="loan.expected_end_date"/></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Product:</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                    <span><t t-esc="loan.product_id.name"/></span>
+                                </td>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Rate(%):</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                    <span><t t-esc="loan.rate"/></span>        
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Loan Amount:</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                    <span><t t-esc="loan.loan_amount" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                </td>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Down Payment:</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                    <span><t t-esc="loan.down_payment" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Property Insurance:</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                    <span><t t-esc="loan.insurance_product_id.lst_price" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                </td>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Property Tax:</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                     <span><t t-esc="loan.tax_product_id.lst_price" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Number of installments:</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                    <span><t t-esc="loan.periods"/></span>
+                                </td>
+                                <td style="border:none;padding:0;padding-left:3px;">
+                                    <b>Time between two installments:</b>
+                                </td>
+                                <td style="border:none;padding:0;padding-right:50px;">
+                                    <span><t t-esc="loan.method_period"/></span>
+                                </td>
+                            </tr>
+                        </table>
+                        <table class="table" t-if="loan.state != 'draft'">
+                            <thead style="background-color: #6bb1b0; color: black;font-size:14px;">
+                                <th style="text-align:left">SR.No.</th>
+                                <th style="text-align:left">Due Date</th>
+                                <th style="text-align:left">Pending Principal</th>
+                                <th style="text-align:left">Loan Payment</th>
+                                <th style="text-align:left">Principal</th>
+                                <th style="text-align:left">Interest</th>
+                                <th style="text-align:left">Total Penalty</th>
+                                <th style="text-align:left">Total Amount</th>
+                                <th style="text-align:left" colspan='2'>Amount Due</th>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="line_ids" t-as="loan_line">
+                                    <tr>
+                                        <td>
+                                            <span><t t-esc="loan_line_value.sequence"/></span>
+                                        </td>
+                                        <td>
+                                            <span><t t-esc="loan_line_value.date"/></span>
+                                        </td>
+                                        <td>
+                                            <span><t t-esc="loan_line_value.pending_principal_amount" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                        </td>
+                                        <td>
+                                            <span><t t-esc="loan_line_value.payment_amount" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                        </td>
+                                        <td>
+                                            <span><t t-esc="loan_line_value.principal_amount" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                        </td>
+                                        <td>
+                                            <span><t t-esc="loan_line_value.interests_amount" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                        </td>
+                                        <td>
+                                            <span><t t-esc="loan_line_value.penalty_amount" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                        </td>
+                                        <td>
+                                            <span><t t-esc="loan_line_value.total_invoice_amount" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                        </td>
+                                        <td>
+                                            <span><t t-esc="loan_line_value.total_amount_due" t-options="{'widget': 'monetary', 'display_currency': res_company.currency_id}"/></span>
+                                        </td>
+                                        <td style="text-align:left">
+                                            <a t-att-href="loan_line">
+                                            <button class="btn btn-primary">Invoice</button></a>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+</odoo>

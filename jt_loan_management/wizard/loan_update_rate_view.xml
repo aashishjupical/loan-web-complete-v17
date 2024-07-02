@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="update_rate_form_wizard" model="ir.ui.view">
+		<field name="name">update.rate.form.wizard</field>
+		<field name="model">update.rate.wizard</field>
+		<field name="arch" type="xml">
+			<form>
+				<group>
+					<field name="update_rate"/>
+				</group>
+				<footer>
+					<button name="confirm_rate" string="Confirm"
+	                        type="object" class="oe_highlight" confirm="Are you sure! you want to change Interest rate becuase they affect all EMI"/> or
+	                <button special="cancel" string="Cancel" type="object" class="oe_link"/>
+				</footer>
+			</form>
+		</field>
+	</record>
+	<record id="action_update_rate" model="ir.actions.act_window">
+		<field name="name">Update Rate</field>
+		<field name="res_model">update.rate.wizard</field>
+		<field name="view_mode">form</field>
+		<field name="target">new</field>
+	</record>
+</odoo>

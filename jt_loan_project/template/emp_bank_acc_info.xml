@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="emp_bank_acc_info" model="ir.ui.view">
+            <field name="name">emp_bank_acc_info</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.emp_bank_acc_info</field>
+            <field name="arch" type="xml">
+                <t name="emp_bank_acc_info" priority="18" t-name="jt_loan_project.emp_bank_acc_info">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+                            <!-- html content start -->
+
+                            <section class="progress-area">
+                                <div class="container">
+                                    <ul class="list-unstyled multi-steps pt80 pb80">
+                                        <li id="step-1">Apply Loan<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-2" >Personal Info <div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-3" class="is-active">Business Info<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>                                    
+                                            </div>
+                                        </li>
+                                        <li id="step-4">Financial Documents<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>
+                                            </div>
+                                        </li>
+                                        <li id="step-5">Review Submit<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>
+                                            </div>
+                                        </li>
+                                        <li id="step-6">Success</li>
+                                    </ul>
+                                </div>
+                            </section>
+
+                            <section class="emr-info-area pt-5">
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-lg-10 col-md-12">
+                                            <div class="in-section-title-1 headline wow fadeInUp"
+                                                data-wow-delay="100ms" data-wow-duration="1000ms"
+                                                style="visibility: visible; animation-duration: 1000ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                                                <div
+                                                    class="sub-title position-relative text-uppercase">
+                                                    <span>User Info</span>
+                                                </div>
+                                                <h2>Employeement and Bank Account Info</h2>
+                                                <p>Lorem ipsum dolor sit amet, consectetur
+                                                    adipiscing elit, sed do eiusmod tempor
+                                                    incididunt ut
+                                                    laboris nisi ut aliquip ex ea commodo
+                                                    consequat..</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-12 col-lg-10">
+                                            <form class="apply-form" enctype="multipart/form-data" method="post">
+                                                <div class="row list-input">
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="company_business_name" t-att-value="company_business_name"
+                                                                placeholder="Company/Business Name"
+                                                                required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6">
+                                                        <div class="single-get-touch">
+                                                            <select class="form-control" name="selected_employee_type_id" required="">
+                                                                <option value="Choose here">Select
+                                                                    Employee type</option>
+                                                                <t t-as="employee_type" t-foreach="select_employee_type or []">
+                                                                    <option t-att-selected="employee_type == select_employee_type_id" t-att-value="employee_type">
+                                                                        <t t-esc="employee_type_value"/>
+                                                                    </option>
+                                                                </t>
+                                                            </select>
+                                                           <!--  <select name="selected_employee_type_id"
+                                                                t-att-value=""
+                                                                required="">
+                                                                <option value="Choose Purpose">Select
+                                                                    Employee Type</option> 
+                                                                <t t-as="employee_type" t-foreach="select_employee_type or []">
+                                                                    <option t-att-selected="employee_type == select_employee_type_id" t-att-value="employee_type">
+                                                                        <t t-esc="employee_type_value"/>
+                                                                    </option>
+                                                                </t>
+                                                            </select> -->
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-md-6">
+                                                        <div class="single-get-touch">
+                                                            <input type="tel" name="com_bussiness_contact_no" t-att-value="com_bussiness_contact_no"
+                                                                placeholder="Company/Business Contact"
+                                                                required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="position_designation_type" t-att-value="position_designation_type"
+                                                                placeholder="Position/Designation"
+                                                                required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="registeration_no" t-att-value="registeration_no"
+                                                                placeholder="Company Registeration No."
+                                                                required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- <p>Lorem ipsum dolor sit amet.</p> -->
+                                                    <div class="col-md-12 mr0">
+                                                        <h5 class="my-3 px-3">Company/Business Address</h5>
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="bussiness_address_line_1" t-att-value="bussiness_address_line_1"
+                                                                placeholder="Address Line 1"
+                                                                required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-12 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="bussiness_address_line_2" t-att-value="bussiness_address_line_2"
+                                                                placeholder="Address Line 2"
+                                                                required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="company_district" t-att-value="company_district"
+                                                                placeholder="District" required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-6 mr0">
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="company_postcode" t-att-value="company_postcode"
+                                                                placeholder="Postcode" required="" />
+                                                        </div>
+                                                    </div>
+
+
+                                                   
+
+                                                    <div class="col-md-4 mr0">
+                                                        <h5 class="mt-3">Full Name</h5>
+                                                        <p>Name as per bank Statement </p>
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="account_holder_name" t-att-value="account_holder_name"
+                                                                placeholder="Full Name" required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4 mr0">
+                                                        <h5 class="mt-3">Account Number</h5>
+                                                        <p>Key in your Bank Details</p>
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="account_number" t-att-value="account_number"
+                                                                placeholder="Account Number"
+                                                                required="" />
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <h5 class="mt-3">Bank Name</h5>
+                                                        <p>Select Bank</p>
+                                                        <select name="select_bank_name_id" t-attf-class="form-control input_tag_h form_input_f_14 border-color-sty">
+                                                            <option value="">Select Bank</option>
+                                                            <t t-as="select_bank" t-foreach="select_bank_name or []">
+                                                                <option t-att-selected="select_bank.id == select_bank_set" t-att-value="select_bank.id">
+                                                                    <t t-esc="select_bank.name"/>
+                                                                </option>
+                                                            </t>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="col-md-12 text-center">
+                                                        <div class="single-get-touch mt-3">
+                                                            <button type="submit"
+                                                                name="submit"
+                                                                class="btn btn-dark btn-submit-ctm">Apply
+                                                                Now</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- html content end -->
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

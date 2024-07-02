@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_partner_form_id_inherited" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='internal_notes']" position="after">
+                    <page string="Emergency Contact">
+                        <group string="Emergency Contact">
+                            <group>
+                                <field name="emergency_contact_name"/>
+                                <field name="emergency_contact_no"/>
+                                <field name="emergency_contact_relationship"/>
+                            </group>
+                        </group>
+                    </page>
+                    <page string="Employment Info">
+                        <group>
+                            <group>
+                                <field name="company_business_name"/>
+                                <field name="select_employee_type"/>
+                                <field name="com_bussiness_contact_no"/>
+                                <field name="position_designation_type"/>
+                                <field name="registeration_no"/>
+                            </group>
+                            <group>
+                                <field name="bussiness_address_line_1"/>
+                                <field name="bussiness_address_line_2"/>
+                                <field name="company_district"/>
+                                <field name="company_postcode"/>
+                                <field name="company_country_id"/>
+                                <field name="company_state_id"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

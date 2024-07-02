@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="loan_application_history_view_form" model="ir.ui.view">
+            <field name="name">Loan Application History</field>
+            <field name="model">loan.application.history</field>
+            <field name="arch" type="xml">
+                <form string="Tags" create="1" edit="1" delete="1">
+                    <header>
+                        <field name="stages" widget="statusbar" options="{'clickable': '1'}"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <group>
+                                <field name="partner_id"/>
+                                <field name="country_id"/>
+                                <field name="state_id"/>
+                                <field name="city"/>
+                                <field name="front_image_name"/>
+                                <field name="front_image_file" filename="front_image_name"/>
+                                <field name="back_image_name"/>
+                                <field name="back_image_file" filename="back_image_name"/>
+                                <field name="face_image_name"/>
+                                <field name="face_image_file" filename="face_image_name"/>
+                            </group>
+                            <group>
+                                <field name="task_id"/>
+                                <field name="email"/>
+                                <field name="phone"/>
+                                <field name="product_id"/>
+                                <field name="is_loan_approve"/>
+                                <field name="is_loan_reject"/>
+                            </group>
+                        </group>
+                        <group string="Documents">
+                            <group>
+                                <field invisible="1" name="ea_statement_file"/>
+                                <field filename="ea_statement_file" name="ea_statement"/>
+                                <field invisible="1" name="be_form_tax_receipts_file"/>
+                                <field filename="be_form_tax_receipts_file" name="be_form_tax_receipts"/>
+                                <field invisible="1" name="salary_slip_file"/>
+                                <field filename="salary_slip_file" name="salary_slip"/>
+                                <field invisible="1" name="savings_account_statement_file"/>
+                                <field filename="savings_account_statement_file" name="savings_account_statement"/>
+                                <field invisible="1" name="employment_letter_file"/>
+                                <field filename="employment_letter_file" name="employment_letter"/>
+                            </group>
+                            <group>
+                                <label for="month_id"/>
+                                <div>
+                                    <field name="month_id" class="oe_inline"/>
+                                    <span> Months</span>
+                                </div>
+                                <field name="salary_amt"/>
+                                <field name="loan_amt"/>
+                                <field name="monthly_repayment"/>
+                                <field name="total_repayment"/>
+                                <field name="interest_rate"/>
+                                <field name="stamping_fee"/>
+                                <field name="total_int_get"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="loan_application_history_view_tree" model="ir.ui.view">
+            <field name="name">Loan Application History</field>
+            <field name="model">loan.application.history</field>
+            <field name="arch" type="xml">
+                <tree create="1" edit="1" delete="1">
+                    <field name="partner_id"/>
+                    <field name="country_id"/>
+                    <field name="state_id"/>
+                    <field name="city"/>
+                    <field name="email"/>
+                    <field name="task_id"/>
+                    <field name="phone"/>
+                    <field name="salary_amt"/>
+                    <field name="loan_amt"/>
+                    <field name="month_id"/>
+                </tree>
+            </field>
+        </record>
+        <record id="loan_application_history_action" model="ir.actions.act_window">
+            <field name="name">Loan Application History</field>
+            <field name="res_model">loan.application.history</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                  No data found for Loan Application History
+                </p>
+            </field>
+        </record>
+        <menuitem id="loan_application_history_menu" action="loan_application_history_action" name="Application History" parent="project.menu_project_config" sequence="1"/>
+    </data>
+</odoo>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_company_loan_setting" model="ir.ui.view">
+        <field name="name">res.company.loan.setting</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="base.view_company_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="loan_setting" string="Loan Configuration">
+                    <group>
+                        <group>
+                            <field name="start_loan"/>
+                            <field name="loan_principal_prod_id" domain="[('type','=','service')]" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_interest_prod_id" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_processing_fee_prod_id" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_agent_fee_prod_id" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="penalty_product_id" domain="[('type','=','service')]" invisible="not start_loan" readonly="loan_counter > 0"/>
+                        </group>
+                        <group>
+                            <field name="loan_disbursement_acc_id" domain="[('account_type', '=', 'liability_payable'),('company_id','=',id)]"  invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_write_off_account_id"  domain="[('company_id','=',id)]" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_income_acc_id" domain="[('company_id','=',id)]" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_jou_id" domain="[('company_id','=',id)]" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_disbursement_journal_id" domain="[('type','=','general'),('company_id','=',id)]" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_inv_create_date" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_acc_rec_id" domain="[('account_type', '=', 'asset_current'),('company_id','=',id)]" invisible="not start_loan" readonly="loan_counter > 0"/>
+                            <field name="loan_counter" invisible="1"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

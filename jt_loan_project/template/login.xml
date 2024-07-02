@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="web_login_temp_inherit" inherit_id="web.login">
+		<xpath expr="//form[hasclass('oe_login_form')]" position="replace">
+			<div class="auth-page-wrapper px80">
+				<!-- page bg -->
+				<div class="auth-one-bg-position auth-one-bg" id="auth-particles">
+					<div class="shape"/>				
+				</div>
+				<!-- end page bg -->
+				<!-- page content -->
+				<div class="auth-page-content">
+					<div class="container pt56 pb56">
+						<div class="row justify-content-center">
+							<div class="col-md-8 col-lg-6 col-xl-5 col-sm-10">
+								<div class="card mt-5 login-bg pb16">
+									<div class="card-body p-4">
+										<div class="text-center">
+											<div class="d-inline-block auth-logo">					
+											</div>
+											<h3 class="text-dark mt-3">Login to Your Account</h3>
+										</div>
+										<form class="" role="form" t-attf-action="/web/login"
+											method="post"
+											onsubmit="this.action = '/web/login' + location.hash">
+											<input type="hidden" name="csrf_token"
+												t-att-value="request.csrf_token()" />
+											<div class="form-group field-db"
+												t-if="databases and len(databases) &gt; 1">
+												<label for="db" class="col-form-label">Database</label>
+												<div
+													t-attf-class="input-group {{'input-group-sm' if form_small else ''}}">
+													<input type="text" name="db"
+														t-att-value="request.db"
+														id="db"
+														t-attf-class="form-control #{'form-control-sm' if form_small else ''}"
+														required="required" readonly="readonly" />
+													<span class="input-group-append">
+														<a role="button"
+															href="/web/database/selector"
+															class="btn btn-secondary">Select 
+															<i
+																class="fa fa-database" role="img"
+																aria-label="Database"
+																title="Database"/>
+														</a>
+													</span>
+												</div>
+											</div>
+
+											<div class="mb-3">
+												<label for="username" class="form-label">Username</label>
+												<input type="text" placeholder="Email" name="login"
+													t-att-value="login" id="login"
+													t-attf-class="form-control #{'form-control-sm' if form_small else ''}"
+													required="required" autofocus="autofocus"
+													autocapitalize="off" />
+											</div>
+
+											<div class="mb-3">
+												<label class="form-label" for="password-input">
+													Password</label>
+												<div
+													class="position-relative auth-pass-inputgroup mb-3">
+													<input type="password"
+														placeholder="Password" name="password"
+														id="password"
+														class="form-control pe-5 password-input"
+														t-attf-class="form-control #{'form-control-sm' if form_small else ''}"
+														required="required"
+														autocomplete="current-password"
+														t-att-autofocus="'autofocus' if login else None"
+														maxlength="4096" />
+													<button class="btn btn-link password-addon"
+														type="button" id="password-addon"
+														style="position: absolute; top: 0; right: 0; margin-right: 10px;">
+														<i class="fa fa-eye-slash" id="login_password"></i>
+													</button>
+												</div>
+											</div>
+
+											<p class="alert alert-danger" t-if="error" role="alert">
+												<t t-esc="error" />
+											</p>
+											<p class="alert alert-success" t-if="message"
+												role="status">
+												<t t-esc="message" />
+											</p>
+
+											<div
+												t-attf-class="clearfix oe_login_buttons text-center mb-1 {{'pt-2' if form_small else 'pt-3'}}">
+												<button type="submit"
+													class="btn btn-blue-ctm w-100 btn-block btn-smt-stl">
+													<span class="login-letter">Log In</span>
+												</button>
+												<div class="pt-3">
+													<p class="text-dark mb-0">Don’t Have an account?</p>
+													<a t-if="signup_enabled"
+														t-attf-href="/create-acc"
+														class="new_user dnt-crt-acc">
+														Register Now!</a>
+												</div>
+												<div class="o_login_auth" />
+											</div>
+											<input type="hidden" name="redirect"
+												t-att-value="redirect" />
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- end page content -->
+			</div>
+		</xpath>
+	</template>
+</odoo>

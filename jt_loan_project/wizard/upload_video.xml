@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="upload_video_form_view" model="ir.ui.view">
+        <field name="name">Upload Video</field>
+        <field name="model">upload.wizard</field>
+        <field name="arch" type="xml">
+            <form string="Upload Video Details">
+                <group>
+                    <field name="task_id" invisible='1'/>
+                    <field name="attestation_video_file" invisible="1"/>
+                    <field name="attestation_video" filename="attestation_video_file"/>
+                </group>
+                <footer>
+                    <button name="uploaded" string="Upload" type="object" class="oe_highlight" />
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="upload_video_action" model="ir.actions.act_window">
+        <field name="name">Upload Video</field>
+        <field name="res_model">upload.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+</odoo>

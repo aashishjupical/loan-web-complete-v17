@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data noupdate="0">
+		<record id="In_Person_Attestation_page" model="ir.ui.view">
+			<field name="name">Attestation Completed</field>
+			<field name="type">qweb</field>
+			<field name="key">jt_loan_project.In_Person_Attestation_page</field>
+			<field name="arch" type="xml">
+				<t name="In Person Attestation" priority="11" t-name="jt_loan_project.In_Person_Attestation_page">
+					<t t-call="website.layout">
+						<t t-set="pageName" t-value="'In_Person_Attestation_page'"/>
+						<div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+							<section class="progress-area">
+	                            <div class="container">
+	                                    	<ul class="list-unstyled multi-steps pt80 pb80">
+		                                        <li id="step-1" >Processing Loan<div
+		                                                class="progress-bar progress-bar__success">
+		                                            </div>
+		                                        </li>
+		                                        <li id="step-2">Approved Loan <div
+		                                                class="progress-bar progress-bar__success">
+		                                            </div>
+		                                        </li>
+		                                        <li id="step-3" class="is-active">Attestation<div
+		                                                class="progress-bar progress-bar__success">
+		                                                <div class="progress-bar__bar"/>                                    
+		                                            </div>
+		                                        </li>                                       
+		                                        <li id="step-4">Review &amp; Agree<div
+		                                                class="progress-bar progress-bar__success">
+		                                                <div class="progress-bar__bar"/>                                    
+		                                            </div>
+		                                        </li>                                       
+		                                        <li id="step-5">Success</li>
+		                                </ul>
+	                         	</div>
+	                        </section>
+							<section>
+								<form enctype="multipart/form-data" id="In_Person_Attestation_id" method="post">
+									<input type="hidden" name="partner_id" t-att-value="partner_id"/>				
+									<input type="hidden" name="calendar_id" t-att-value="calendar_id"/>
+									<input type="hidden" name="minutes_slot" t-att-value="minutes_slot"/>				
+									<input type="hidden" id="slot_data_get" name="slot_data_get" t-att-value="slot_data_get"/>
+									<input type="hidden" name="csrf_token" t-att-value="request.csrf_token()" />
+
+									<input type="hidden" id="in_person_attestation_current_ip_id" name="in_person_attestation_current_ip"/>
+
+									<div class="Review-Agree user-will-be">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="titles">
+														<h2 class="mb-25 section-title">Select a Slot of In Person Attestation</h2>
+														<p class="sub-text mb-52">Please select one of the available slots as given for the next 2 days in
+															order to complete your loan application. Our friendly attester will be ready to guide you
+															through.</p>
+													</div>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-lg-4 col-md-12">
+													<img style="filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.25));border-radius: 20px;" class="img-fluid" src="/jt_loan_project/static/src/img/wc1.jpg" alt="profile1"/>
+												</div>
+												<div class="col-lg-4 col-md-6">	
+													<input type="hidden" id="minutes_slot" name="minutes_slot" t-att-value="minutes_slot" />
+													<div class="time-box">
+														<t t-if="slots">
+															<h4><span t-esc="slots['days_name']"/></h4>
+															<span t-esc="slots['week_of_day']"/>
+															 <span id="month_year" t-esc="month_year"/>
+															<!-- <p>25 January 2023</p> -->
+															<div class="row">
+																<ul class="calendar_sty nav justify-content-around">
+																	<t t-foreach="slots['slots']" t-as="slot"> 
+																		<li class="slot_li_tag">
+																			<a href="#"><span t-esc="slot[1]"/><sup class="hide_slot" id="slot_span_tag" t-esc="slot[0]"/></a>
+																		</li>
+																	</t>
+																</ul>
+															</div>
+														</t>
+													</div>
+												</div>
+												<div class="col-lg-4 col-md-6">
+													<div class="time-box">
+														<t t-if="slots_2">
+															<h4><span t-esc="slots_2['days_name']"/></h4>
+															<span t-esc="slots_2['week_of_day']"/>
+															<span id="month_year" t-esc="month_year"/>
+															<div class="row">
+																<ul class="calendar_sty nav justify-content-around">
+																	<t t-foreach="slots_2['slots']" t-as="slot"> 
+																		<li class="slot_li_tag">
+																			<a href="#"><span t-esc="slot[1]"/><sup class="hide_slot" id="slot_span_tag" t-esc="slot[0]"/></a>
+																		</li>
+																	</t>
+																</ul>
+															</div>
+														</t>
+													</div>
+												</div>
+											</div>
+											 <div class="col-lg-12 mt-2 mb-4">
+					                            <p class="alert alert-danger" t-if="error" role="alert">
+					                                <t t-esc="error"/>
+					                            </p>
+					                            <p class="alert alert-danger" t-if="part_err_msg" role="alert">
+					                                <t t-esc="part_err_msg"/>
+					                            </p>
+                        					</div>
+											<div class="text-center">
+												<button type="button" class="Attestation-btn disabled" id="book_now_att">Book Now</button>
+												<a href="/video_attestation" class="Attestation-btn border-button">Back</a>
+												
+											</div>
+										</div>
+									</div>
+								</form>
+							</section>
+						</div>
+					</t>
+				</t>
+			</field>
+		</record>
+	</data>
+</odoo>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="loan_approval_success" model="ir.ui.view">
+            <field name="name">Loan Approval Success</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.loan_approval_success</field>
+            <field name="arch" type="xml">
+                <t name="Loan Approval Success" priority="18" t-name="jt_loan_project.loan_approval_success">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+                            <!-- html start -->
+                            <section class="progress-area">
+                                <div class="container">
+                                    <ul class="list-unstyled multi-steps pt80 pb80">
+                                        <li id="step-1" >Processing Loan<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-2" class="is-active">Approved Loan <div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>  
+                                            </div>
+                                        </li>
+                                        <li id="step-3">Attestation<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>                                    
+                                            </div>
+                                        </li>   
+                                        <li id="step-4">Review &amp; Agree<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>                                    
+                                            </div>
+                                        </li>
+                                        <li id="step-5">Success</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="loan-approval-success-area px80">
+                                <div class="container">
+                                    <div class="in-section-title-1 headline wow fadeInUp"
+                                        data-wow-delay="550ms" data-wow-duration="1000ms"
+                                        style="visibility: visible; animation-duration: 1000ms; animation-delay: 550ms; animation-name: fadeInUp;">
+                                        <div class="sub-title position-relative text-uppercase">
+                                            <span>User Dashboard Approved</span>
+                                        </div>
+                                        <h2 class="mt-2 text-success">Congratulations &#127881; Your
+                                            Loan has been Approved</h2>
+                                    </div>
+                                    <div class="row mt-5">
+                                        <form enctype="multipart/form-data" method="post">
+                                            <div class="row list-input">
+                                                <div class="col-md-4 mr0">
+                                                    <p>Monthly Repayment</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="monthly_repayment" name="monthly_repayment" placeholder="Monthly Repayment" t-att-readonly="'readonly'" required="" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p>Principal Sum</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="principal_sum" name="principal_sum" placeholder="Principal Sum" t-att-readonly="'readonly'" required=""/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="col-md-4 mr0">
+                                                    <p>Total Repayment</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="total_repayment" name="total_repayment" t-att-readonly="'readonly'" placeholder="Total Repayment" required=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p>Interest Rate</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="interest_rate" t-att-readonly="'readonly'" name="interest_rate" placeholder="Interest Rate" required=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <p>Tenure/Duration</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="tenure_duration" t-att-readonly="'readonly'" name="tenure" placeholder="Tenure/Duration" required=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4 mr0">
+                                                    <p>Stampping Fee</p>
+                                                    <div class="single-get-touch">
+                                                        <input type="text" t-att-value="stamping_fee" t-att-readonly="'readonly'" name="stamping_fee" placeholder="Stampping Fee" required=""/>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-12 text-center">
+                                                    <div class="single-get-touch mt-3">
+                                                        <button type="submit" name="submit"
+                                                            class="btn btn-ctm-blue">Do Attestation</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- html end -->
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

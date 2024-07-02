@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+    <data>
+
+            <record id="product_category_loan" model="product.category">
+                <field name="parent_id" ref="product.product_category_all"/>
+                <field name="name">Loan</field>
+            </record>
+
+            <record id="loan_property_1" model="product.product">
+                <field name="categ_id" ref="product_category_loan"/>
+                <field name="type">property</field>
+                <field name="name">Blue Bells</field>
+                <field name="list_price">100000</field>
+            </record>
+
+            <record id="ins_property_1" model="product.product">
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+                <field name="name">Blue Bells Insurance</field>
+                <field name="list_price">100</field>
+            </record>
+
+            <record id="tax_property_1" model="product.product">
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+                <field name="name">Blue Bells Tax</field>
+                <field name="list_price">200</field>
+            </record>
+
+            <record id="loan_property_2" model="product.product">
+                <field name="categ_id" ref="product_category_loan"/>
+                <field name="type">property</field>
+                <field name="name">Diamond Hill</field>
+                <field name="list_price">400000</field>
+            </record>
+
+            <record id="ins_property_2" model="product.product">
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+                <field name="name">Diamond Hill Insurance</field>
+                <field name="list_price">150</field>
+            </record>
+
+            <record id="tax_property_2" model="product.product">
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+                <field name="name">Diamond Hill Tax</field>
+                <field name="list_price">200</field>
+            </record>
+
+             <record id="loan_property_3" model="product.product">
+                <field name="categ_id" ref="product_category_loan"/>
+                <field name="type">property</field>
+                <field name="name">Urban Ville</field>
+                <field name="list_price">200000</field>
+            </record>
+
+            <record id="ins_property_3" model="product.product">
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+                <field name="name">Urban Ville Insurance</field>
+                <field name="list_price">140</field>
+            </record>
+
+            <record id="tax_property_3" model="product.product">
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+                <field name="name">Urban Ville Tax</field>
+                <field name="list_price">250</field>
+            </record>
+
+            <record id="principal_prod" model="product.product">
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+                <field name="name">Principal</field>
+            </record>
+
+            <record id="interest_prod" model="product.product">
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+                <field name="name">Interest</field>
+            </record>
+
+            <record id="product_product_penalty" model="product.product">
+                <field name="name">Penalty</field>
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+            </record>
+
+            <record id="product_product_processing_fee" model="product.product">
+                <field name="name">Processing Fee</field>
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+            </record>
+
+            <record id="product_product_agent_commission_fee" model="product.product">
+                <field name="name">Agent Commission Fee</field>
+                <field name="categ_id" ref="product.product_category_all"/>
+                <field name="type">service</field>
+            </record>
+
+    </data>
+</odoo>

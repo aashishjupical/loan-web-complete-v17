@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="review_agree_attestation" model="ir.ui.view">
+            <field name="name">review_agree_attestation</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.review_agree_attestation</field>
+            <field name="arch" type="xml">
+                <t name="Review Agree Attestaion" priority="18" t-name="jt_loan_project.review_agree_attestation">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+                            <section class="progress-area">
+                                <div class="container">
+                                    <ul class="list-unstyled multi-steps pt80 pb80">
+                                        <li id="step-1" >Processing Loan<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-2" >Approved Loan <div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-3">Attestation<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>   
+                                        <li id="step-4" class="is-active">Review &amp; Agree<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>                                
+                                            </div>
+                                        </li>                                       
+                                        <li id="step-5" >Success</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="review_agree_area px80">
+                                <div class="container">
+
+                                    <div class="row justify-content-center text-center">
+                                        <div class="py-3">                    
+                                            <h1>Review and Agree</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                                laboris nisi ut aliquip ex ea commodo consequat..</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-12 col-lg-10">
+                                            <form class="apply-form" enctype="multipart/form-data" method="post">
+                                                <div class="row justify-content-center">
+                                                    <div class="col-md-12 col-lg-10">
+                                                        <form enctype="multipart/form-data" method="post">
+                                                            <div class="row list-input">
+                                                                <div class="col-md-4 mr0">
+                                                                    <p>Monthly Repayment</p>
+                                                                    <div class="single-get-touch">
+                                                                        <input type="text" t-att-value="monthly_repayment" name="monthly_repayment" t-att-readonly="'readonly'" placeholder="Monthly Repayment" required="" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <p>Principal Sum</p>
+                                                                    <div class="single-get-touch">
+                                                                        <input type="text" t-att-value="principal_sum" t-att-readonly="'readonly'" name="principal_sum" placeholder="Principal Sum" required=""/>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="col-md-4 mr0">
+                                                                    <p>Total Repayment</p>
+                                                                    <div class="single-get-touch">
+                                                                        <input type="text" t-att-value="total_repayment" t-att-readonly="'readonly'" name="total_repayment" placeholder="Total Repayment" required=""/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <p>Interest Rate</p>
+                                                                    <div class="single-get-touch">
+                                                                        <input type="text" t-att-value="interest_rate" t-att-readonly="'readonly'" name="interest_rate" placeholder="Interest Rate" required=""/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4">
+                                                                    <p>Tenure/Duration</p>
+                                                                    <div class="single-get-touch">
+                                                                        <input type="text" t-att-value="tenure_duration" t-att-readonly="'readonly'" name="tenure" placeholder="Tenure/Duration" required=""/>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-md-4 mr0">
+                                                                    <p>Stampping Fee</p>
+                                                                    <div class="single-get-touch">
+                                                                        <input type="text" t-att-value="stamping_fee" t-att-readonly="'readonly'" name="stamping_fee" placeholder="Stampping Fee" required=""/>
+                                                                    </div>
+                                                                </div>                                                        
+
+                                                                <div class="col-md-12 text-center">
+                                                                    <div class="single-get-touch mt-3">
+                                                                        <button type="submit" name="submit" class="btn btn-submit-ctm">Submit</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>
