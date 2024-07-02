@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Inherit Invoice view to add fields and button -->
+    <record id="customer_invoice_trust_form" model="ir.ui.view">
+        <field name="name">account.customer.invoice.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="loan_line_id" invisible="1"/>
+                 <field name="penalty_charged_till" readonly="1"/>
+            </field>
+            <xpath expr="//button[@name='action_post']" position="attributes">
+                <attribute name="context">{'from_validate':1}</attribute>
+            </xpath>
+            <xpath expr="//group[@name='accounting_info_group']" position="after">
+                <group string="Loan Details" name="loan_details">
+                    <field name="emi" readonly='1'/>
+                    <field name="is_down_payment" readonly='1'/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

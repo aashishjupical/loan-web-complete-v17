@@ -1,0 +1,2463 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_loan_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-06 12:16+0000\n"
+"PO-Revision-Date: 2023-06-06 12:16+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Customer</b>"
+msgstr "<b>Cliente</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Down Payment</b>"
+msgstr "<b>Depósito</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Loan Amount</b>"
+msgstr "<b>Monto del préstamo</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Loan Status</b>"
+msgstr "<b>Estado del préstamo</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Monthly Insurance</b>"
+msgstr "<b>Seguro Mensual"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Monthly Tax</b>"
+msgstr "<b>Impuesto Mensual</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Months</b>"
+msgstr "<b>Meses</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Paid Insurance Balance</b>"
+msgstr "<b>Saldo de seguro pagado</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Paid Interest Balance</b>"
+msgstr "<b>Saldo de intereses pagados</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Paid Principal Balance</b>"
+msgstr "<b>Saldo principal pagado</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Payment Day</b>"
+msgstr "<b>Dia de pago</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Rate</b>"
+msgstr "<b>Tasa</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Reference</b>"
+msgstr "<b>Referencia</b>"
+
+#. module: jt_loan_management
+#: model:mail.template,body_html:jt_loan_management.email_template_loan_details
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p>Dear \n"
+"\t\t\t\t\t<t t-if=\"object.partner_id.parent_id\">\n"
+"\t\t\t\t\t\t<t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t> (<t t-out=\"object.partner_id.parent_id.name or ''\">Azure Interior</t>),\n"
+"\t\t\t\t\t</t>\n"
+"\t\t\t\t\t<t t-else=\"\">\n"
+"\t\t\t\t\t\t<t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t>,\n"
+"\t\t\t\t\t</t>\n"
+"\t\t\t\t<br/>\n"
+"               \tHere is the details of <strong><t t-out=\"object.name or ''\"/></strong>\n"
+"                  <t t-if=\"object.name\">\n"
+"                    with reference: \n"
+"                      <t t-out=\"object.name or ''\"/> of amount\n"
+"                      <t t-out=\"object.loan_amount or ''\"/> <t t-out=\"object.currency_id.name or ''\"/>,\n"
+"                  </t>\n"
+"               \n"
+"                from <t t-out=\"object.company_id.name or ''\"/>,\n"
+"                </p>\n"
+"              </div>\n"
+"            "
+msgstr ""
+"<div style=\"margen: 0px; relleno: 0px;\">\n"
+" <p>Estimado \n"
+"\t\t\t\t\t<t t-if=\"object.partner_id.parent_id\">\n"
+"\t\t\t\t\t\t<t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t> (<t t-out=\"object.partner_id .parent_id.name or ''\">Azure Interior</t>),\n"
+"\t\t\t\t\t</t>\n"
+"\t\t\t\t\t<t t-else=\"\">\n"
+"\t\t\t\t\t\t<t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t>,\n"
+"\t\t\t\t\t</t>\n"
+"\t\t\t\t<br/>\n"
+" \tAquí están los detalles de <strong><t t-out=\"object.name or ''\"/></strong>\n"
+" <t t-if=\"object.name\">\n"
+" con referencia: \n"
+" <t t-out=\"object.name or ''\"/> de cantidad\n"
+" <t t-out=\"object.loan_amount or ''\"/> <t t-out=\"object.currency_id.name or ''\"/>,\n"
+"</t>\n"
+"\n"
+" from <t t-out=\"object.company_id.name or ''\"/>,\n"
+"</p>\n"
+"</div>\n"
+" "
+#. module: jt_loan_management
+#: model:mail.template,body_html:jt_loan_management.mail_template_data_notification_email_loan_details
+msgid ""
+"<html>\n"
+"               <![CDATA[<html>\n"
+"                <head></head>\n"
+"                % set record = ctx.get('record')\n"
+"                % set company = record and record.company_id or ctx.get('company')\n"
+"                <body style=\"margin: 0; padding: 0;\">\n"
+"                <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; background-color: #ededed; border-collapse:separate;\" summary=\"o_mail_notification\">\n"
+"                    <tbody>\n"
+"\n"
+"                      <!-- HEADER -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
+"                            <tr>\n"
+"                              <td valign=\"middle\">\n"
+"                                  <span style=\"font-size:20px; color:white; font-weight: bold;\">\n"
+"                                      ${object.record_name}\n"
+"                                  </span>\n"
+"                              </td>\n"
+"                              <td valign=\"middle\" align=\"right\">\n"
+"                                  <img src=\"/logo.png?company=${company.id}\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${company.name}\">\n"
+"                              </td>\n"
+"                            </tr>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"\n"
+"                      <!-- CONTENT -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#ffffff\" style=\"min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px; border-collapse:separate;\">\n"
+"                            <tbody>\n"
+"                              <td valign=\"top\" style=\"font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;\">\n"
+"                                ${object.body | safe}\n"
+"                              </td>\n"
+"                            </tbody>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"\n"
+"                      <!-- FOOTER -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
+"                            <tr>\n"
+"                              <td valign=\"middle\" align=\"left\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                                ${company.name}<br/>\n"
+"                                ${company.phone or ''}\n"
+"                              </td>\n"
+"                              <td valign=\"middle\" align=\"right\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                                % if company.email:\n"
+"                                <a href=\"mailto:${company.email}\" style=\"text-decoration:none; color: white;\">${company.email}</a><br/>\n"
+"                                % endif\n"
+"                                % if company.website:\n"
+"                                    <a href=\"${company.website}\" style=\"text-decoration:none; color: white;\">\n"
+"                                        ${company.website}\n"
+"                                    </a>\n"
+"                                % endif\n"
+"                              </td>\n"
+"                            </tr>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"                      <tr>\n"
+"                        <td align=\"center\">\n"
+"                            Powered by <a target=\"_blank\" href=\"https://www.odoo.com\">Odoo</a>.\n"
+"                        </td>\n"
+"                      </tr>\n"
+"                    </tbody>\n"
+"                </table>\n"
+"                </body>\n"
+"                </html>\n"
+"            "
+msgstr ""
+"<html>\n"
+" <![CDATA[<html>\n"
+" <cabeza></cabeza>\n"
+" % establecer registro = ctx.get('registro')\n"
+" % establecer empresa = registro y registro.company_id o ctx.get('empresa')\n"
+" <estilo del cuerpo=\"margen: 0; relleno: 0;\">\n"
+" <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; color de fondo: #ededed; border-collapse:separate;\" resumen=\"o_mail_notification\">\n"
+" <tcuerpo>\n"
+"\norte"
+" <!-- ENCABEZADO -->\n"
+"<tr>\n"
+" <td align=\"center\" style=\"min-width: 590px;\">\n"
+" <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; color de fondo: rgb(135,90,123); relleno: 20px; border-collapse:separate;\">\n"
+"<tr>\n"
+" <td valign=\"medio\">\n"
+" <span style=\"font-size:20px; color blanco; peso de fuente: negrita;\">\n"
+" ${object.record_name}\n"
+" </span>\n"
+"</td>\n"
+" <td valign=\"medio\" align=\"derecha\">\n"
+" <img src=\"/logo.png?company=${company.id}\" style=\"relleno: 0px; margen: 0px; altura: automático; ancho: 80px;\" alt=\"${empresa.nombre}\">\n"
+"</td>\n"
+"</tr>\n"
+"</tabla>\n"
+"</td>\n"
+"</tr>\n"
+"\norte"
+" <!-- CONTENIDO -->\n"
+"<tr>\n"
+" <td align=\"center\" style=\"min-width: 590px;\">\n"
+" <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#ffffff\" style=\"min-width: 590px; color de fondo: rgb (255, 255, 255); relleno: 20px; border-collapse:separate;\">\n"
+" <tcuerpo>\n"
+" <td valign=\"top\" style=\"font-family:Arial,Helvetica,sans-serif; color: #555; tamaño de fuente: 14px;\">\n"
+" ${object.body | safe}\n"
+"</td>\n"
+"</tbody>\n"
+"</tabla>\n"
+"</td>\n"
+"</tr>\n"
+"\norte"
+" <!-- PIE DE PIE -->\n"
+"<tr>\n"
+" <td align=\"center\" style=\"min-width: 590px;\">\n"
+" <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; color de fondo: rgb(135,90,123); relleno: 20px; border-collapse:separate;\">\n"
+"<tr>\n"
+" <td valign=\"middle\" align=\"left\" style=\"color: #fff; acolchado superior: 10px; parte inferior del relleno: 10px; tamaño de fuente: 12px;\">\n"
+" ${company.name}<br/>\n"
+" ${company.phone or ''}\n"
+"</td>\n"
+" <td valign=\"medio\" align=\"derecha\" style=\"color: #fff; acolchado superior: 10px; parte inferior del relleno: 10px; tamaño de fuente: 12px;\">\n"
+" % si company.email:\n"
+" <a href=\"mailto:${company.email}\" style=\"text-decoration:none; color: blanco;\">${company.email}</a><br/>\n"
+" % endif\n"
+" % si company.website web:\n"
+" <a href=\"${company.website}\" style=\"text-decoration:none; color: blanco;\">\n"
+" ${company.website web}\n"
+"</a>\n"
+" % endif\n"
+"</td>\n"
+"</tr>\n"
+"</tabla>\n"
+"</td>\n"
+"</tr>\n"
+"<tr>\n"
+" <td align=\"centro\">\n"
+" Impulsado por <a target=\"_blank\" href=\"https://www.odoo.com\">Odoo</a>.\n"
+"</td>\n"
+"</tr>\n"
+"</tbody>\n"
+"</tabla>\n"
+"</cuerpo>\n"
+"</html>\n"
+" "
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<span>By Certain Amount of Days</span>"
+msgstr "<span>Por Cierta Cantidad de Días</span>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<span>By Certain Number of Months</span>"
+msgstr "<span>Por Cierto Número de Meses</span>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<strong>Installments</strong>"
+msgstr "<strong>Cuotas</strong>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<strong>Cuotas</strong>"
+msgstr "<strong>Cuotas</strong>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<strong>Loan Details</strong>"
+msgstr "<strong>Detalles del préstamo</strong>"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_product_product__detailed_type
+#: model:ir.model.fields,help:jt_loan_management.field_product_template__detailed_type
+msgid ""
+"A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A consumable product is a product for which stock is not managed.\n"
+"A service is a non-material product you provide."
+msgstr ""
+"Un producto almacenable es un producto para el que gestiona stock. La aplicación de inventario debe estar instalada.\n"
+"Un producto consumible es un producto para el que no se gestionan las existencias.\n"
+"Un servicio es un producto no material."
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.loan_invoice_line_action
+msgid "Account Invoice Line"
+msgstr "Línea de factura de cuenta"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_account_loan
+msgid "Account Loan"
+msgstr "Préstamo de cuenta"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Account Receivable"
+msgstr "Cuenta por cobrar"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Account Receivable used in loan invoices."
+msgstr "Cuenta por cobrar utilizada en facturas de préstamos."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid ""
+"Account used to write-off the unpaid amount from the invoices, which need to\n"
+"                                            be cancelled when loan was Cancelled / Closed."
+msgstr ""
+"Account used to write-off the unpaid amount from the invoices, which need to\n"
+"                                            be cancelled when loan was Cancelled / Closed."
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__due_date_selection
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Action"
+msgstr "Acción"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_needaction
+msgid "Action Needed"
+msgstr "Accion necesaria"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_ids
+msgid "Activities"
+msgstr "Actividades"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Decoración de excepción de actividad"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_state
+msgid "Activity State"
+msgstr "Estado de actividad"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Icono de tipo de actividad"  
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__all_lines_has_invoice
+msgid "All lines has invoice?"
+msgstr "¿Todas las líneas tienen factura?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__of_days
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Allow # of days after due"
+msgstr "Permitir # de días después del vencimiento"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__total_amount_due
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Amount Due"
+msgstr "Importe adeudado"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid "Amount cannot be recomputed if invoices exists already"
+msgstr "El monto no se puede volver a calcular si las facturas ya existen"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__interests_amount
+msgid "Amount from the the payment that will be set aside as interest"
+msgstr "Importe del pago que se reservará como interés"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__principal_amount
+msgid ""
+"Amount of the payment that will reduce the pending loan principal amount"
+msgstr ""
+"Importe del pago que reducirá el principal del préstamo pendiente"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__amount
+msgid "Amount to Pay"
+msgstr "Monto a pagar"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_loan_line
+msgid "Annuity"
+msgstr "Anualidad"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__is_down_payment
+msgid "Any Down Payment?"
+msgstr "¿Algún pago inicial?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_attachment_count
+msgid "Attachment Count"
+msgstr "Recuento de archivos adjuntos"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Auto Invoice Create Date"
+msgstr "Fecha de creación de factura automática"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Bad Debt Accounts for Loans"
+msgstr "Cuentas de deudas incobrables para préstamos"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__balance
+msgid "Balance"
+msgstr "Balance"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__penalty_type__percentage_based
+msgid "Based on Percentage"
+msgstr "Basado en porcentaje"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_product__bill_amount
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_template__bill_amount
+msgid "Bill Amount"
+msgstr "Total de la factura"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.loan_property_1
+#: model:product.template,name:jt_loan_management.loan_property_1_product_template
+msgid "Blue Bells"
+msgstr "campanas azules"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.ins_property_1
+#: model:product.template,name:jt_loan_management.ins_property_1_product_template
+msgid "Blue Bells Insurance"
+msgstr "Seguro de campanas azules"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.tax_property_1
+#: model:product.template,name:jt_loan_management.tax_property_1_product_template
+msgid "Blue Bells Tax"
+msgstr "Impuesto de campanas azules"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__loan_changes__due_date_selection__by_days
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__due_date_selection__by_days
+msgid "By Certain Amount of Days"
+msgstr "Por Cierta Cantidad de Días"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__loan_changes__due_date_selection__by_month
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__due_date_selection__by_month
+msgid "By Number of Months"
+msgstr "Por Número de Meses"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_pay_amount_form
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.move_due_date_of_loan_wizard
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Cancel Loan"
+msgstr "Cancelar préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__state__cancelled
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid ""
+"Cancelling the loan is irreversible action.                           Once "
+"you confirm that, All Open and Draft invoice will be cancelled and Partial "
+"Invoices                            will be paid with Write-off account!"
+msgstr ""
+"Cancelar el préstamo es una acción irreversible. Una vez"
+"usted confirma que, Todas las facturas Abiertas y Borrador serán canceladas y Parciales"
+"¡Las facturas se pagarán con la cuenta de Cancelación!"
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.inherit_for_cashed_paid_widget
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.inherit_tem_for_cashed_paid_widget
+msgid "Cashed"
+msgstr "Cobrado"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__charge
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__charge
+msgid "Charge"
+msgstr "Cargar"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__penalty_type
+msgid "Charge Penalty"
+msgstr "Penalización de cargo"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Charge Penalty Or Interest :"
+msgstr "Cargo de multa o interés:"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Charge penalty with :"
+msgstr "Cobrar penalización con:"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__penalty
+msgid "Charge penalty?"
+msgstr "¿Cobrar penalización?"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+msgid "Close"
+msgstr "Cerca"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__close_date
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__close_date
+msgid "Close Date"
+msgstr "Fecha de cierre"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__cancel_loan
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Close Loan"
+msgstr "Cerrar préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__state__closed
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Closed"
+msgstr "Cerrado"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__expected_end_date
+msgid "Closing Date"
+msgstr "Fecha de cierre"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid ""
+"Closing the loan is irreversible action.                             Once "
+"you confirm that, All Open and Draft invoice will be cancelled!"
+msgstr ""
+"Cerrar el préstamo es una acción irreversible. Una vez"
+"Usted confirma que se cancelarán todas las facturas abiertas y en borrador!"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__company_id
+msgid "Company"
+msgstr "Compañía"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__interest_type__compound
+msgid "Compound Interest"
+msgstr "Interés compuesto"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__is_compute_items
+msgid "Compute Items"
+msgstr "Calcular elementos"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Compute items"
+msgstr "Calcular elementos"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_res_config_settings
+msgid "Config Settings"
+msgstr "Opciones de configuración"
+
+#. module: jt_loan_management
+#: model:ir.ui.menu,name:jt_loan_management.account_config
+msgid "Configurations"
+msgstr "Configuraciones"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_res_partner
+msgid "Contact"
+msgstr "Contacto"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__inv_counter
+msgid "Count Invoice"
+msgstr "Contar factura"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan_pay_amount__extra_payment__pay_2
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_payment_history__payment_method__pay_2
+msgid "Cover all next due installments"
+msgstr "Cubrir todas las próximas cuotas vencidas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan_pay_amount__extra_payment__pay_3
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_payment_history__payment_method__pay_3
+msgid "Cover only principal outstanding"
+msgstr "Cubre solo el principal pendiente"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__create_date
+msgid "Created on"
+msgstr "Creado en"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__credit
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.transaction_history_for_loan
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__currency_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__currency_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__currency_id
+msgid "Currency"
+msgstr "Divisa"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__rate
+msgid "Currently applied rate"
+msgstr "Tasa aplicada actualmente"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__partner_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.invoice_order_line_tree
+msgid "Customer"
+msgstr "Cliente"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_invoice_line_product
+#: model:ir.actions.act_window,name:jt_loan_management.action_invoice_line_product_tem
+msgid "Customer Invoices"
+msgstr "Facturas de clientes"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__date
+msgid "Date"
+msgstr "Fecha"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__date
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Date of Change"
+msgstr "Fecha de cambio"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__date
+msgid "Date when the payment will be accounted for"
+msgstr "Fecha en que se contabilizará el pago"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__days_past_due
+msgid "Days Due"
+msgstr "Días de vencimiento"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__days_to_add
+msgid "Days to Postpone"
+msgstr "Días para posponer"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Days/Month Added"
+msgstr "Días/Mes Agregado"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__data_added
+msgid "Days/Months Postponed"
+msgstr "Días/Meses Aplazados"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__debit
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.transaction_history_for_loan
+msgid "Debit"
+msgstr "Debit"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__description
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__description
+msgid "Description"
+msgstr "Descripción"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.loan_property_2
+#: model:product.template,name:jt_loan_management.loan_property_2_product_template
+msgid "Diamond Hill"
+msgstr "colina de diamante"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.ins_property_2
+#: model:product.template,name:jt_loan_management.ins_property_2_product_template
+msgid "Diamond Hill Insurance"
+msgstr "Seguro Diamond Hill"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.tax_property_2
+#: model:product.template,name:jt_loan_management.tax_property_2_product_template
+msgid "Diamond Hill Tax"
+msgstr "Impuesto de Diamond Hill"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__disbursement_acc_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Disbursement Account"
+msgstr "Cuenta de desembolso"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Disbursement Account used in loan amount entry."
+msgstr "Cuenta de desembolso utilizada en la entrada del monto del préstamo."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__disbursement_journal_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Disbursement Journal"
+msgstr "Diario de desembolsos"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Disbursement Journal used in loan amount entry."
+msgstr "Diario de desembolsos utilizado en la entrada del monto del préstamo."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__display_name
+msgid "Display Name"
+msgstr "Nombre para mostrar"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid ""
+"Do you really want to validate the loan? After that no "
+" changes to the accounts or                              amounts are allowed! Define Insurance and Tax if land countract loan!"
+msgstr ""
+"¿De verdad quieres validar el préstamo? Después de eso no"
+"¡Se permiten cambios en las cuentas o montos! ¡Definir seguro e impuestos si se contrata un préstamo de tierra!"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__down_payment
+msgid "Down Payment"
+msgstr "Depósito"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__state__draft
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Due Date"
+msgstr "Fecha de vencimiento"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.due_invoice_cron_ir_actions_server
+#: model:ir.cron,cron_name:jt_loan_management.due_invoice_cron
+#: model:ir.cron,name:jt_loan_management.due_invoice_cron
+msgid "Due invoice charges"
+msgstr "Cargos por factura vencida"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__charge_option
+msgid "Due penalty method"
+msgstr "Método de la pena debida"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#, python-format
+msgid "Enter Customer Name"
+msgstr "Ingrese el nombre del cliente"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Enter Interest par Anum. (%)"
+msgstr "Ingrese el interés por año. (%)"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__expected_end_date
+msgid "Expected end date of closing loan"
+msgstr "Fecha de finalización prevista del préstamo de cierre"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_loan_pay_amount
+msgid "Extra Amount"
+msgstr "Importe adicional"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.account_loan_pay_amount_action
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Extra Payment"
+msgstr "Pago extra"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__extra_payment
+msgid "Extra Payment Type"
+msgstr "Tipo de pago adicional"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__final_pending_principal_amount
+msgid "Final Pending Principal Amount"
+msgstr "Importe de capital final pendiente"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__res_config_settings__charge_option__fixed
+msgid "Fixed"
+msgstr "Fijo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__fixed_amount
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__penalty_type__fixed_amt
+msgid "Fixed Amount"
+msgstr "Cantidad fija"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__fixed_loan_amount
+msgid "Fixed Loan Amount"
+msgstr "Monto fijo del préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__fixed_periods
+msgid "Fixed Periods"
+msgstr "Períodos fijos"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Fixed amount"
+msgstr "Cantidad fija"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Socios)"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Icono de fuente impresionante, p. fa-tareas"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.generate_old_loan_invoices
+msgid "Generate Loan Invoices"
+msgstr "Generar facturas de préstamo"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+msgid "Group By"
+msgstr "Agrupar por"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__has_invoices
+msgid "Has Invoices?"
+msgstr "Tiene Facturas?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__has_message
+msgid "Has Message"
+msgstr "tiene mensaje"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__history_id
+msgid "History"
+msgstr "Historia"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__id
+msgid "ID"
+msgstr "IDENTIFICACIÓN"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_exception_icon
+msgid "Icon"
+msgstr "Icono"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Icono para indicar una actividad de excepción."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_needaction
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_unread
+msgid "If checked, new messages require your attention."
+msgstr "Si está marcado, los nuevos mensajes requieren su atención."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_has_error
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Si está marcado, algunos mensajes tienen un error de entrega."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "In Percentage (%)"
+msgstr "En Porcentaje (%)"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Income Account used in loan invoice items."
+msgstr "Cuenta de ingresos utilizada en partidas de facturas de préstamo."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Initial Due Date"
+msgstr "Fecha de vencimiento inicial"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__start_date
+msgid "Initial date of the loan/first period as given in contract"
+msgstr "Fecha inicial del préstamo/primer período según lo estipulado en el contrato"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__old_inv_date
+msgid "Initial due date"
+msgstr "fecha de vencimiento inicial"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__first_payment_due
+msgid "Installment Due Date"
+msgstr "Fecha de vencimiento de la cuota"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__inv_create_date
+#: model:ir.model.fields,help:jt_loan_management.field_res_config_settings__inv_create_date
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid ""
+"Installment Invoice Create Date before how much days from installment due "
+"date."
+msgstr ""
+"Fecha de creación de la factura a plazos antes de cuántos días desde el vencimiento de la cuota"
+"fecha."
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Installment's Changes"
+msgstr "Cambios de Cuota"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Installments"
+msgstr "Cuotas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__insurance_balance
+msgid "Insurance"
+msgstr "Seguro"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Insurance Paid"
+msgstr "seguro pagado"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__insurance_sale_price
+msgid "Insurance product price"
+msgstr "precio del producto de seguro"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__res_config_settings__penalty_option__interest
+#: model:product.product,name:jt_loan_management.interest_prod
+#: model:product.product,name:jt_loan_management.product_product_interest
+#: model:product.template,name:jt_loan_management.interest_prod_product_template
+#: model:product.template,name:jt_loan_management.product_product_interest_product_template
+msgid "Interest"
+msgstr "Interés"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Interest Amount"
+msgstr "Cantidad de interés"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__interest_due_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__interest_due_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__interest_due_date
+msgid "Interest Due Date"
+msgstr "Fecha de vencimiento del interés"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__total_interest_balance
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Interest Paid"
+msgstr "Pago interesado"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__interest_prod_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Interest Product"
+msgstr "Producto de interés"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__interest_type
+msgid "Interest Type"
+msgstr "Tipo de interés"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__interest_inv_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__interest_inv_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__interest_inv_id
+msgid "Interest inv ref"
+msgstr "Referencia de inversión de interés"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Interests"
+msgstr "Intereses"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__interests_amount
+msgid "Interests Amount"
+msgstr "Cantidad de intereses"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__comment
+msgid "Internal Notes"
+msgstr "Notas Internas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__invoice_ids
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__move_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__move_id
+msgid "Invoice"
+msgstr "Factura"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_product__invoice_amount
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_template__invoice_amount
+msgid "Invoice Amount"
+msgstr "Monto de la factura"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__invoice_count
+msgid "Invoice Count"
+msgstr "Recuento de facturas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__date_invoice
+msgid "Invoice Date"
+msgstr "Fecha de la factura"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.loan_view_invoice_line_tree
+msgid "Invoice Line"
+msgstr "Línea de factura"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.invoice_order_line_tree
+msgid "Invoice Lines"
+msgstr "Líneas de factura"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__invoice_ids
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Invoices"
+msgstr "Facturas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_payment__reconciled_invoice_ids
+msgid "Invoices whose journal items have been reconciled with these payments."
+msgstr "Facturas cuyas apuntes individuales se han conciliado con estos pagos."
+
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__is_down_payment
+msgid "Is Down Payment?"
+msgstr ""
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__is_down_payment
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__is_down_payment
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__is_down_payment
+msgid "Is Downpayment?"
+msgstr "¿Es el pago inicial?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__emi
+msgid "Is EMI?"
+msgstr "¿Es EMI?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_is_follower
+msgid "Is Follower"
+msgstr "Es seguidor"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__emi
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__emi
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__emi
+msgid "Is Installment?"
+msgstr "es a plazos?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__is_leasing
+msgid "Is Land Contract"
+msgstr "es contrato de tierra"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_move
+msgid "Journal Entry"
+msgstr "Asiento contable"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_move_line
+msgid "Journal Item"
+msgstr "Apunte contable"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Journal used in loan invoice."
+msgstr "Diario utilizado en la factura del préstamo."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date____last_update
+msgid "Last Modified on"
+msgstr "Última modificación el"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__write_date
+msgid "Last Updated on"
+msgstr "Ultima actualización en"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__line_ids
+msgid "Line"
+msgstr "Línea"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_loan
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__loan_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Loan"
+msgstr "Préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__acc_rec_id
+msgid "Loan Account Receivable"
+msgstr "Cuenta de préstamo por cobrar"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__loan_amount
+msgid "Loan Amount"
+msgstr "Monto del préstamo"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.loan_invoice_auto_ir_actions_server
+#: model:ir.cron,cron_name:jt_loan_management.loan_invoice_auto
+#: model:ir.cron,name:jt_loan_management.loan_invoice_auto
+msgid "Loan Auto Invoice Generation"
+msgstr "Generación de facturas de préstamos para automóviles"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_loan_changes
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__loan_payment_change_ids
+msgid "Loan Changes"
+msgstr ""
+
+#. module: jt_loan_management
+#: model:ir.actions.report,name:jt_loan_management.action_report_loan_details
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.customer_invoice_trust_form
+msgid "Loan Details"
+msgstr "Detalles del préstamo"
+
+#. module: jt_loan_management
+#: model:mail.template,name:jt_loan_management.email_template_loan_details
+msgid "Loan Details - Send by Email"
+msgstr "Detalles del préstamo - Enviar por correo electrónico"
+
+#. module: jt_loan_management
+#: model:mail.template,name:jt_loan_management.mail_template_data_notification_email_loan_details
+msgid "Loan Details Notification Email"
+msgstr "Correo electrónico de notificación de detalles del préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__income_acc_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Loan Income Account"
+msgstr "Cuenta de ingresos de préstamos"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__loan_interest
+msgid "Loan Interest"
+msgstr "Intereses del prestamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move_line__loan_invoice_id
+msgid "Loan Invoice"
+msgstr "Factura de préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__name
+msgid "Loan Invoice Range"
+msgstr "Rango de factura de préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_loan_invoice
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__loan_inv_ids
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Loan Invoices"
+msgstr "Factura de préstamo"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Loan Journal"
+msgstr "Diario de préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__loan_line_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__loan_line_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__loan_line_id
+msgid "Loan Line"
+msgstr "línea de préstamo"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Loan Name/ID"
+msgstr "Nombre/identificación del préstamo"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Loan Payment"
+msgstr "Pago de préstamo"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.res_partner_view_inherit
+msgid "Loan Payments"
+msgstr "Pagos de préstamos"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__loan_principal
+msgid "Loan Principal"
+msgstr "Principal del préstamo"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Loan items"
+msgstr "artículos de préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.constraint,message:jt_loan_management.constraint_account_loan_name_uniq
+msgid "Loan name must be unique"
+msgstr "El nombre del préstamo debe ser único"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.ir_actions_server_send_loan_detail_email
+msgid "Loan: Send Loan Detail Email"
+msgstr "Préstamo: Enviar correo electrónico detallado del préstamo"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.account_loan_action
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_partner__loan_count
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_users__loan_count
+#: model:ir.ui.menu,name:jt_loan_management.account_loan_menu
+#: model:ir.ui.menu,name:jt_loan_management.menu_loans
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.res_partner_view_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Loans"
+msgstr "Préstamos"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Loans Accounts and Products"
+msgstr "Préstamos Cuentas y Productos"
+
+#. module: jt_loan_management
+#: model:ir.module.category,name:jt_loan_management.module_category_loans
+msgid "Loans App"
+msgstr "Aplicación de préstamos"
+
+#. module: jt_loan_management
+#: model:ir.module.category,description:jt_loan_management.module_category_loans
+msgid "Loans App Access Rights"
+msgstr "Derechos de acceso a la aplicación de préstamos"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__loan_jou_id
+msgid "Loans Journal"
+msgstr "Diario de préstamos"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Archivo adjunto principal"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__main_invoice_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__main_invoice_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__main_invoice_id
+msgid "Main Invoice"
+msgstr "Factura principal"
+
+#. module: jt_loan_management
+#: model:res.groups,name:jt_loan_management.group_loan_manager
+msgid "Manager"
+msgstr "Gerente"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_has_error
+msgid "Message Delivery error"
+msgstr "Mensaje de error de entrega"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_ids
+msgid "Messages"
+msgstr "Mensajes"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__month
+msgid "Month"
+msgstr "Mes"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__months_to_add
+msgid "Months to Postpone"
+msgstr "Meses para posponer"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__move_by_keep_tax_ins
+msgid "Moved by Keep Tax and Insurance"
+msgstr "Movido por Keep Tax and Insurance"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Fecha límite de mi actividad"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__name
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_bank_statement_line__partner
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__partner_id
+#: model:ir.model.fields,help:jt_loan_management.field_account_move__partner
+#: model:ir.model.fields,help:jt_loan_management.field_account_payment__partner
+msgid "Name of Customer that borrows the money at an interest rate."
+msgstr "Nombre del Cliente que pide prestado el dinero a una tasa de interés."
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "New"
+msgstr "Nuevo"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "New Due Date"
+msgstr "Nueva fecha de vencimiento"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__new_inv_date
+msgid "New due date"
+msgstr "Nueva fecha de vencimiento"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Fecha límite de la próxima actividad"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_summary
+msgid "Next Activity Summary"
+msgstr "Resumen de la siguiente actividad"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_type_id
+msgid "Next Activity Type"
+msgstr "Siguiente tipo de actividad"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "No"
+msgstr "No"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__inv_create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__inv_create_date
+msgid "No. of Days"
+msgstr "Nº de días"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__periods
+msgid "No. of Installments"
+msgstr "Nº de Cuotas"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Note"
+msgstr "Nota"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Note..."
+msgstr "Nota..."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de acciones"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_has_error_counter
+msgid "Number of errors"
+msgstr "Número de errores"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensajes que requieren una acción"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de períodos (meses) que durará el préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__periods
+msgid "Number of periods (months) that the loan will last"
+msgstr "Número de períodos (meses) que durará el préstamo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Número de mensajes no leídos"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Only loans in Draft state can be posted"
+msgstr "Solo se pueden contabilizar préstamos en estado Borrador"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Outstanding Balanace"
+msgstr "Saldo excepcional"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__outstanding_bal
+msgid "Outstanding Balance"
+msgstr "Saldo excepcional"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__amount
+msgid "Paid Amount"
+msgstr "Monto de pago"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.inherit_for_cashed_paid_widget
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.inherit_tem_for_cashed_paid_widget
+msgid "Paid For"
+msgstr "Pagado"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Paid On"
+msgstr "Pagado en"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__paid_on
+msgid "Paid on"
+msgstr "pagado el"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__partner
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__partner
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__partner
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__partner_id
+msgid "Partner"
+msgstr "Pareja"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_pay_amount_form
+msgid "Pay"
+msgstr "Pagar"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_pay_amount_form
+msgid "Pay amount"
+msgstr "cantidad de pago"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__payment_ids
+msgid "Payment"
+msgstr "Pago"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__payment_amount
+msgid "Payment Amount"
+msgstr "Monto del pago"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__payment_date
+msgid "Payment Date"
+msgstr ""
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__payment_day
+msgid "Payment Day"
+msgstr "Dia de pago"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_payment_history
+msgid "Payment History"
+msgstr "historial de pagos"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__journal_id
+msgid "Payment Journal"
+msgstr ""
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__payment_method
+msgid "Payment Method"
+msgstr "Método de pago"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__payment_on_first_period
+msgid "Payment On First Period"
+msgstr "Pago en el primer período"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__payment_ids
+msgid "Payment Reference"
+msgstr "Referencia de pago"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.view_partner_payments
+#: model:ir.actions.act_window,name:jt_loan_management.view_payments
+#: model:ir.model,name:jt_loan_management.model_account_payment
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.loan_payment_history_form_view
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.loan_payment_history_tree_view
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__res_config_settings__penalty_option__penalty
+#: model:product.product,name:jt_loan_management.product_product_penalty
+#: model:product.template,name:jt_loan_management.product_product_penalty_product_template
+msgid "Penalty"
+msgstr "Multa"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__penalty_option
+msgid "Penalty / Interest ?"
+msgstr "Interés penalizado ?"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Penalty Amount"
+msgstr "Importe de la sanción"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__penalty_due
+msgid "Penalty Outstanding"
+msgstr "Pena Pendiente"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__penalty_paid
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Penalty Paid"
+msgstr "Multa pagada"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Penalty on Due Invoices"
+msgstr "Multa por Facturas Vencidas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__penalty
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__penalty
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__penalty
+msgid "Penalty?"
+msgstr "¿Multa?"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Pending Principal"
+msgstr "Principal pendiente"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__pending_principal_amount
+msgid "Pending Principal Amount"
+msgstr "Cantidad de capital pendiente"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__final_pending_principal_amount
+msgid "Pending amount of the loan after the payment"
+msgstr "Importe pendiente del préstamo tras el pago"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__pending_principal_amount
+msgid "Pending amount of the loan before the next payment"
+msgstr "Importe pendiente del préstamo antes del próximo pago"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__res_config_settings__charge_option__percentage
+msgid "Percentage"
+msgstr "Porcentaje"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#, python-format
+msgid ""
+"Please Configure 'Account receivable' from Loan -> Configuration -> Setting!"
+msgstr ""
+"¡Configure 'Cuenta por cobrar' desde Préstamo -> Configuración -> Configuración!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#, python-format
+msgid ""
+"Please Configure 'Loan Account Receivable' from Loans -> Configurations -> "
+"Settings!"
+msgstr ""
+"Configure 'Cuenta de préstamo por cobrar' desde Préstamos -> Configuraciones ->"
+"¡Ajustes!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please Configure Account receivable from Loan -> Configurations -> Account "
+"Setting!"
+msgstr ""
+"Configure la cuenta por cobrar del préstamo -> Configuraciones -> Cuenta"
+"¡Configuración!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Please Configure Default Credit Account for 'Loan Journal'!"
+msgstr "¡Configure la cuenta de crédito predeterminada para el 'Diario de préstamo'!"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please Configure Disbursement Account from Loans -> Configurations -> "
+"Settings!"
+msgstr ""
+"Configure la cuenta de desembolso de Préstamos -> Configuraciones ->"
+"¡Ajustes!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please Configure Disbursement Journal from Loans -> Configurations -> "
+"Settings!"
+msgstr ""
+"Configure el diario de desembolsos desde Préstamos -> Configuraciones ->"
+"¡Ajustes!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please Configure Income Account from Loans -> Configurations -> Settings!"
+msgstr ""
+"¡Configure la cuenta de ingresos de préstamos -> Configuraciones -> Ajustes!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#, python-format
+msgid ""
+"Please Configure Loan Journal from Loans -> Configurations -> Settings!"
+msgstr ""
+"¡Configure el diario de préstamos desde Préstamos -> Configuraciones -> Ajustes!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please Configure Processing Fee Product from Loans -> Configurations -> "
+"Settings!"
+msgstr ""
+"Configure el producto de la tarifa de procesamiento de Préstamos -> Configuraciones ->"
+"¡Ajustes!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please configure 'Interest Product' from Loan -> Configurations -> Account "
+"Setting!"
+msgstr ""
+"Configure 'Producto de interés' desde Préstamo -> Configuraciones -> Cuenta"
+"¡Configuración!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please configure 'Loan Journal' from Loans -> Configurations -> Settings!"
+msgstr ""
+"¡Por favor configure 'Diario de préstamo' desde Préstamos -> Configuraciones -> Ajustes!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please configure 'Principal Product' from Loan -> Configurations -> Account "
+"Setting!"
+msgstr ""
+"Configure 'Producto principal' desde Préstamo -> Configuraciones -> Cuenta"
+"¡Configuración!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please configure 'Write off Account' from Loan -> Configurations -> "
+"Settings!"
+msgstr ""
+"Configure 'Cancelar cuenta' desde Préstamo -> Configuraciones -> "
+"¡Ajustes!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please configure Loan Journal from Loan -> Configurations -> Account "
+"Settings!"
+msgstr ""
+"Configure 'Cancelar cuenta' desde Préstamo -> Configuraciones -> "
+"¡Ajustes!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Please configure Loan Journal from Loan -> Configurations ->Settings!"
+msgstr "¡Configure Loan Journal desde Préstamo -> Configuraciones -> Ajustes!"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please configure Principal and Interest product from Loan -> Configurations "
+"->Settings!"
+msgstr "Configure el producto de principal e interés desde Préstamo -> Configuraciones"
+"->Configuración!"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.move_due_date_of_loan_wizard
+msgid ""
+"Please select the item which you want to postpone. Rest selected items you "
+"need to pay for."
+msgstr ""
+"Seleccione el elemento que desea posponer. Descanse los elementos seleccionados que "
+"necesita pagar."
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Posted"
+msgstr "Al corriente"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.move_due_date_of_loan_wizard
+msgid "Postpone"
+msgstr "Posponer"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__due_date_selection
+msgid "Postpone Installment by"
+msgstr "Aplazar cuota por"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Postpone Installments"
+msgstr "Aplazar Cuotas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__move_invoices_since
+msgid "Postpone Installments Since"
+msgstr "Aplazar cuotas desde"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_move_due_date
+msgid "Postpone Instaments"
+msgstr "Aplazar Cuotas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__postpone_penalty
+msgid "Postpone Penalty"
+msgstr "Aplazar penalti"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__insurance_sale_price
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__tax_sale_price
+msgid "Price at which the product is sold to customers."
+msgstr "Precio al que se vende el producto a los clientes."
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.principal_prod
+#: model:product.template,name:jt_loan_management.principal_prod_product_template
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Principal"
+msgstr "Principal"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__principal_amount
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Principal Amount"
+msgstr "Cantidad principal"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__total_principal_balance
+msgid "Principal Balance"
+msgstr "Saldo principal"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Principal Paid"
+msgstr "principal pagado"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__principal_prod_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Principal Product"
+msgstr "Producto Principal"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__processing_fee_prod_id
+msgid "Processing Fee"
+msgstr "Cuota de procesamiento"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__processing_fee_inv_id
+msgid "Processing Fee Invoice"
+msgstr "Factura de tarifa de procesamiento"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Processing Fee Product"
+msgstr "Producto de tarifa de procesamiento"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_product_product
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__product_id
+msgid "Product"
+msgstr "Producto"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_product_template
+msgid "Product Template"
+msgstr "Plantilla de producto"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_product__detailed_type
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_template__detailed_type
+msgid "Product Type"
+msgstr "Tipo de producto"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_res_config_settings__processing_fee_prod_id
+msgid "Product used as Processing fee of the loans."
+msgstr "Producto utilizado como Comisión de tramitación de los préstamos."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_res_config_settings__interest_prod_id
+msgid "Product used to invoice as interest of the loans."
+msgstr "Producto utilizado para facturar como interés de los préstamos."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_res_config_settings__principal_prod_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Product used to invoice as principal of the loans."
+msgstr "Producto utilizado para facturar como principal de los préstamos."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Product used to invoice as processing fee from the loans."
+msgstr "Producto utilizado para facturar como comisión de tramitación de los préstamos."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Product used to invoice as the interest of the loans."
+msgstr "Producto utilizado para facturar como interés de los préstamos."
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.loan_property_action
+msgid "Products"
+msgstr "productos"
+
+#. module: jt_loan_management
+#: model:ir.ui.menu,name:jt_loan_management.property_product_menu
+msgid "Properties"
+msgstr "Propiedades"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__product_template__detailed_type__property
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__product_template__type__property
+msgid "Property"
+msgstr "Propiedad"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__insurance_product_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__property_ins
+msgid "Property Insurance"
+msgstr "Seguro de propiedad"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__tax_product_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__property_tax
+msgid "Property Tax"
+msgstr "Impuesto a la propiedad"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__rate
+msgid "Rate"
+msgstr "Tasa"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__rate_period
+msgid "Rate per month"
+msgstr "Tarifa por mes"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__rate_period
+msgid "Real rate that will be applied on each period"
+msgstr "Tasa real que se aplicará en cada período"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__reason
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__reason
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Reason"
+msgstr "Razón"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__reconciled_invoice_ids
+msgid "Reconciled Invoices"
+msgstr "Facturas conciliadas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__reference
+msgid "Reference"
+msgstr "Referencia"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_payment_history__payment_method__reg_pay
+msgid "Register Payment (on Invoice)"
+msgstr "Registrar Pago (en Factura)"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__remaining_principal_amount
+msgid "Remaining Principal"
+msgstr "Principal restante"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__loan_changes__due_date_selection__reset
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__due_date_selection__reset
+msgid "Reset all Installment's date"
+msgstr "Restablecer la fecha de todas las cuotas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__residual_amount
+msgid "Residual Amount"
+msgstr "Cantidad residual"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__residual_amount
+msgid ""
+"Residual amount of the land contract that must be paid at the end  in order "
+"to acquire the property"
+msgstr ""
+"Importe residual del contrato de tierra que debe pagarse al final en orden"
+"adquirir la propiedad"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_user_id
+msgid "Responsible User"
+msgstr "Usuario responsable"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__round_on_end
+msgid "Round On End"
+msgstr "redondo en el extremo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Error de entrega de SMS"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+msgid "Search Loan For"
+msgstr "Buscar préstamo para"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.ir_cron_send_email_ir_actions_server
+#: model:ir.cron,cron_name:jt_loan_management.ir_cron_send_email
+#: model:ir.cron,name:jt_loan_management.ir_cron_send_email
+msgid "Send Automatic Email"
+msgstr "Enviar correo electrónico automático"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Seq"
+msgstr "secuencia"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__sequence
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__sequence_number
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_loan_configuration
+#: model:ir.ui.menu,name:jt_loan_management.account_setting
+msgid "Settings"
+msgstr "Ajustes"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan_pay_amount__extra_payment__pay_1
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_payment_history__payment_method__pay_1
+msgid "Settle with next due instalment rest with principal"
+msgstr "Liquidar con la próxima cuota vencida resto con el principal"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__interest_type__simple
+msgid "Simple Interest"
+msgstr "Interés simple"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Some invoices payments are partially paid. You need to pay them."
+msgstr "Algunos pagos de facturas están parcialmente pagados. Tienes que pagarles."
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Some payments are already registered. You need to cancel them."
+msgstr "Algunos pagos ya están registrados. Tienes que cancelarlos."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__splitted_invoice
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__splitted_invoice
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__splitted_invoice
+msgid "Splitted Invoice"
+msgstr "Factura dividida"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__start_date
+msgid "Start Date"
+msgstr "Fecha de inicio"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__state
+msgid "State"
+msgstr "Estado"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__method_period
+msgid "State here the time between 2 installments, in months"
+msgstr "Indique aquí el tiempo entre 2 cuotas, en meses"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+msgid "Status"
+msgstr "Estado"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Estado basado en actividades\n"
+"Atrasado: la fecha de vencimiento ya pasó\n"
+"Hoy: la fecha de la actividad es hoy\n"
+"Planificado: Actividades futuras."
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__tax_balance
+msgid "Tax"
+msgstr "Impuesto"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Tax Paid"
+msgstr "Impuesto pagado"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Tax and Insurance"
+msgstr "Impuestos y Seguros"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__tax_sale_price
+msgid "Tax product price"
+msgstr "Impuesto sobre el precio del producto"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/wizard/move_due_date_of_loan.py:0
+#, python-format
+msgid ""
+"The invoices can't be moved since %s as payment was already registered for "
+"an invoice after this date. Please pick later date for the push back"
+msgstr ""
+"Las facturas no se pueden mover porque %s ya que el pago ya estaba registrado para"
+"una factura posterior a esta fecha. Elija una fecha posterior para la devolución"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__method_period
+msgid "Time between two installments(In Month)"
+msgstr "Tiempo entre dos cuotas (En Mes)"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Total"
+msgstr "Total"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__total_invoice_amount
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.invoice_order_line_tree
+msgid "Total Amount"
+msgstr "Cantidad total"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__amount_due
+msgid "Total Amount Due"
+msgstr "Importe total adeudado"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__total_payments
+msgid "Total Paid Payments"
+msgstr "Pagos totales pagados"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.loan_payment_history_tree_view
+msgid "Total Payment"
+msgstr "Pago total"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_partner__total_payment_amount
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_users__total_payment_amount
+msgid "Total Payment Amount"
+msgstr "Importe total del pago"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__penalty_amount
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Total Penalty"
+msgstr "Penalización total"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.invoice_order_line_tree
+msgid "Total Quantity"
+msgstr "Cantidad total"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__payment_amount
+msgid "Total amount that will be paid (installment)"
+msgstr "Monto total que se pagará (cuota)"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Total interests"
+msgstr "Intereses totales"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Total payments"
+msgstr "Pagos totales"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Total principal"
+msgstr "Principal total"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__transaction_balance
+msgid "Transaction Balance"
+msgstr "Saldo de transacción"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_loan_transaction_history
+msgid "Transaction History"
+msgstr "Historial de transacciones"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_loan_transaction
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Transactions"
+msgstr "Actas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_product__type
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_template__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Tipo de actividad de excepción registrada."
+
+#. module: jt_loan_management
+#: model:product.product,uom_name:jt_loan_management.ins_property_1
+#: model:product.product,uom_name:jt_loan_management.ins_property_2
+#: model:product.product,uom_name:jt_loan_management.ins_property_3
+#: model:product.product,uom_name:jt_loan_management.interest_prod
+#: model:product.product,uom_name:jt_loan_management.loan_property_1
+#: model:product.product,uom_name:jt_loan_management.loan_property_2
+#: model:product.product,uom_name:jt_loan_management.loan_property_3
+#: model:product.product,uom_name:jt_loan_management.principal_prod
+#: model:product.product,uom_name:jt_loan_management.product_product_interest
+#: model:product.product,uom_name:jt_loan_management.product_product_penalty
+#: model:product.product,uom_name:jt_loan_management.tax_property_1
+#: model:product.product,uom_name:jt_loan_management.tax_property_2
+#: model:product.product,uom_name:jt_loan_management.tax_property_3
+#: model:product.template,uom_name:jt_loan_management.ins_property_1_product_template
+#: model:product.template,uom_name:jt_loan_management.ins_property_2_product_template
+#: model:product.template,uom_name:jt_loan_management.ins_property_3_product_template
+#: model:product.template,uom_name:jt_loan_management.interest_prod_product_template
+#: model:product.template,uom_name:jt_loan_management.loan_property_1_product_template
+#: model:product.template,uom_name:jt_loan_management.loan_property_2_product_template
+#: model:product.template,uom_name:jt_loan_management.loan_property_3_product_template
+#: model:product.template,uom_name:jt_loan_management.principal_prod_product_template
+#: model:product.template,uom_name:jt_loan_management.product_product_interest_product_template
+#: model:product.template,uom_name:jt_loan_management.product_product_penalty_product_template
+#: model:product.template,uom_name:jt_loan_management.tax_property_1_product_template
+#: model:product.template,uom_name:jt_loan_management.tax_property_2_product_template
+#: model:product.template,uom_name:jt_loan_management.tax_property_3_product_template
+msgid "Units"
+msgstr "Unidades"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__residual_amount
+msgid "Unpaid invoices"
+msgstr "facturas sin pagar"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_unread
+msgid "Unread Messages"
+msgstr "Mensajes no leídos"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de mensajes no leídos"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__total_invoice_amount
+msgid "Upcomming Invoice Amount"
+msgstr "Importe de la próxima factura"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.loan_property_3
+#: model:product.template,name:jt_loan_management.loan_property_3_product_template
+msgid "Urban Ville"
+msgstr "Ciudad urbana"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.ins_property_3
+#: model:product.template,name:jt_loan_management.ins_property_3_product_template
+msgid "Urban Ville Insurance"
+msgstr "Seguro Ciudad Urbana"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.tax_property_3
+#: model:product.template,name:jt_loan_management.tax_property_3_product_template
+msgid "Urban Ville Tax"
+msgstr "Impuesto de Ciudad Urbana"
+
+#. module: jt_loan_management
+#: model:res.groups,name:jt_loan_management.group_loan_user
+msgid "User"
+msgstr "Usuario"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Validate"
+msgstr "Validar"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__state__posted
+msgid "Validated"
+msgstr "Validado"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_vendor_bill_line_product
+#: model:ir.actions.act_window,name:jt_loan_management.action_vendor_bill_line_product_tem
+msgid "Vendor Bills"
+msgstr "Facturas de proveedores"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__website_message_ids
+msgid "Website Messages"
+msgstr "Mensajes del sitio web"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__website_message_ids
+msgid "Website communication history"
+msgstr "Historial de comunicación del sitio web"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__round_on_end
+msgid ""
+"When checked, the differences will be applied on the last period, if it is "
+"unchecked, the annuity will be recalculated on each period (i.e. amount "
+"won't be the same every month)."
+msgstr ""
+"Cuando se marca, las diferencias se aplicarán en el último período, si es"
+"sin marcar, la anualidad se volverá a calcular en cada período (es decir, cantidad "
+"no será lo mismo todos los meses)."
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__payment_on_first_period
+msgid ""
+"When checked, the first payment will be expected on Start Date,otherwise 1 "
+"period (month) after the Start Date."
+msgstr ""
+"Cuando se marca, el primer pago se esperará en la Fecha de inicio; de lo contrario, 1"
+"período (mes) posterior a la fecha de inicio."
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__write_off_account_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Write-Off Account"
+msgstr "Cuenta de cancelación"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_pay_amount_form
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.move_due_date_of_loan_wizard
+msgid "or"
+msgstr "o"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__year
+msgid "year"
+msgstr "año"
+
+#. module: jt_loan_management
+#: model:mail.template,report_name:jt_loan_management.email_template_loan_details
+msgid "{{ (object.name or '').replace('/','_') }}"
+msgstr "{{ (object.name or '').replace('/','_') }}"
+
+#. module: jt_loan_management
+#: model:mail.template,subject:jt_loan_management.email_template_loan_details
+msgid "{{ object.name }} - Details"
+msgstr "{{ object.name }} - Detalles"
+
+#. module: jt_loan_management
+#: model:mail.template,subject:jt_loan_management.mail_template_data_notification_email_loan_details
+msgid "{{ object.subject }}"
+msgstr "{{ object.subject }}"
+

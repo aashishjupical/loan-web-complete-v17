@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<template id="index_page" name="index page">
+		<t t-call="website.layout">
+			<div id="wrap" class="oe_structure">
+                <div class="oe_structure"/>
+				<!-- slider start -->
+                    <div class="swiper mySwiper homeSlider">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1626178793926-22b28830aa30?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80" alt="Slider 1" />
+                                <!-- <div class="swiper-content1" data-aos="fade-down" data-aos-easing="linear" data-aos-duration="1500">
+                                    <h1>Apply for Home Loan</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, accusantium.</p>
+                                </div> -->
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=870&amp;q=80" alt="Slider 2" />
+                                <!-- <div class="swiper-content2" data-aos="fade-up" data-aos-duration="3000">
+                                    <h1>Apply for Car Loan</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, accusantium.</p>
+                                </div> -->
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="https://images.unsplash.com/photo-1616514197671-15d99ce7a6f8?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1473&amp;q=80" alt="Slider 3" />
+                                <!-- <div class="swiper-content3" data-aos="fade-up" data-aos-duration="3000">
+                                    <h1>Apply for Car Loan</h1>
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, accusantium.</p>
+                                </div> -->
+                            </div>
+                        </div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                    </div>
+                    <!-- slider end -->
+
+                    <!-- card section start -->
+                    <section class="genmed-intro">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="intro-box bg-dark-brown mb-md-20">
+                                        <div class="intro-wrapper text-center"> <i class="flaticon-flag"></i>
+                                            <h6 class="text-custom-white fw-700">CORPORATE LOAN</h6>
+                                            <p class="text-custom-white">Create pages with ease with a help of the best page builder
+                                                plugin.</p> <a class="btn-first btn-read-more-card fw-600"
+                                                href="/">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="intro-box bg-dark-brown mb-md-20">
+                                        <div class="intro-wrapper text-center"> <i class="flaticon-flag"></i>
+                                            <h6 class="text-custom-white fw-700">GET FUNDS IN SECOND</h6>
+                                            <p class="text-custom-white">Create pages with ease with a help of the best page builder
+                                                plugin.</p> <a class="btn-first btn-read-more-card fw-600"
+                                                href="/">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="intro-box bg-dark-brown mb-xs-20">
+                                        <div class="intro-wrapper text-center"> <i class="flaticon-flag"></i>
+                                            <h6 class="text-custom-white fw-700">REPAY AS YOU GET PAID</h6>
+                                            <p class="text-custom-white">Create pages with ease with a help of the best page builder
+                                                plugin.</p> <a class="btn-first btn-read-more-card fw-600"
+                                                href="/">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="intro-box bg-dark-brown ">
+                                        <div class="intro-wrapper text-center"> <i class="flaticon-flag"></i>
+                                            <h6 class="text-custom-white fw-700">ONE FIX FEE</h6>
+                                            <p class="text-custom-white">Create pages with ease with a help of the best page builder
+                                                plugin.</p> <a class="btn-first btn-read-more-card fw-600"
+                                                href="/">Read more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- card section end -->
+
+                    <section id="in-about-1" class="in-about-section-1 position-relative">        
+                        <div class="container">
+                            <div class="in-about-content-1">
+                                <div class="row flx9">
+                                    <div class="col-lg-7">
+                                        <div class="in-about-feature-img-1">
+                                            <div class="in-about-feature-wrapper">
+                                                <div class="in-about-feature-item wow fadeInUp" data-wow-delay="200ms"
+                                                    data-wow-duration="1000ms"
+                                                    style="visibility: visible; animation-duration: 1000ms; animation-delay: 200ms; animation-name: fadeInUp;">
+                                                    <div class="inner-icon">
+                                                        <!-- <i class="flaticon-life-insurance"></i> -->
+                                                        <i class="fas fa-hand-holding-usd"></i>
+                                                    </div>
+                                                    <div class="inner-text headline pera-content">
+                                                        <h3>Pay Bills</h3>
+                                                        <p>On the other hand we den noun with righteous
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="in-about-feature-item wow fadeInUp" data-wow-delay="300ms"
+                                                    data-wow-duration="1000ms"
+                                                    style="visibility: visible; animation-duration: 1000ms; animation-delay: 300ms; animation-name: fadeInUp;">
+                                                    <div class="inner-icon">
+                                                        <i class="fas fa-rupee-sign"></i>
+                                                    </div>
+                                                    <div class="inner-text headline pera-content">
+                                                        <h3>Wealth Protection</h3>
+                                                        <p>On the other hand we den noun with righteous
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="in-about-feature-item wow fadeInUp" data-wow-delay="400ms"
+                                                    data-wow-duration="1000ms"
+                                                    style="visibility: visible; animation-duration: 1000ms; animation-delay: 400ms; animation-name: fadeInUp;">
+                                                    <div class="inner-icon">
+                                                        <i class="fas fa-piggy-bank"></i>
+                                                    </div>
+                                                    <div class="inner-text headline pera-content">
+                                                        <h3>Protect Income</h3>
+                                                        <p>On the other hand we den noun with righteous
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="in-about-img-1 wow fadeInLeft" data-wow-delay="550ms" data-wow-duration="1000ms"
+                                                style="visibility: visible; animation-duration: 1000ms; animation-delay: 550ms; animation-name: fadeInLeft;">
+                                                <img src="https://html.themexriver.com/insurin/assets/img/about/ab1.jpg" alt="" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="in-about-text-wrapper-1">
+                                            <div class="in-section-title-1 headline wow fadeInUp" data-wow-delay="550ms"
+                                                data-wow-duration="1000ms"
+                                                style="visibility: visible; animation-duration: 1000ms; animation-delay: 550ms; animation-name: fadeInUp;">
+                                                <div class="sub-title position-relative text-uppercase">
+                                                    <span> About Us </span>
+                                                </div>
+                                                <h2>Insurence Solution
+                                                    With Experts </h2>
+                                            </div>
+                                            <div class="in-about-text-area-1 wow fadeInUp" data-wow-delay="650ms"
+                                                data-wow-duration="1000ms"
+                                                style="visibility: visible; animation-duration: 1000ms; animation-delay: 650ms; animation-name: fadeInUp;">
+                                                On the other hand we denounce with righteous indig nation and dislike men who are
+                                                sbeguiled and demor alized bite the finan charms blinded.
+                                            </div>
+                                            <div class="in-about-counter-wrapper-1 wow fadeInUp" data-wow-delay="750ms"
+                                                data-wow-duration="1000ms"
+                                                style="visibility: visible; animation-duration: 1000ms; animation-delay: 750ms; animation-name: fadeInUp;">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="in-about-counter-item-1 headline pera-content">
+                                                            <h3><span class="counter">12</span>K+</h3>
+                                                            <p>Insurance Policies</p>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="in-about-counter-item-1 headline pera-content">
+                                                            <h3><span class="counter">10</span>K+</h3>
+                                                            <p>Happy Client</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="in-btn-1 wow fadeInUp" data-wow-delay="850ms" data-wow-duration="1000ms"
+                                                style="visibility: visible; animation-duration: 1000ms; animation-delay: 850ms; animation-name: fadeInUp;">
+                                                <a href="about.html">Read More</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!--service cards start -->    
+                    <section id="in-service-3" class="in-service-section-3">
+                        <div class="container">
+                            <div class="in-service-content-3">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="in-section-title-3 headline pera-content">
+                                            <div class="sub-title position-relative text-uppercase">
+                                                <span> Services </span>
+                                            </div>
+                                            <!-- <div class="sub-title position-relative text-uppercase">
+                                                Services
+                                            </div> -->
+                                            <h2>Lorem, ipsum.</h2>
+                                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus, explicabo?
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="in-service-item-3 position-relative">
+                                            <div class="inner-text headline pera-content">
+                                                <h3><a href="service-single.html">Home Loan</a></h3>
+                                                <p>Leverage agile frameworks provide
+                                                    synopsis for high level overviews
+                                                    Iterative approaches.</p>
+                                            </div>
+                                            <div class="inner-icon-btn d-flex align-items-center justify-content-between">
+                                                <div class="inner-icon">
+                                                    <i class="fas fa-home"></i>
+                                                </div>
+                                                <div class="inner-btn">
+                                                    <a class="d-flex align-items-center justify-content-center"
+                                                        href="service-single.html"><i class="fas fa-chevron-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="in-service-item-3 position-relative">
+                                            <div class="inner-text headline pera-content">
+                                                <h3><a href="service-single.html">Car Loan</a></h3>
+                                                <p>Leverage agile frameworks provide
+                                                    synopsis for high level overviews
+                                                    Iterative approaches.</p>
+                                            </div>
+                                            <div class="inner-icon-btn d-flex align-items-center justify-content-between">
+                                                <div class="inner-icon">
+                                                    <i class="fas fa-car"></i>
+                                                </div>
+                                                <div class="inner-btn">
+                                                    <a class="d-flex align-items-center justify-content-center"
+                                                        href="service-single.html"><i class="fas fa-chevron-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="in-service-item-3 position-relative">
+                                            <div class="inner-text headline pera-content">
+                                                <h3><a href="service-single.html">Education Loan</a></h3>
+                                                <p>Leverage agile frameworks provide
+                                                    synopsis for high level overviews
+                                                    Iterative approaches.</p>
+                                            </div>
+                                            <div class="inner-icon-btn d-flex align-items-center justify-content-between">
+                                                <div class="inner-icon">
+                                                    <i class="fas fa-user-graduate"></i>
+                                                </div>
+                                                <div class="inner-btn">
+                                                    <a class="d-flex align-items-center justify-content-center"
+                                                        href="service-single.html"><i class="fas fa-chevron-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="in-service-item-3 position-relative">
+                                            <div class="inner-text headline pera-content">
+                                                <h3><a href="service-single.html">Personal Loan</a></h3>
+                                                <p>Leverage agile frameworks provide
+                                                    synopsis for high level overviews
+                                                    Iterative approaches.</p>
+                                            </div>
+                                            <div class="inner-icon-btn d-flex align-items-center justify-content-between">
+                                                <div class="inner-icon">
+                                                    <i class="fas fa-user"></i>
+                                                </div>
+                                                <div class="inner-btn">
+                                                    <a class="d-flex align-items-center justify-content-center"
+                                                        href="service-single.html"><i class="fas fa-chevron-right"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6">
+                                        <div class="in-services-more-btn">
+                                            <div class="service-btn-img">
+                                                <img src="/theme_fashion/static/src/img/service/sb1.jpg" class="img-fluid" alt="Services" />
+                                            </div>
+                                            <div class="services-btn-text text-center">
+                                                Leverage agile frameworks provide
+                                                synopsis for high level overviews
+                                                Iterative approaches.
+                                            </div>
+                                            <div class="in-btn-1 text-center">
+                                                <a href="service.html">View All Services</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!--service cards end -->
+
+
+                    <!-- why choose start -->
+                    <section id="in-why-choose-1" class="in-why-choose-section-1">
+                        <div class="container">
+                            <div class="in-why-choose-top-content">
+                                <div class="in-section-title-1 headline wow fadeInUp" data-wow-delay="100ms" data-wow-duration="1000ms"
+                                    style="visibility: visible; animation-duration: 1000ms; animation-delay: 100ms; animation-name: fadeInUp;">
+                                    <div class="sub-title position-relative text-uppercase">
+                                        <span>Why choose</span>
+                                    </div>
+                                    <h2>With The Experience
+                                        Comes Excellence. </h2>
+                                </div>
+                                <div class="in-why-choose-top-text wow fadeInUp" data-wow-delay="200ms" data-wow-duration="1000ms"
+                                    style="visibility: visible; animation-duration: 1000ms; animation-delay: 200ms; animation-name: fadeInUp;">
+                                    On the other hand we denounce with righteous indignation and dislike men who are so beguiled and
+                                    demoralized bite the finan charms of pleasure of blinded.
+                                </div>
+                            </div>
+                            <div class="in-why-choose-content-1">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="in-why-choose-img-area-1 position-relative  wow fadeInUp" data-wow-delay="350ms"
+                                            data-wow-duration="1000ms"
+                                            style="visibility: visible; animation-duration: 1000ms; animation-delay: 350ms; animation-name: fadeInUp;">
+                                            <div class="in-why-choose-img-1 position-relative">
+                                                <img class="img-fluid" src="https://html.themexriver.com/insurin/assets/img/about/wc1.jpg" alt="image" />
+                                            </div>                            
+                                            <div class="in-why-choose-circle-progress position-absolute wow fadeInRight"
+                                                data-wow-delay="750ms" data-wow-duration="1000ms"
+                                                style="visibility: visible; animation-duration: 1000ms; animation-delay: 750ms; animation-name: fadeInRight;">                                               
+                                                <img src="/jt_loan_project/static/src/img/home/wc1.jpg" class="img-fluid" alt="why choose?" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="in-why-choose-feature-wrapper">
+                                            <div class="in-why-choose-feature-area">
+                                                <div class="in-why-choose-feature-item d-flex wow fadeInUp" data-wow-delay="550ms"
+                                                    data-wow-duration="1000ms"
+                                                    style="visibility: visible; animation-duration: 1000ms; animation-delay: 550ms; animation-name: fadeInUp;">
+                                                    <div class="inner-icon position-relative">
+                                                        <i class="fas fa-user-shield"></i>
+                                                    </div>
+                                                    <div class="inner-text headline pera-content">
+                                                        <h3>Local knowledge</h3>
+                                                        <p>On the other hand we denounce righteous
+                                                            indignation beguiled demoralized.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="in-why-choose-feature-item d-flex wow fadeInUp" data-wow-delay="650ms"
+                                                    data-wow-duration="1000ms"
+                                                    style="visibility: visible; animation-duration: 1000ms; animation-delay: 650ms; animation-name: fadeInUp;">
+                                                    <div class="inner-icon position-relative">
+                                                        <i class="fas fa-house-damage"></i>
+                                                    </div>
+                                                    <div class="inner-text headline pera-content">
+                                                        <h3>Choice and value</h3>
+                                                        <p>On the other hand we denounce righteous
+                                                            indignation beguiled demoralized.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                                <div class="in-why-choose-feature-item d-flex wow fadeInUp" data-wow-delay="750ms"
+                                                    data-wow-duration="1000ms"
+                                                    style="visibility: visible; animation-duration: 1000ms; animation-delay: 750ms; animation-name: fadeInUp;">
+                                                    <div class="inner-icon position-relative">
+                                                        <i class="fas fa-user-friends"></i>
+                                                    </div>
+                                                    <div class="inner-text headline pera-content">
+                                                        <h3>Community matters</h3>
+                                                        <p>On the other hand we denounce righteous
+                                                            indignation beguiled demoralized.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="in-btn-1">
+                                                <a href="contact.html">Get Started</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- why choose end -->
+
+			</div>
+		</t>
+	</template>
+</odoo>

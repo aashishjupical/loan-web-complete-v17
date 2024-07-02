@@ -1,0 +1,5 @@
+1. First need to configure Journal from loan setting because currency comes from journal when creating loan.
+Note: Inside Journal Prefix don't use Short code just use Legend.
+For e.g.,
+%(range_year)s, %(year)s etc.
+2. Also need to configure Principal Product, Interest Product, Processing Fee Product, Account Receivable and Income Account.

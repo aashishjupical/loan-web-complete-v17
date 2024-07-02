@@ -1,0 +1,59 @@
+/* review and agree start */
+.px80{
+    padding: 80px 0;
+}
+/* form start */
+.single-get-touch {
+    margin-bottom: 16px;
+}
+
+.list-input p{
+    margin-bottom: 5px;
+}
+
+.single-get-touch input {
+   /* width: 100%;
+    height: 50px;*/
+    padding-left: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    border: 1px solid #c1c1c1;
+    color: #000;
+}
+
+.single-get-touch select {
+   
+    padding-left: 10px;
+    color: #000;
+    border: 1px solid #c1c1c1;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.single-get-check {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+/* form end  */
+.btn-submit-ctm {
+    width: 200px;
+    text-align: center;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #23395B;
+    border-color: #23395B;
+    color: #fff;
+    transition: all .3s ease-in;
+    font-size: 16px;
+    font-weight: 500;
+    position: relative;
+}
+.btn-submit-ctm:hover {
+    background-color: #f59019;
+    border-color: #f59019;
+    color: #000;
+    transition: all .3s ease;
+}
+
+/* review and agree end */

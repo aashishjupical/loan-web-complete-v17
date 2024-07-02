@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_write,perm_create,perm_unlink,perm_read
+access_terminate_reason,access.terminate.reason,model_terminate_reason,,1,1,1,1
+access_terminate_wizard,access.terminate.wizard,model_terminate_wizard,,1,1,1,1
+access_loan_month,access.loan.month,model_loan_month,,1,1,1,1
+access_upload_wizard,access.upload.wizard,model_upload_wizard,,1,1,1,1
+access_loan_application_history,access.loan.application.history,model_loan_application_history,,1,1,1,1
+access_account_move_portal,access.account.move.portal,account.model_account_move,base.group_portal,0,0,0,1
+access_loan_portal,access.loan.portal,jt_loan_management.model_account_loan,base.group_portal,0,0,0,1
+access_loan_line_portal,access.loan.line,jt_loan_management.model_account_loan_line,base.group_portal,0,0,0,1

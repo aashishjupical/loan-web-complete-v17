@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="create_account_page" name="Create Account">
+        <t t-call="website.layout">
+            <div class="oe_structure" id="wrap">
+            <div class="oe_structure"/>
+                <section class="pt56 pb56">
+                    <div class="container">
+                        <div class="row">
+                            <div class="pt16 pb16 col-md-6">
+                                <h3>Create an Account</h3>
+                                               
+                                <form class="form" method="post">
+                                    <label class="font_bold_600 color_gray_light">Name</label>
+                                    <input class="badge-pill form-control s_website_form_input input_height" id="name" name="name" placeholder="John Doe" required="" t-att-value="name" type="text"/><br/>
+                                    <p class="alert alert-danger" t-if="error_msg" role="alert">
+                                        <t t-esc="error_msg"/>
+                                    </p>
+                                    <label class="font_bold_600 color_gray_light">Email Address</label>
+                                    <input class="badge-pill form-control s_website_form_input input_height" id="email" name="email" placeholder="johndoe@mail.com" required="" t-att-value="email" type="text"/><br/>
+                                    <p class="alert alert-danger" t-if="error_msg" role="alert">
+                                        <t t-esc="error_msg"/>
+                                    </p>
+                                    <label class="font_bold_600 color_gray_light">Mobile Number</label>
+                                    <input class="badge-pill form-control s_website_form_input input_height" id="crt_mobile_no" name="mobile_no" required="" t-att-value="mobile_no" type="text"/><br/>
+                                    <p class="alert alert-danger" t-if="err_number_msg" role="alert">
+                                        <t t-esc="err_number_msg"/>
+                                    </p>
+                                    <div class="form-group field-password left-and-right-inner-addon">
+                                        <label class="font_bold_600 color_gray_light">Password</label>
+                                        <div style="position: relative;">
+                                            <input class="badge-pill form-control s_website_form_input input_height" id="password" name="password" autocomplete="current-password" required="" type="password" maxlength="4096"/>
+                                            <span style="position: absolute;right: 13px;bottom: 15px;cursor: pointer;top:35%;" class="fa fa-eye-slash" id="rt_toggle_password"></span>
+
+                                        </div>
+                                    </div>
+                                   
+                                    <p class="alert alert-danger" t-if="error_pwd_msg" role="alert">
+                                        <t t-esc="error_pwd_msg"/>
+                                    </p>
+                                    <div class="form-group field-password">
+                                        <label class="font_bold_600 color_gray_light">Confirm Password</label>
+                                        <div style="position: relative;">
+                                            <input class="badge-pill form-control s_website_form_input input_height" id="confirm_password" name="confirm_password" required="" type="password" maxlength="4096"/>
+                                            <span style="position: absolute;right: 13px;bottom: 15px;cursor: pointer;top:25%;" class="fa fa-eye-slash" id="rt_cnfr_toggle_password"></span>
+                                        </div>
+                                    </div>
+                                    <p class="alert alert-danger" t-if="error_match_pwd" role="alert">
+                                        <t t-esc="error_match_pwd"/>
+                                    </p>
+                                    
+                                    <button class="btn btn-blue-ctm w-100 btn-block btn-smt-stl" type="submit"><span style="font-weight: 600;font-size: 18px;line-height: 20px;text-align: center;letter-spacing: 0.2px;">Create an Account</span>
+                                    </button><br/><br/>
+                                </form>
+                            </div>
+                            <div class="pt16 pb16 col-md-6">
+                                <img style="border-radius: 20px;height: 511px;width: 494px;" src="/jt_loan_project/static/src/img/product-about2.jpg" class="img img-fluid"/>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <div  id="hidden_box_acc" t-att-class="'modal ' + ('fade show d-block' if box_visible else 'fade')">
+                    <div class="container height-100 d-flex justify-content-center align-items-center">
+                        <div class="position-relative" id="pop_html">
+                            <div class="card modal-dialog modal-content otp-box" style="width: 400px;height:450px">
+                                <div style="margin-left: 355px;">
+                                    <a style="color: #300C46;" href="#" class="o_popup_btn_close o_not_editable o_default_snippet_text" data-dismiss="modal">X</a>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-center pt-2"> 
+                                        <img src="/jt_loan_project/static/src/img/mail.jpg" alt="Contact" width="50" height="45" style="" loading="lazy"/><br/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-center pt-4">
+                                        <span class="o_default_snippet_text text-center verify-otp">Check your email inbox </span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-center pt-2">
+                                        <span class="verify-span">A verification email has been sent!<br/>You’re just a click away from completing your<br/> Account Creation.<span t-esc="phone"/></span>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12 text-center pt-2">
+                                        <span class="otp-link-exp">*Verification link will be expired in 24 hours.</span>
+                                    </div>
+                                </div>
+                                <form action="#" method="post" id="jt_email_resend">
+                                    <input  id="email" name="email"  t-att-value="email" type="hidden"/>
+                                    <input name="call_resend_pop" t-att-value="call_resend_pop" type="text" hidden="1"/>
+                                    <input  id="mobile_no" name="mobile_no" t-att-value="mobile_no" type="text" hidden="1"/>
+
+                                    <div class="row">
+                                        <div class="col-12 text-center pt-4">
+                                            <button class="btn btn-blue-ctm w-100 btn-block btn-smt-stl" type="submit"><span style="font-weight: 600;font-size: 18px;line-height: 20px;text-align: center;letter-spacing: 0.2px;"> Resend Email Verification</span></button>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="row">
+                                    <div class="col-12 text-center pt-2">
+                                        <a style="font-weight: 600;font-size: 14px;line-height: 22px;text-decoration-line: underline;color: #2E3232;" href="/contactus">Need help? Contact us Now!</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+</odoo>

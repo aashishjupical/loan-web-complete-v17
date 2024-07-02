@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="res_config_expire_sign_attestation_time_view_form" model="ir.ui.view">
+            <field name="name">res.config.view.expire.sign.attestation.form.inherit.mrp</field>
+            <field name="model">res.config.settings</field>
+            <field name="priority" eval="35"/>
+            <field name="inherit_id" ref="jt_loan_management.res_config_settings_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[@id='bad_debt_account_loan']" position="before">
+                    <h2>Configure Expire/Sign Attestation</h2>
+                    <div id="expire_atte_main_id" class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="expire_inperson_att_time" string="Expiry To In-person Attestation"/>
+                                    <div class="text-muted">
+                                       Expiry To In-person Attestation
+                                    </div>
+                                    <div class="text-muted">       
+                                        <field name="expire_inperson_att_time"/>
+                                    </div>
+                                <label for="expire_attestation_time" string="Expiry to Review and Agree Attestation"/>
+                                <div class="text-muted">
+                                   Expiry to Review and Agree Attestation
+                                </div>
+                                <div class="text-muted">       
+                                    <field name="expire_attestation_time"/>
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-md-6 o_setting_box">
+                                <div class="o_setting_left_pane"/>
+                                <div class="o_setting_right_pane">
+                                    <label for="sign_attestation_time" string="Expiry To Sign Agreement Attestation"/>
+                                    <div class="text-muted">
+                                       Expiry To Sign Agreement
+                                    </div>
+                                    <div class="text-muted">       
+                                        <field name="sign_attestation_time"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <h2>Product Disclosure</h2>
+                    <div id="product_disclosure_main_id" class="row mt16 o_settings_container">
+                      <div class="col-xs-12 col-md-6 o_setting_box">
+                            <div class="o_setting_left_pane"/>
+                            <div class="o_setting_right_pane">
+                                <label for="product_disclosure" string="Product Disclosure"/>
+                                <div class="text-muted">
+                                   Product Disclosure
+                                </div>
+                                <div class="text-muted">          
+                                    <field name="product_disclosure"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

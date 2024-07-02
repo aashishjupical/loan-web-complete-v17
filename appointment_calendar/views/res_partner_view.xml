@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="partner_view_calendar">
+        <field name="name">partner.view.calendar</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="priority" eval="20" />
+        <field name="arch" type="xml">
+            <field name='category_id' position="after">
+                <field name='is_available' />
+                <field name='calendar_id' attrs="{'invisible':[('is_available','=',False)]}"/>
+            </field>
+        </field>
+    </record>
+    <record id="action_appointmnet_calendar_member" model="ir.actions.act_window">
+        <field name="name">Team Member</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.partner</field>
+        <field name="view_mode">kanban,tree,form</field>
+        <field name="domain">[('is_available','=',1)]</field>
+        <field name="context">{'default_is_available':1}</field>
+        <field name="filter" eval="True" />
+    </record>
+    <menuitem id="menu_exception_calendar_member" name="Team Member" parent="menu_apppointment_config" action="appointment_calendar.action_appointmnet_calendar_member" sequence="2" />
+</odoo>

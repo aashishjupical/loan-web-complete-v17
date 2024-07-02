@@ -1,0 +1,2460 @@
+            # Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* jt_loan_management
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-06-07 07:09+0000\n"
+"PO-Revision-Date: 2023-06-07 07:09+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Customer</b>"
+msgstr "<b>Pelanggan</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Down Payment</b>"
+msgstr "<b>Uang Muka</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Loan Amount</b>"
+msgstr "<b>Jumlah Pinjaman</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Loan Status</b>"
+msgstr "<b>Status Pinjaman</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Monthly Insurance</b>"
+msgstr "<b>Asuransi Bulanan</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Monthly Tax</b>"
+msgstr "<b>Pajak Bulanan</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Months</b>"
+msgstr "<b>Bulan</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Paid Insurance Balance</b>"
+msgstr "<b>Saldo Asuransi Dibayar</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Paid Interest Balance</b>"
+msgstr "<b>Saldo Bunga Terbayar</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Paid Principal Balance</b>"
+msgstr "<b>Saldo Pokok Dibayar</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Payment Day</b>"
+msgstr "<b>Hari Pembayaran</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Rate</b>"
+msgstr "<b>Tarif</b>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<b>Reference</b>"
+msgstr "<b>Referensi</b>"
+
+#. module: jt_loan_management
+#: model:mail.template,body_html:jt_loan_management.email_template_loan_details
+msgid ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+"                <p>Dear \n"
+"\t\t\t\t\t<t t-if=\"object.partner_id.parent_id\">\n"
+"\t\t\t\t\t\t<t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t> (<t t-out=\"object.partner_id.parent_id.name or ''\">Azure Interior</t>),\n"
+"\t\t\t\t\t</t>\n"
+"\t\t\t\t\t<t t-else=\"\">\n"
+"\t\t\t\t\t\t<t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t>,\n"
+"\t\t\t\t\t</t>\n"
+"\t\t\t\t<br/>\n"
+"               \tHere is the details of <strong><t t-out=\"object.name or ''\"/></strong>\n"
+"                  <t t-if=\"object.name\">\n"
+"                    with reference: \n"
+"                      <t t-out=\"object.name or ''\"/> of amount\n"
+"                      <t t-out=\"object.loan_amount or ''\"/> <t t-out=\"object.currency_id.name or ''\"/>,\n"
+"                  </t>\n"
+"               \n"
+"                from <t t-out=\"object.company_id.name or ''\"/>,\n"
+"                </p>\n"
+"              </div>\n"
+"            "
+msgstr ""
+"<div style=\"margin: 0px; padding: 0px;\">\n"
+" <p>Sayang\n"
+"\t\t\t\t\t<t t-if=\"object.partner_id.parent_id\">\n"
+"\t\t\t\t\t\t<t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t> (<t t-out=\"object.partner_id .parent_id.name atau ''\">Azure Interior</t>),\n"
+"\t\t\t\t\t</t>\n"
+"\t\t\t\t\t<t t-else=\"\">\n"
+"\t\t\t\t\t\t<t t-out=\"object.partner_id.name or ''\">Brandon Freeman</t>,\n"
+"\t\t\t\t\t</t>\n"
+"\t\t\t\t<br/>\n"
+" \tBerikut detail <strong><t t-out=\"object.name or ''\"/></strong>\n"
+" <t t-if=\"object.nama\">\n"
+" dengan referensi: \n"
+" <t t-out=\"object.name atau ''\"/> dari jumlah\n"
+" <t t-out=\"object.loan_amount or ''\"/> <t t-out=\"object.currency_id.name or ''\"/>,\n"
+" </t>\n"
+"               \N"
+" dari <t t-out=\"object.company_id.name atau ''\"/>,\n"
+" </p>\n"
+" </div>\n"
+" "
+#. module: jt_loan_management
+#: model:mail.template,body_html:jt_loan_management.mail_template_data_notification_email_loan_details
+msgid ""
+"<html>\n"
+"               <![CDATA[<html>\n"
+"                <head></head>\n"
+"                % set record = ctx.get('record')\n"
+"                % set company = record and record.company_id or ctx.get('company')\n"
+"                <body style=\"margin: 0; padding: 0;\">\n"
+"                <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; background-color: #ededed; border-collapse:separate;\" summary=\"o_mail_notification\">\n"
+"                    <tbody>\n"
+"\n"
+"                      <!-- HEADER -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
+"                            <tr>\n"
+"                              <td valign=\"middle\">\n"
+"                                  <span style=\"font-size:20px; color:white; font-weight: bold;\">\n"
+"                                      ${object.record_name}\n"
+"                                  </span>\n"
+"                              </td>\n"
+"                              <td valign=\"middle\" align=\"right\">\n"
+"                                  <img src=\"/logo.png?company=${company.id}\" style=\"padding: 0px; margin: 0px; height: auto; width: 80px;\" alt=\"${company.name}\">\n"
+"                              </td>\n"
+"                            </tr>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"\n"
+"                      <!-- CONTENT -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#ffffff\" style=\"min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px; border-collapse:separate;\">\n"
+"                            <tbody>\n"
+"                              <td valign=\"top\" style=\"font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;\">\n"
+"                                ${object.body | safe}\n"
+"                              </td>\n"
+"                            </tbody>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"\n"
+"                      <!-- FOOTER -->\n"
+"                      <tr>\n"
+"                        <td align=\"center\" style=\"min-width: 590px;\">\n"
+"                          <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; background-color: rgb(135,90,123); padding: 20px; border-collapse:separate;\">\n"
+"                            <tr>\n"
+"                              <td valign=\"middle\" align=\"left\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                                ${company.name}<br/>\n"
+"                                ${company.phone or ''}\n"
+"                              </td>\n"
+"                              <td valign=\"middle\" align=\"right\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                                % if company.email:\n"
+"                                <a href=\"mailto:${company.email}\" style=\"text-decoration:none; color: white;\">${company.email}</a><br/>\n"
+"                                % endif\n"
+"                                % if company.website:\n"
+"                                    <a href=\"${company.website}\" style=\"text-decoration:none; color: white;\">\n"
+"                                        ${company.website}\n"
+"                                    </a>\n"
+"                                % endif\n"
+"                              </td>\n"
+"                            </tr>\n"
+"                          </table>\n"
+"                        </td>\n"
+"                      </tr>\n"
+"                      <tr>\n"
+"                        <td align=\"center\">\n"
+"                            Powered by <a target=\"_blank\" href=\"https://www.odoo.com\">Odoo</a>.\n"
+"                        </td>\n"
+"                      </tr>\n"
+"                    </tbody>\n"
+"                </table>\n"
+"                </body>\n"
+"                </html>\n"
+"            "
+msgstr ""
+"<html>\n"
+" <![CDATA[<html>\n"
+" <kepala></kepala>\n"
+" % atur rekor = ctx.get('record')\n"
+" % atur perusahaan = record dan record.company_id atau ctx.get('company')\n"
+" <gaya tubuh=\"margin: 0; bantalan: 0;\">\n"
+" <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; background-color: #ededed; border-collapse:separate;\" ringkasan=\"o_mail_notification\">\n"
+" <tubuh>\n"
+"\N"
+" <!-- HEADER -->\n"
+" <tr>\n"
+" <td align=\"center\" style=\"min-width: 590px;\">\n"
+" <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; warna latar belakang: rgb(135,90,123); padding: 20px; perbatasan-runtuh: terpisah;\">\n"
+" <tr>\n"
+" <td valign=\"tengah\">\n"
+" <span style=\"font-size:20px; warna putih; font-berat: tebal;\">\n"
+" ${object.record_name}\n"
+" </span>\n"
+" </td>\n"
+" <td valign=\"middle\" align=\"kanan\">\n"
+" <img src=\"/logo.png?company=${company.id}\" style=\"padding: 0px; margin: 0px; tinggi: otomatis; lebar: 80px;\" alt=\"${nama.perusahaan}\">\n"
+" </td>\n"
+" </tr>\n"
+" </tabel>\n"
+" </td>\n"
+" </tr>\n"
+"\N"
+" <!-- KONTEN -->\n"
+" <tr>\n"
+" <td align=\"center\" style=\"min-width: 590px;\">\n"
+" <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#ffffff\" style=\"min-width: 590px; warna latar belakang: rgb(255, 255, 255); padding: 20px; perbatasan-runtuh: terpisah;\">\n"
+" <tubuh>\n"
+" <td valign=\"top\" style=\"font-family:Arial,Helvetica,sans-serif; warna: #555; ukuran font: 14px;\">\n"
+" ${object.body | aman}\n"
+" </td>\n"
+" </tbody>\n"
+" </tabel>\n"
+" </td>\n"
+" </tr>\n"
+"\N"
+" <!-- FOOTER -->\n"
+" <tr>\n"
+" <td align=\"center\" style=\"min-width: 590px;\">\n"
+" <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#875A7B\" style=\"min-width: 590px; warna latar belakang: rgb(135,90,123); padding: 20px; perbatasan-runtuh: terpisah;\">\n"
+" <tr>\n"
+" <td valign=\"middle\" align=\"left\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; ukuran font: 12px;\">\n"
+" ${namaperusahaan.}<br/>\n"
+" ${perusahaan.telepon atau ''}\n"
+" </td>\n"
+" <td valign=\"middle\" align=\"right\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; ukuran font: 12px;\">\n"
+" % jika perusahaan.email:\n"
+" <a href=\"mailto:${company.email}\" style=\"text-decoration:none; warna: putih;\">${perusahaan.email}</a><br/>\n"
+"% endif\n"
+" % jika perusahaan.situs web:\n"
+" <a href=\"${company.website}\" style=\"text-decoration:none; warna: putih;\">\n"
+" ${perusahaan.situs web}\n"
+" </a>\n"
+"% endif\n"
+" </td>\n"
+" </tr>\n"
+" </tabel>\n"
+" </td>\n"
+" </tr>\n"
+" <tr>\n"
+" <td sejajar=\"pusat\">\n"
+" Didukung oleh <a target=\"_blank\" href=\"https://www.odoo.com\">Odoo</a>.\n"
+" </td>\n"
+" </tr>\n"
+" </tbody>\n"
+" </tabel>\n"
+" </tubuh>\n"
+" </html>\n"
+" "
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<span>By Certain Amount of Days</span>"
+msgstr ""
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<span>By Certain Number of Months</span>"
+msgstr "<span>Dengan Jumlah Hari Tertentu</span>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<strong>Installments</strong>"
+msgstr "<strong>Cicilan</strong>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<strong>Loan Changes</strong>"
+msgstr "<strong>Perubahan Pinjaman</strong>"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "<strong>Loan Details</strong>"
+msgstr "<strong>Detail Pinjaman</strong>"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_product_product__detailed_type
+#: model:ir.model.fields,help:jt_loan_management.field_product_template__detailed_type
+msgid ""
+"A storable product is a product for which you manage stock. The Inventory app has to be installed.\n"
+"A consumable product is a product for which stock is not managed.\n"
+"A service is a non-material product you provide."
+msgstr ""
+"Produk yang dapat disimpan adalah produk yang Anda kelola stoknya. Aplikasi Inventaris harus diinstal.\n"
+"Produk habis pakai adalah produk yang stoknya tidak dikelola.\n"
+"Layanan adalah produk non-materi yang Anda berikan."
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.loan_invoice_line_action
+msgid "Account Invoice Line"
+msgstr "Jalur Faktur Akun"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_account_loan
+msgid "Account Loan"
+msgstr "Pinjaman Rekening"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Account Receivable"
+msgstr "Piutang dagang"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Account Receivable used in loan invoices."
+msgstr "Piutang Usaha digunakan dalam faktur pinjaman."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid ""
+"Account used to write-off the unpaid amount from the invoices, which need to\n"
+"                                            be cancelled when loan was Cancelled / Closed."
+msgstr ""
+"Akun digunakan untuk menghapus jumlah yang belum dibayar dari faktur, yang perlu\n"
+"dibatalkan bila pinjaman Dibatalkan / Ditutup."
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__due_date_selection
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Action"
+msgstr ""
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_needaction
+msgid "Action Needed"
+msgstr "Tindakan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_ids
+msgid "Activities"
+msgstr "Kegiatan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr "Dekorasi Pengecualian Aktivitas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_state
+msgid "Activity State"
+msgstr "Status Aktivitas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_type_icon
+msgid "Activity Type Icon"
+msgstr "Ikon Jenis Aktivitas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__all_lines_has_invoice
+msgid "All lines has invoice?"
+msgstr "Semua lini memiliki faktur?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__of_days
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Allow # of days after due"
+msgstr "Izinkan # hari setelah jatuh tempo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__total_amount_due
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Amount Due"
+msgstr "Jumlah Terutang"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid "Amount cannot be recomputed if invoices exists already"
+msgstr "Jumlah tidak dapat dihitung ulang jika faktur sudah ada"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__interests_amount
+msgid "Amount from the the payment that will be set aside as interest"
+msgstr "Jumlah dari pembayaran yang akan disisihkan sebagai bunga"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__principal_amount
+msgid ""
+"Amount of the payment that will reduce the pending loan principal amount"
+msgstr ""
+"Jumlah pembayaran yang akan mengurangi jumlah pokok pinjaman yang tertunda"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__amount
+msgid "Amount to Pay"
+msgstr "Jumlah yang harus dibayar"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_loan_line
+msgid "Annuity"
+msgstr "Anuitas"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__is_down_payment
+msgid "Any Down Payment?"
+msgstr "Ada Uang Muka?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_attachment_count
+msgid "Attachment Count"
+msgstr "Jumlah Lampiran"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Auto Invoice Create Date"
+msgstr "Tanggal Pembuatan Faktur Otomatis"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Bad Debt Accounts for Loans"
+msgstr "Akun Utang Macet untuk Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__balance
+msgid "Balance"
+msgstr "Keseimbangan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__penalty_type__percentage_based
+msgid "Based on Percentage"
+msgstr "Berdasarkan Persentase"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_product__bill_amount
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_template__bill_amount
+msgid "Bill Amount"
+msgstr "Jumlah tagihan"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.loan_property_1
+#: model:product.template,name:jt_loan_management.loan_property_1_product_template
+msgid "Blue Bells"
+msgstr "Lonceng Biru"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.ins_property_1
+#: model:product.template,name:jt_loan_management.ins_property_1_product_template
+msgid "Blue Bells Insurance"
+msgstr "Asuransi Lonceng Biru"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.tax_property_1
+#: model:product.template,name:jt_loan_management.tax_property_1_product_template
+msgid "Blue Bells Tax"
+msgstr "Pajak Lonceng Biru"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__loan_changes__due_date_selection__by_days
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__due_date_selection__by_days
+msgid "By Certain Amount of Days"
+msgstr "Dengan Jumlah Hari Tertentu"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__loan_changes__due_date_selection__by_month
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__due_date_selection__by_month
+msgid "By Number of Months"
+msgstr "Dengan Jumlah Bulan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_pay_amount_form
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.move_due_date_of_loan_wizard
+msgid "Cancel"
+msgstr "Membatalkan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Cancel Loan"
+msgstr "Batalkan Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__state__cancelled
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Cancelled"
+msgstr "Dibatalkan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid ""
+"Cancelling the loan is irreversible action.                           Once "
+"you confirm that, All Open and Draft invoice will be cancelled and Partial "
+"Invoices                            will be paid with Write-off account!"
+msgstr ""
+"Membatalkan pinjaman adalah tindakan yang tidak dapat diubah. Sekali "
+"Anda mengonfirmasi bahwa, Faktur Semua Terbuka dan Draf akan dibatalkan dan Sebagian "
+"Faktur akan dibayar dengan akun Write-off!"
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.inherit_for_cashed_paid_widget
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.inherit_tem_for_cashed_paid_widget
+msgid "Cashed"
+msgstr "Diuangkan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__charge
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__charge
+msgid "Charge"
+msgstr "Mengenakan biaya"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__penalty_type
+msgid "Charge Penalty"
+msgstr "Biaya Penalti"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Charge Penalty Or Interest :"
+msgstr "Membebankan Denda Atau Bunga :"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Charge penalty with :"
+msgstr "Biaya penalti dengan:"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__penalty
+msgid "Charge penalty?"
+msgstr "Biaya penalti?"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+msgid "Close"
+msgstr "Menutup"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__close_date
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__close_date
+msgid "Close Date"
+msgstr "Tanggal Tutup"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__cancel_loan
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Close Loan"
+msgstr "Tutup Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__state__closed
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Closed"
+msgstr "Tertutup"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__expected_end_date
+msgid "Closing Date"
+msgstr "Tanggal Penutupan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid ""
+"Closing the loan is irreversible action.                             Once "
+"you confirm that, All Open and Draft invoice will be cancelled!"
+msgstr ""
+"Menutup pinjaman adalah tindakan yang tidak dapat diubah. Sekali "
+"Anda mengonfirmasi bahwa, Faktur Semua Terbuka dan Draf akan dibatalkan!"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__company_id
+msgid "Company"
+msgstr "Perusahaan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__interest_type__compound
+msgid "Compound Interest"
+msgstr "Bunga Majemuk"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__is_compute_items
+msgid "Compute Items"
+msgstr "Hitung Item"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Compute items"
+msgstr "Hitung Item"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_res_config_settings
+msgid "Config Settings"
+msgstr "Pengaturan Konfigurasi"
+
+#. module: jt_loan_management
+#: model:ir.ui.menu,name:jt_loan_management.account_config
+msgid "Configurations"
+msgstr "Konfigurasi"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_res_partner
+msgid "Contact"
+msgstr "Kontak"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__inv_counter
+msgid "Count Invoice"
+msgstr "Hitung Faktur"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan_pay_amount__extra_payment__pay_2
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_payment_history__payment_method__pay_2
+msgid "Cover all next due installments"
+msgstr "Mencakup semua cicilan jatuh tempo berikutnya"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan_pay_amount__extra_payment__pay_3
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_payment_history__payment_method__pay_3
+msgid "Cover only principal outstanding"
+msgstr "Mencakup hanya kepala sekolah yang beredar"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__create_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__create_uid
+msgid "Created by"
+msgstr "Dibuat oleh"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__create_date
+msgid "Created on"
+msgstr "Dibuat pada"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__credit
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.transaction_history_for_loan
+msgid "Credit"
+msgstr "Kredit"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__currency_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__currency_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__currency_id
+msgid "Currency"
+msgstr "Mata uang"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__rate
+msgid "Currently applied rate"
+msgstr "Tarif yang diterapkan saat ini"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__partner_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.invoice_order_line_tree
+msgid "Customer"
+msgstr "Pelanggan"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_invoice_line_product
+#: model:ir.actions.act_window,name:jt_loan_management.action_invoice_line_product_tem
+msgid "Customer Invoices"
+msgstr "Faktur Pelanggan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__date
+msgid "Date"
+msgstr "Tanggal"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__date
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Date of Change"
+msgstr "Tanggal Perubahan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__date
+msgid "Date when the payment will be accounted for"
+msgstr "Tanggal kapan pembayaran akan dipertanggungjawabkan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__days_past_due
+msgid "Days Due"
+msgstr "Hari Jatuh Tempo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__days_to_add
+msgid "Days to Postpone"
+msgstr "Hari untuk Ditunda"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Days/Month Added"
+msgstr "Hari/Bulan Ditambahkan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__data_added
+msgid "Days/Months Postponed"
+msgstr "Hari/Bulan Ditunda"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__debit
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.transaction_history_for_loan
+msgid "Debit"
+msgstr "Debet"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__description
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__description
+msgid "Description"
+msgstr "Keterangan"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.loan_property_2
+#: model:product.template,name:jt_loan_management.loan_property_2_product_template
+msgid "Diamond Hill"
+msgstr "Bukit Berlian"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.ins_property_2
+#: model:product.template,name:jt_loan_management.ins_property_2_product_template
+msgid "Diamond Hill Insurance"
+msgstr "Asuransi Bukit Berlian"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.tax_property_2
+#: model:product.template,name:jt_loan_management.tax_property_2_product_template
+msgid "Diamond Hill Tax"
+msgstr "Pajak Bukit Berlian"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__disbursement_acc_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Disbursement Account"
+msgstr "Akun Pencairan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Disbursement Account used in loan amount entry."
+msgstr "Akun Pencairan digunakan dalam entri jumlah pinjaman."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__disbursement_journal_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Disbursement Journal"
+msgstr "Jurnal Pencairan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Disbursement Journal used in loan amount entry."
+msgstr "Jurnal Pencairan digunakan dalam entri jumlah pinjaman."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__display_name
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__display_name
+msgid "Display Name"
+msgstr "Nama tampilan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid ""
+"Do you really want to validate the loan? After that no "
+" changes to the accounts or                              amounts are allowed! Define Insurance and Tax if land countract loan!"
+msgstr ""
+"Apakah Anda benar-benar ingin memvalidasi pinjaman? Setelah itu tidak"
+"perubahan pada akun atau jumlah diperbolehkan! Tentukan Asuransi dan Pajak jika pinjaman menghitung tanah!"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__down_payment
+msgid "Down Payment"
+msgstr "Uang muka"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__state__draft
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Draft"
+msgstr "Draf"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Due Date"
+msgstr "Tenggat waktu"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.due_invoice_cron_ir_actions_server
+#: model:ir.cron,cron_name:jt_loan_management.due_invoice_cron
+#: model:ir.cron,name:jt_loan_management.due_invoice_cron
+msgid "Due invoice charges"
+msgstr "Biaya faktur jatuh tempo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__charge_option
+msgid "Due penalty method"
+msgstr "Metode pinalti"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#, python-format
+msgid "Enter Customer Name"
+msgstr "Masukkan Nama Pelanggan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Enter Interest par Anum. (%)"
+msgstr "Masukkan Bunga par Anum. (%)"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__expected_end_date
+msgid "Expected end date of closing loan"
+msgstr "Tanggal akhir yang diharapkan dari penutupan pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_loan_pay_amount
+msgid "Extra Amount"
+msgstr "Jumlah Ekstra"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.account_loan_pay_amount_action
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Extra Payment"
+msgstr "Pembayaran Ekstra"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__extra_payment
+msgid "Extra Payment Type"
+msgstr "Jenis Pembayaran Ekstra"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__final_pending_principal_amount
+msgid "Final Pending Principal Amount"
+msgstr "Jumlah Pokok Tertunda Akhir"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__res_config_settings__charge_option__fixed
+msgid "Fixed"
+msgstr "Tetap"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__fixed_amount
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__penalty_type__fixed_amt
+msgid "Fixed Amount"
+msgstr "Jumlah Tetap"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__fixed_loan_amount
+msgid "Fixed Loan Amount"
+msgstr "Jumlah Pinjaman Tetap"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__fixed_periods
+msgid "Fixed Periods"
+msgstr "Periode Tetap"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Fixed amount"
+msgstr "Jumlah tetap"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_follower_ids
+msgid "Followers"
+msgstr "Pengikut"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Pengikut (Mitra)"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr "Ikon font mengagumkan mis. tugas-fa"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.generate_old_loan_invoices
+msgid "Generate Loan Invoices"
+msgstr "Menghasilkan Faktur Pinjaman"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+msgid "Group By"
+msgstr "Kelompokkan Menurut"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__has_invoices
+msgid "Has Invoices?"
+msgstr "Memiliki Faktur?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__has_message
+msgid "Has Message"
+msgstr "Memiliki Pesan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__history_id
+msgid "History"
+msgstr "Sejarah"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__id
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__id
+msgid "ID"
+msgstr "PENGENAL"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_exception_icon
+msgid "Icon"
+msgstr "Ikon"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr "Ikon untuk menunjukkan aktivitas pengecualian."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_needaction
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_unread
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_has_error
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_has_sms_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Jika dicentang, pesan baru memerlukan perhatian Anda."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "In Percentage (%)"
+msgstr "Dalam Persentase (%)"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Income Account used in loan invoice items."
+msgstr "Rekening Pendapatan yang digunakan dalam item faktur pinjaman."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Initial Due Date"
+msgstr ""
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__start_date
+msgid "Initial date of the loan/first period as given in contract"
+msgstr "Tanggal awal pinjaman/periode pertama seperti yang diberikan dalam kontrak"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__old_inv_date
+msgid "Initial due date"
+msgstr "Tanggal jatuh tempo awal"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__first_payment_due
+msgid "Installment Due Date"
+msgstr "Tanggal Jatuh Tempo Angsuran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__inv_create_date
+#: model:ir.model.fields,help:jt_loan_management.field_res_config_settings__inv_create_date
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid ""
+"Installment Invoice Create Date before how much days from installment due "
+"date."
+msgstr ""
+"Tanggal Pembuatan Faktur Angsuran sebelum berapa hari dari jatuh tempo cicilan"
+"tanggal."
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Installment's Changes"
+msgstr "Perubahan Angsuran"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Installments"
+msgstr "Angsuran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__insurance_balance
+msgid "Insurance"
+msgstr "Pertanggungan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Insurance Paid"
+msgstr "Asuransi Dibayar"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__insurance_sale_price
+msgid "Insurance product price"
+msgstr "Harga produk asuransi"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__res_config_settings__penalty_option__interest
+#: model:product.product,name:jt_loan_management.interest_prod
+#: model:product.product,name:jt_loan_management.product_product_interest
+#: model:product.template,name:jt_loan_management.interest_prod_product_template
+#: model:product.template,name:jt_loan_management.product_product_interest_product_template
+msgid "Interest"
+msgstr "Minat"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Interest Amount"
+msgstr "Jumlah Bunga"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__interest_due_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__interest_due_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__interest_due_date
+msgid "Interest Due Date"
+msgstr "Tanggal Jatuh Tempo Bunga"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__total_interest_balance
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Interest Paid"
+msgstr "Bunga Dibayar"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__interest_prod_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Interest Product"
+msgstr "Produk Minat"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__interest_type
+msgid "Interest Type"
+msgstr "Jenis Bunga"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__interest_inv_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__interest_inv_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__interest_inv_id
+msgid "Interest inv ref"
+msgstr "Minat inv ref"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Interests"
+msgstr "Minat"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__interests_amount
+msgid "Interests Amount"
+msgstr "Jumlah Bunga"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__comment
+msgid "Internal Notes"
+msgstr "Catatan Internal"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__invoice_ids
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__move_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__move_id
+msgid "Invoice"
+msgstr "Faktur"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_product__invoice_amount
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_template__invoice_amount
+msgid "Invoice Amount"
+msgstr "Jumlah tagihan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__invoice_count
+msgid "Invoice Count"
+msgstr "Jumlah Faktur"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__date_invoice
+msgid "Invoice Date"
+msgstr "Tanggal faktur"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.loan_view_invoice_line_tree
+msgid "Invoice Line"
+msgstr "Jalur Faktur"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.invoice_order_line_tree
+msgid "Invoice Lines"
+msgstr "Garis Faktur"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__invoice_ids
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Invoices"
+msgstr "Faktur"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_payment__reconciled_invoice_ids
+msgid "Invoices whose journal items have been reconciled with these payments."
+msgstr "Faktur yang item jurnalnya telah direkonsiliasi dengan pembayaran ini."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__is_down_payment
+msgid "Is Down Payment?"
+msgstr "Apakah Uang Muka?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__is_down_payment
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__is_down_payment
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__is_down_payment
+msgid "Is Downpayment?"
+msgstr "Apakah Uang Muka?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__emi
+msgid "Is EMI?"
+msgstr ""
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_is_follower
+msgid "Is Follower"
+msgstr "Adalah Pengikut"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__emi
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__emi
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__emi
+msgid "Is Installment?"
+msgstr "Apakah Angsuran?"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__is_leasing
+msgid "Is Land Contract"
+msgstr "Apakah Kontrak Tanah"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__journal_id
+msgid "Journal"
+msgstr "Jurnal"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_move
+msgid "Journal Entry"
+msgstr "Entri Jurnal"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_move_line
+msgid "Journal Item"
+msgstr "Item Jurnal"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Journal used in loan invoice."
+msgstr "Jurnal yang digunakan dalam faktur pinjaman."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history____last_update
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date____last_update
+msgid "Last Modified on"
+msgstr "Terakhir Diubah pada"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__write_uid
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__write_uid
+msgid "Last Updated by"
+msgstr "Terakhir Diperbarui oleh"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__write_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__write_date
+msgid "Last Updated on"
+msgstr "Terakhir diperbarui saat"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__line_ids
+msgid "Line"
+msgstr "Garis"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_loan
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__loan_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__loan_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Loan"
+msgstr "Meminjamkan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__acc_rec_id
+msgid "Loan Account Receivable"
+msgstr "Piutang Rekening Piutang"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__loan_amount
+msgid "Loan Amount"
+msgstr "Jumlah pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.loan_invoice_auto_ir_actions_server
+#: model:ir.cron,cron_name:jt_loan_management.loan_invoice_auto
+#: model:ir.cron,name:jt_loan_management.loan_invoice_auto
+msgid "Loan Auto Invoice Generation"
+msgstr "Pembuatan Faktur Otomatis Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_loan_changes
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__loan_payment_change_ids
+msgid "Loan Changes"
+msgstr "Perubahan Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.actions.report,name:jt_loan_management.action_report_loan_details
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.customer_invoice_trust_form
+msgid "Loan Details"
+msgstr "Detail Pinjaman"
+
+#. module: jt_loan_management
+#: model:mail.template,name:jt_loan_management.email_template_loan_details
+msgid "Loan Details - Send by Email"
+msgstr "Detail Pinjaman - Kirim melalui Email"
+
+#. module: jt_loan_management
+#: model:mail.template,name:jt_loan_management.mail_template_data_notification_email_loan_details
+msgid "Loan Details Notification Email"
+msgstr "Email Pemberitahuan Detail Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__income_acc_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Loan Income Account"
+msgstr "Akun Pendapatan Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__loan_interest
+msgid "Loan Interest"
+msgstr "Bunga pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move_line__loan_invoice_id
+msgid "Loan Invoice"
+msgstr "Faktur Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__name
+msgid "Loan Invoice Range"
+msgstr "Kisaran Faktur Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_loan_invoice
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__loan_inv_ids
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Loan Invoices"
+msgstr "Faktur Pinjaman"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Loan Journal"
+msgstr "Jurnal Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__loan_line_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__loan_line_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__loan_line_id
+msgid "Loan Line"
+msgstr "Jalur Pinjaman"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Loan Name/ID"
+msgstr "Nama/ID Pinjaman"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Loan Payment"
+msgstr "Pembayaran Pinjaman"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.res_partner_view_inherit
+msgid "Loan Payments"
+msgstr "Pembayaran pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__loan_principal
+msgid "Loan Principal"
+msgstr "Pokok Pinjaman"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Loan items"
+msgstr "Barang pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.constraint,message:jt_loan_management.constraint_account_loan_name_uniq
+msgid "Loan name must be unique"
+msgstr "Nama pinjaman harus unik"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.ir_actions_server_send_loan_detail_email
+msgid "Loan: Send Loan Detail Email"
+msgstr "Pinjaman: Kirim Email Detail Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.account_loan_action
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_partner__loan_count
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_users__loan_count
+#: model:ir.ui.menu,name:jt_loan_management.account_loan_menu
+#: model:ir.ui.menu,name:jt_loan_management.menu_loans
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.res_partner_view_inherit
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Loans"
+msgstr "Pinjaman"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Loans Accounts and Products"
+msgstr "Rekening dan Produk Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.module.category,name:jt_loan_management.module_category_loans
+msgid "Loans App"
+msgstr "Aplikasi Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.module.category,description:jt_loan_management.module_category_loans
+msgid "Loans App Access Rights"
+msgstr "Hak Akses Aplikasi Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__loan_jou_id
+msgid "Loans Journal"
+msgstr "Jurnal Pinjaman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Lampiran Utama"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__main_invoice_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__main_invoice_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__main_invoice_id
+msgid "Main Invoice"
+msgstr "Faktur Utama"
+
+#. module: jt_loan_management
+#: model:res.groups,name:jt_loan_management.group_loan_manager
+msgid "Manager"
+msgstr "Pengelola"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_has_error
+msgid "Message Delivery error"
+msgstr "Kesalahan Pengiriman Pesan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_ids
+msgid "Messages"
+msgstr "Pesan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__month
+msgid "Month"
+msgstr "Bulan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__months_to_add
+msgid "Months to Postpone"
+msgstr "Bulan untuk Ditunda"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__move_by_keep_tax_ins
+msgid "Moved by Keep Tax and Insurance"
+msgstr "Digerakkan oleh Keep Tax and Insurance"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr "Batas Waktu Aktivitas Saya"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__name
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__name
+msgid "Name"
+msgstr "Nama"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_bank_statement_line__partner
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__partner_id
+#: model:ir.model.fields,help:jt_loan_management.field_account_move__partner
+#: model:ir.model.fields,help:jt_loan_management.field_account_payment__partner
+msgid "Name of Customer that borrows the money at an interest rate."
+msgstr "Nama Nasabah yang meminjam uang dengan suku bunga."
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "New"
+msgstr "Baru"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "New Due Date"
+msgstr "Tanggal Jatuh Tempo Baru"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__new_inv_date
+msgid "New due date"
+msgstr "Tanggal Jatuh Tempo Baru"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr "Batas Waktu Kegiatan Selanjutnya"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_summary
+msgid "Next Activity Summary"
+msgstr "Rangkuman Kegiatan Selanjutnya"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_type_id
+msgid "Next Activity Type"
+msgstr "Jenis Aktivitas Selanjutnya"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "No"
+msgstr "TIDAK"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__inv_create_date
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__inv_create_date
+msgid "No. of Days"
+msgstr "Jumlah Hari"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__periods
+msgid "No. of Installments"
+msgstr "Jumlah Angsuran"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Note"
+msgstr "Catatan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Note..."
+msgstr "Catatan..."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Jumlah Tindakan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_has_error_counter
+msgid "Number of errors"
+msgstr "Jumlah kesalahan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Jumlah pesan yang memerlukan tindakan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Jumlah pesan dengan kesalahan pengiriman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__periods
+msgid "Number of periods (months) that the loan will last"
+msgstr "Jumlah periode (bulan) pinjaman akan berlangsung"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Jumlah pesan yang belum dibaca"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Only loans in Draft state can be posted"
+msgstr "Hanya pinjaman dalam status Draf yang dapat diposting"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Outstanding Balanace"
+msgstr "Saldo Luar Biasa"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__outstanding_bal
+msgid "Outstanding Balance"
+msgstr "Saldo Luar Biasa"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__amount
+msgid "Paid Amount"
+msgstr "Jumlah pembayaran"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.inherit_for_cashed_paid_widget
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.inherit_tem_for_cashed_paid_widget
+msgid "Paid For"
+msgstr "Dibayar untuk"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Paid On"
+msgstr "Dibayarkan pada"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__paid_on
+msgid "Paid on"
+msgstr "Dibayarkan pada"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__partner
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__partner
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__partner
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__partner_id
+msgid "Partner"
+msgstr "Mitra"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_pay_amount_form
+msgid "Pay"
+msgstr "Membayar"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_pay_amount_form
+msgid "Pay amount"
+msgstr "Jumlah pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__payment_ids
+msgid "Payment"
+msgstr "Pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__payment_amount
+msgid "Payment Amount"
+msgstr "Jumlah pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__date
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__payment_date
+msgid "Payment Date"
+msgstr "Tanggal pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__payment_day
+msgid "Payment Day"
+msgstr "Hari Pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_account_payment_history
+msgid "Payment History"
+msgstr "Riwayat Pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__journal_id
+msgid "Payment Journal"
+msgstr "Jurnal Pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment_history__payment_method
+msgid "Payment Method"
+msgstr "Cara Pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__payment_on_first_period
+msgid "Payment On First Period"
+msgstr "Pembayaran Pada Periode Pertama"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__payment_ids
+msgid "Payment Reference"
+msgstr "Referensi pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.view_partner_payments
+#: model:ir.actions.act_window,name:jt_loan_management.view_payments
+#: model:ir.model,name:jt_loan_management.model_account_payment
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.loan_payment_history_form_view
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.loan_payment_history_tree_view
+msgid "Payments"
+msgstr "Pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__res_config_settings__penalty_option__penalty
+#: model:product.product,name:jt_loan_management.product_product_penalty
+#: model:product.template,name:jt_loan_management.product_product_penalty_product_template
+msgid "Penalty"
+msgstr "Penalti"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__penalty_option
+msgid "Penalty / Interest ?"
+msgstr "Denda / Bunga ?"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Penalty Amount"
+msgstr "Jumlah Denda"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__penalty_due
+msgid "Penalty Outstanding"
+msgstr "Penalti Luar Biasa"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__penalty_paid
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Penalty Paid"
+msgstr "Penalti Dibayar"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Penalty on Due Invoices"
+msgstr "Penalti atas Faktur yang Jatuh Tempo"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__penalty
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__penalty
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__penalty
+msgid "Penalty?"
+msgstr "Penalti?"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Pending Principal"
+msgstr "Menunggu Kepala Sekolah"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__pending_principal_amount
+msgid "Pending Principal Amount"
+msgstr "Jumlah Pokok Tertunda"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__final_pending_principal_amount
+msgid "Pending amount of the loan after the payment"
+msgstr "Jumlah pinjaman yang tertunda setelah pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__pending_principal_amount
+msgid "Pending amount of the loan before the next payment"
+msgstr "Jumlah pinjaman yang tertunda sebelum pembayaran berikutnya"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__res_config_settings__charge_option__percentage
+msgid "Percentage"
+msgstr "Persentase"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#, python-format
+msgid ""
+"Please Configure 'Account receivable' from Loan -> Configuration -> Setting!"
+msgstr ""
+"Silakan Konfigurasikan 'Piutang' dari Pinjaman -> Konfigurasi -> Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#, python-format
+msgid ""
+"Please Configure 'Loan Account Receivable' from Loans -> Configurations -> "
+"Settings!"
+msgstr ""
+"Silakan Konfigurasikan 'Piutang Piutang' dari Pinjaman -> Konfigurasi -> "
+"Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please Configure Account receivable from Loan -> Configurations -> Account "
+"Setting!"
+msgstr ""
+"Harap Konfigurasi Piutang Rekening dari Pinjaman -> Konfigurasi -> Rekening"
+"Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Please Configure Default Credit Account for 'Loan Journal'!"
+msgstr "Harap Konfigurasi Akun Kredit Default untuk 'Jurnal Pinjaman'!"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please Configure Disbursement Account from Loans -> Configurations -> "
+"Settings!"
+msgstr ""
+"Silakan Konfigurasikan Akun Pencairan dari Pinjaman -> Konfigurasi ->"
+"Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please Configure Disbursement Journal from Loans -> Configurations -> "
+"Settings!"
+msgstr ""
+"Silakan Konfigurasikan Jurnal Pencairan dari Pinjaman -> Konfigurasi ->"
+"Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please Configure Income Account from Loans -> Configurations -> Settings!"
+msgstr ""
+"Silakan Konfigurasikan Akun Pendapatan dari Pinjaman -> Konfigurasi -> Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#: code:addons/jt_loan_management/wizard/account_loan_pay_amount.py:0
+#, python-format
+msgid ""
+"Please Configure Loan Journal from Loans -> Configurations -> Settings!"
+msgstr ""
+"Silakan Konfigurasi Jurnal Pinjaman dari Pinjaman -> Konfigurasi -> Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please Configure Processing Fee Product from Loans -> Configurations -> "
+"Settings!"
+msgstr ""
+"Silakan Konfigurasi Produk Biaya Pemrosesan dari Pinjaman -> Konfigurasi ->"
+"Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please configure 'Interest Product' from Loan -> Configurations -> Account "
+"Setting!"
+msgstr ""
+"Harap konfigurasikan 'Produk Bunga' dari Pinjaman -> Konfigurasi -> Akun "
+"Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please configure 'Loan Journal' from Loans -> Configurations -> Settings!"
+msgstr ""
+"Silakan konfigurasikan 'Jurnal Pinjaman' dari Pinjaman -> Konfigurasi -> Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please configure 'Principal Product' from Loan -> Configurations -> Account "
+"Setting!"
+msgstr ""
+"Silakan konfigurasikan 'Produk Utama' dari Pinjaman -> Konfigurasi -> Akun "
+"Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please configure 'Write off Account' from Loan -> Configurations -> "
+"Settings!"
+msgstr ""
+"Silakan konfigurasikan 'Hapus Akun' dari Pinjaman -> Konfigurasi -> "
+"Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan_line.py:0
+#, python-format
+msgid ""
+"Please configure Loan Journal from Loan -> Configurations -> Account "
+"Settings!"
+msgstr ""
+"Silakan konfigurasikan Jurnal Pinjaman dari Pinjaman -> Konfigurasi -> Akun "
+"Pengaturan!"
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Please configure Loan Journal from Loan -> Configurations ->Settings!"
+msgstr "Harap konfigurasikan Jurnal Pinjaman dari Pinjaman -> Konfigurasi -> Pengaturan!"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid ""
+"Please configure Principal and Interest product from Loan -> Configurations "
+"->Settings!"
+msgstr ""
+"Silakan konfigurasi produk Pokok dan Bunga dari Pinjaman -> Konfigurasi"
+"->Pengaturan!"
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.move_due_date_of_loan_wizard
+msgid ""
+"Please select the item which you want to postpone. Rest selected items you "
+"need to pay for."
+msgstr ""
+"Silahkan pilih item yang ingin anda tunda. Selebihnya pilih item yang anda pilih"
+"perlu membayar."
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Posted"
+msgstr "Diposting"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.move_due_date_of_loan_wizard
+msgid "Postpone"
+msgstr "Menunda"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__due_date_selection
+msgid "Postpone Installment by"
+msgstr "Tunda Angsuran oleh"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Postpone Installments"
+msgstr "Menunda Angsuran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__move_invoices_since
+msgid "Postpone Installments Since"
+msgstr "Menunda Angsuran Sejak"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_move_due_date
+msgid "Postpone Instaments"
+msgstr "Menunda Instan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__postpone_penalty
+msgid "Postpone Penalty"
+msgstr "Penundaan hukuman"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__insurance_sale_price
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__tax_sale_price
+msgid "Price at which the product is sold to customers."
+msgstr "Harga di mana produk dijual kepada pelanggan."
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.principal_prod
+#: model:product.template,name:jt_loan_management.principal_prod_product_template
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Principal"
+msgstr "Kepala sekolah"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__principal_amount
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Principal Amount"
+msgstr "Jumlah Pokok"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__total_principal_balance
+msgid "Principal Balance"
+msgstr "Saldo Pokok"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Principal Paid"
+msgstr "Pokok Dibayar"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__principal_prod_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Principal Product"
+msgstr "Produk Utama"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__processing_fee_prod_id
+msgid "Processing Fee"
+msgstr "Biaya pengolahan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__processing_fee_inv_id
+msgid "Processing Fee Invoice"
+msgstr "Memproses Faktur Biaya"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Processing Fee Product"
+msgstr "Produk Biaya Pemrosesan"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_product_product
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__product_id
+msgid "Product"
+msgstr "Produk"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_product_template
+msgid "Product Template"
+msgstr "Templete Produk"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_product__detailed_type
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_template__detailed_type
+msgid "Product Type"
+msgstr "Tipe Produk"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_res_config_settings__processing_fee_prod_id
+msgid "Product used as Processing fee of the loans."
+msgstr "Produk yang digunakan sebagai biaya pemrosesan pinjaman."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_res_config_settings__interest_prod_id
+msgid "Product used to invoice as interest of the loans."
+msgstr "Produk yang digunakan untuk menagih sebagai bunga pinjaman."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_res_config_settings__principal_prod_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Product used to invoice as principal of the loans."
+msgstr "Produk yang digunakan untuk menagih sebagai pokok pinjaman."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Product used to invoice as processing fee from the loans."
+msgstr "Produk digunakan untuk menagih sebagai biaya pemrosesan dari pinjaman."
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Product used to invoice as the interest of the loans."
+msgstr "Produk digunakan untuk menagih sebagai bunga pinjaman."
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.loan_property_action
+msgid "Products"
+msgstr "Produk"
+
+#. module: jt_loan_management
+#: model:ir.ui.menu,name:jt_loan_management.property_product_menu
+msgid "Properties"
+msgstr "Properti"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__product_template__detailed_type__property
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__product_template__type__property
+msgid "Property"
+msgstr "Properti"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__insurance_product_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__property_ins
+msgid "Property Insurance"
+msgstr "Asuransi properti"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__tax_product_id
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__property_tax
+msgid "Property Tax"
+msgstr "Pajak Bumi dan Bangunan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__rate
+msgid "Rate"
+msgstr "Kecepatan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__rate_period
+msgid "Rate per month"
+msgstr "Tarif per bulan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__rate_period
+msgid "Real rate that will be applied on each period"
+msgstr "Tarif riil yang akan diterapkan pada setiap periode"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_changes__reason
+#: model:ir.model.fields,field_description:jt_loan_management.field_move_due_date__reason
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Reason"
+msgstr "Alasan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__reconciled_invoice_ids
+msgid "Reconciled Invoices"
+msgstr "Faktur yang Direkonsiliasi"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_transaction_history__reference
+msgid "Reference"
+msgstr "Referensi"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_payment_history__payment_method__reg_pay
+msgid "Register Payment (on Invoice)"
+msgstr "Daftarkan Pembayaran (pada Faktur)"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__remaining_principal_amount
+msgid "Remaining Principal"
+msgstr "Kepala Sekolah yang tersisa"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__loan_changes__due_date_selection__reset
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__move_due_date__due_date_selection__reset
+msgid "Reset all Installment's date"
+msgstr "Setel ulang semua tanggal Angsuran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__residual_amount
+msgid "Residual Amount"
+msgstr "Jumlah Residu"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__residual_amount
+msgid ""
+"Residual amount of the land contract that must be paid at the end  in order "
+"to acquire the property"
+msgstr ""
+"Jumlah sisa kontrak tanah yang harus dibayar pada akhir pesanan"
+"memperoleh harta"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__activity_user_id
+msgid "Responsible User"
+msgstr "Pengguna yang Bertanggung Jawab"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__round_on_end
+msgid "Round On End"
+msgstr "Putaran Di Akhir"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_has_sms_error
+msgid "SMS Delivery error"
+msgstr "Kesalahan Pengiriman SMS"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+msgid "Search Loan For"
+msgstr "Cari Pinjaman Untuk"
+
+#. module: jt_loan_management
+#: model:ir.actions.server,name:jt_loan_management.ir_cron_send_email_ir_actions_server
+#: model:ir.cron,cron_name:jt_loan_management.ir_cron_send_email
+#: model:ir.cron,name:jt_loan_management.ir_cron_send_email
+msgid "Send Automatic Email"
+msgstr "Kirim Email Otomatis"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Seq"
+msgstr "Urutan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__sequence
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__sequence_number
+msgid "Sequence"
+msgstr "Urutan"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_loan_configuration
+#: model:ir.ui.menu,name:jt_loan_management.account_setting
+msgid "Settings"
+msgstr "Pengaturan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan_pay_amount__extra_payment__pay_1
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_payment_history__payment_method__pay_1
+msgid "Settle with next due instalment rest with principal"
+msgstr "Selesaikan sisa cicilan jatuh tempo berikutnya dengan pokok"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__interest_type__simple
+msgid "Simple Interest"
+msgstr "Bunga Sederhana"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Some invoices payments are partially paid. You need to pay them."
+msgstr "Beberapa pembayaran faktur dibayar sebagian. Anda harus membayar mereka."
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/model/account_loan.py:0
+#, python-format
+msgid "Some payments are already registered. You need to cancel them."
+msgstr "Beberapa pembayaran sudah terdaftar. Anda harus membatalkannya."
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_bank_statement_line__splitted_invoice
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_move__splitted_invoice
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_payment__splitted_invoice
+msgid "Splitted Invoice"
+msgstr "Faktur Terpisah"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__start_date
+msgid "Start Date"
+msgstr "Mulai tanggal"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__state
+msgid "State"
+msgstr "Negara"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__method_period
+msgid "State here the time between 2 installments, in months"
+msgstr "Nyatakan di sini waktu antara 2 angsuran, dalam bulan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_view_search
+msgid "Status"
+msgstr "Status"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+"Status berdasarkan aktivitas\n"
+"Terlambat: Tanggal jatuh tempo sudah lewat\n"
+"Hari ini: Tanggal aktivitas adalah hari ini\n"
+"Direncanakan: Kegiatan masa depan."
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__tax_balance
+msgid "Tax"
+msgstr "Pajak"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Tax Paid"
+msgstr "Pajak yang di bayar"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Tax and Insurance"
+msgstr "Pajak dan Asuransi"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__tax_sale_price
+msgid "Tax product price"
+msgstr "Harga produk pajak"
+
+#. module: jt_loan_management
+#: code:addons/jt_loan_management/wizard/move_due_date_of_loan.py:0
+#, python-format
+msgid ""
+"The invoices can't be moved since %s as payment was already registered for "
+"an invoice after this date. Please pick later date for the push back"
+msgstr ""
+"Faktur tidak dapat dipindahkan sejak %s karena pembayaran telah didaftarkan untuk "
+"faktur setelah tanggal ini. Silakan pilih tanggal nanti untuk mendorong kembali"
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__method_period
+msgid "Time between two installments(In Month)"
+msgstr "Waktu antara dua angsuran (Dalam Bulan)"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.report_loan_detail
+msgid "Total"
+msgstr "Total"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__total_invoice_amount
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.invoice_order_line_tree
+msgid "Total Amount"
+msgstr "Jumlah total"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__amount_due
+msgid "Total Amount Due"
+msgstr "Jumlah total karena"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__total_payments
+msgid "Total Paid Payments"
+msgstr "Total Pembayaran Dibayar"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.loan_payment_history_tree_view
+msgid "Total Payment"
+msgstr "Total pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_partner__total_payment_amount
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_users__total_payment_amount
+msgid "Total Payment Amount"
+msgstr "Total Jumlah Pembayaran"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_line__penalty_amount
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Total Penalty"
+msgstr "Penalti Total"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.invoice_order_line_tree
+msgid "Total Quantity"
+msgstr "Jumlah total"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan_line__payment_amount
+msgid "Total amount that will be paid (installment)"
+msgstr "Jumlah total yang akan dibayarkan (cicilan)"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Total interests"
+msgstr "Minat total"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Total payments"
+msgstr "Jumlah pembayaran"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_line_tree
+msgid "Total principal"
+msgstr "Jumlah kepala sekolah"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__transaction_balance
+msgid "Transaction Balance"
+msgstr "Saldo Transaksi"
+
+#. module: jt_loan_management
+#: model:ir.model,name:jt_loan_management.model_loan_transaction_history
+msgid "Transaction History"
+msgstr "sejarah transaksi"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_loan_transaction
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Transactions"
+msgstr "Transaksi"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_product__type
+#: model:ir.model.fields,field_description:jt_loan_management.field_product_template__type
+msgid "Type"
+msgstr "Jenis"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr "Jenis aktivitas pengecualian yang tercatat."
+
+#. module: jt_loan_management
+#: model:product.product,uom_name:jt_loan_management.ins_property_1
+#: model:product.product,uom_name:jt_loan_management.ins_property_2
+#: model:product.product,uom_name:jt_loan_management.ins_property_3
+#: model:product.product,uom_name:jt_loan_management.interest_prod
+#: model:product.product,uom_name:jt_loan_management.loan_property_1
+#: model:product.product,uom_name:jt_loan_management.loan_property_2
+#: model:product.product,uom_name:jt_loan_management.loan_property_3
+#: model:product.product,uom_name:jt_loan_management.principal_prod
+#: model:product.product,uom_name:jt_loan_management.product_product_interest
+#: model:product.product,uom_name:jt_loan_management.product_product_penalty
+#: model:product.product,uom_name:jt_loan_management.tax_property_1
+#: model:product.product,uom_name:jt_loan_management.tax_property_2
+#: model:product.product,uom_name:jt_loan_management.tax_property_3
+#: model:product.template,uom_name:jt_loan_management.ins_property_1_product_template
+#: model:product.template,uom_name:jt_loan_management.ins_property_2_product_template
+#: model:product.template,uom_name:jt_loan_management.ins_property_3_product_template
+#: model:product.template,uom_name:jt_loan_management.interest_prod_product_template
+#: model:product.template,uom_name:jt_loan_management.loan_property_1_product_template
+#: model:product.template,uom_name:jt_loan_management.loan_property_2_product_template
+#: model:product.template,uom_name:jt_loan_management.loan_property_3_product_template
+#: model:product.template,uom_name:jt_loan_management.principal_prod_product_template
+#: model:product.template,uom_name:jt_loan_management.product_product_interest_product_template
+#: model:product.template,uom_name:jt_loan_management.product_product_penalty_product_template
+#: model:product.template,uom_name:jt_loan_management.tax_property_1_product_template
+#: model:product.template,uom_name:jt_loan_management.tax_property_2_product_template
+#: model:product.template,uom_name:jt_loan_management.tax_property_3_product_template
+msgid "Units"
+msgstr "Satuan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan_pay_amount__residual_amount
+msgid "Unpaid invoices"
+msgstr "Faktur yang belum dibayar"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_unread
+msgid "Unread Messages"
+msgstr "Pesan Belum Dibaca"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Penghitung Pesan Belum Dibaca"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__total_invoice_amount
+msgid "Upcomming Invoice Amount"
+msgstr "Jumlah Faktur Mendatang"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.loan_property_3
+#: model:product.template,name:jt_loan_management.loan_property_3_product_template
+msgid "Urban Ville"
+msgstr "Kota Perkotaan"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.ins_property_3
+#: model:product.template,name:jt_loan_management.ins_property_3_product_template
+msgid "Urban Ville Insurance"
+msgstr "Asuransi Urban Ville"
+
+#. module: jt_loan_management
+#: model:product.product,name:jt_loan_management.tax_property_3
+#: model:product.template,name:jt_loan_management.tax_property_3_product_template
+msgid "Urban Ville Tax"
+msgstr "Pajak Kota Ville"
+
+#. module: jt_loan_management
+#: model:res.groups,name:jt_loan_management.group_loan_user
+msgid "User"
+msgstr "Pengguna"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_form
+msgid "Validate"
+msgstr "Mengesahkan"
+
+#. module: jt_loan_management
+#: model:ir.model.fields.selection,name:jt_loan_management.selection__account_loan__state__posted
+msgid "Validated"
+msgstr "Divalidasi"
+
+#. module: jt_loan_management
+#: model:ir.actions.act_window,name:jt_loan_management.action_vendor_bill_line_product
+#: model:ir.actions.act_window,name:jt_loan_management.action_vendor_bill_line_product_tem
+msgid "Vendor Bills"
+msgstr "Tagihan Vendor"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_account_loan__website_message_ids
+msgid "Website Messages"
+msgstr "Pesan situs web"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__website_message_ids
+msgid "Website communication history"
+msgstr "Riwayat komunikasi situs web"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__round_on_end
+msgid ""
+"When checked, the differences will be applied on the last period, if it is "
+"unchecked, the annuity will be recalculated on each period (i.e. amount "
+"won't be the same every month)."
+msgstr ""
+"Bila dicentang, selisihnya akan diterapkan pada periode terakhir, jika "
+"tidak dicentang, anuitas akan dihitung ulang pada setiap periode (yaitu jumlah "
+"tidak akan sama setiap bulan)."
+#. module: jt_loan_management
+#: model:ir.model.fields,help:jt_loan_management.field_account_loan__payment_on_first_period
+msgid ""
+"When checked, the first payment will be expected on Start Date,otherwise 1 "
+"period (month) after the Start Date."
+msgstr ""
+"Saat diperiksa, pembayaran pertama diharapkan pada Tanggal Mulai, jika tidak, 1 "
+"periode (bulan) setelah Tanggal Mulai."
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_res_config_settings__write_off_account_id
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.special_account_view
+msgid "Write-Off Account"
+msgstr "Akun Penghapusan"
+
+#. module: jt_loan_management
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.account_loan_pay_amount_form
+#: model_terms:ir.ui.view,arch_db:jt_loan_management.move_due_date_of_loan_wizard
+msgid "or"
+msgstr "atau"
+
+#. module: jt_loan_management
+#: model:ir.model.fields,field_description:jt_loan_management.field_loan_invoice__year
+msgid "year"
+msgstr "tahun"
+
+#. module: jt_loan_management
+#: model:mail.template,report_name:jt_loan_management.email_template_loan_details
+msgid "{{ (object.name or '').replace('/','_') }}"
+msgstr "{{ (objek.nama atau '').replace('/','_') }}"
+
+#. module: jt_loan_management
+#: model:mail.template,subject:jt_loan_management.email_template_loan_details
+msgid "{{ object.name }} - Details"
+msgstr "{{ object.name }} - Detail"
+
+#. module: jt_loan_management
+#: model:mail.template,subject:jt_loan_management.mail_template_data_notification_email_loan_details
+msgid "{{ object.subject }}"
+msgstr "{{ objek subjek }}"

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="video_attestation" model="ir.ui.view">
+            <field name="name">video attestation</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.video_attestation</field>
+            <field name="arch" type="xml">
+                <t name="video attestation" priority="18" t-name="jt_loan_project.video_attestation">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+                            <section class="progress-area">
+                                <div class="container">
+                                    <ul class="list-unstyled multi-steps pt80 pb80">
+                                        <li id="step-1" >Processing Loan<div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-2">Approved Loan <div
+                                                class="progress-bar progress-bar__success">
+                                            </div>
+                                        </li>
+                                        <li id="step-3" class="is-active">Attestation<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>                                    
+                                            </div>
+                                        </li>                                       
+                                        <li id="step-4">Review &amp; Agree<div
+                                                class="progress-bar progress-bar__success">
+                                                <div class="progress-bar__bar"/>                                    
+                                            </div>
+                                        </li>                                       
+                                        <li id="step-5">Success</li>
+                                    </ul>
+                                </div>
+                            </section>
+                          
+                            <section class="video_attestation_area">
+                                <div class="container">
+                                    <div class="row">
+                                        <form enctype="multipart/form-data" method="post">
+                                            <div class="py-3 text-center">
+                                                <h1>Lorem, ipsum.</h1>
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlaboris nisi ut aliquip ex ea commodo consequat..</p>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="video-block mb-27 text-center">
+                                                        <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+                                                            <img id="cover" class="img-fluid" src="/jt_loan_project/static/src/img/about-back.jpg" style="cursor:pointer" />
+                                                            <a id="playvideo" class="click-play playbtn video-btn"><i class="fa fa-play" style="color:#FFFFFF;border"></i></a>
+                                                        </div>
+                                                        <div style="display:none;height:500px;">
+                                                            <iframe id="video1" width="80%" height="90%" src="https://www.youtube.com/embed/L7zXxgEZ1pg"
+                                                                title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; modestbranding; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="true"></iframe>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                             <div class="col-md-12 text-center">
+                                                <div class="single-get-touch mt-3">
+                                                    <button type="submit" name="submit" class="btn btn-submit-ctm">Accepted</button>
+                                                </div>
+                                            </div>
+                                            <div class="col-12 text-center">
+                                                    <a href="/inperson-attestation" class="btn btn-aj btn-a-assitance"><span class="btn-a-txt-st">Need More Assistance? Schedule an In-Person Attestation</span></a>
+                                                </div>
+
+                                            <!-- <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script> -->
+                                            <!-- <script src="function.js"></script> -->
+                                        </form>
+
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- html end -->
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

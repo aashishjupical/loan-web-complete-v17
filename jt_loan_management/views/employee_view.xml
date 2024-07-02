@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<record id="ln_employee_view_inherit" model="ir.ui.view">
+		<field name="name">loan.employee.view.inherit</field>
+		<field name="model">hr.employee</field>
+		<field name="inherit_id" ref="hr.view_employee_form"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@name='button_box']" position="inside">
+				<div class="oe_button_box" name="button_box">
+                    <button name="%(jt_loan_management.action_loan_consultant)d" icon="fa-money" type="action"
+                        class="oe_stat_button">
+                        <field name="ln_commission_count" widget="statinfo" string="Loan Commission"/>
+                    </button>
+                </div>
+			</xpath>
+		</field>
+	</record>
+</odoo>

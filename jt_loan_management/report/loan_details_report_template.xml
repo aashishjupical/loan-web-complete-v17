@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <template id="report_loan_detail">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <style>
+                            thead { display: table-header-group; }
+                            .align_center { text-align: center; }
+                        </style>
+                        <h3>
+                            <center>
+                                <strong>Loan Details</strong>
+                            </center>
+                        </h3>
+                        <br/>
+                        <table class="table table-striped align_center">
+                            <tr>
+                                <td>
+                                    <b>Customer</b>
+                                </td>
+                                <td>
+                                    <b>Reference</b>
+                                </td>
+                                <td>
+                                    <b>Loan Amount</b>
+                                </td>
+                                <td>
+                                    <b>Down Payment</b>
+                                </td>
+                                <td>
+                                    <b>Rate</b>
+                                </td>
+                                <td>
+                                    <b>Payment Day</b>
+                                </td>
+                                <td>
+                                    <b>Months</b>
+                                </td>
+                                <td>
+                                    <b>Loan Status</b>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span t-esc="o.partner_id.name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="o.name"/>
+                                </td>
+                                <td>
+                                    <span t-esc="'%.2f'% o.loan_amount"/>
+                                </td>
+                                <td>
+                                    <span t-esc="'%.2f'% o.down_payment"/>
+                                </td>
+                                <td>
+                                    <span t-esc="o.rate"/>
+                                </td>
+                                <td>
+                                    <span t-esc="o.payment_day"/>
+                                </td>
+                                <td>
+                                    <span t-esc="o.periods"/>
+                                </td>
+                                <td>
+                                    <t t-if="o.state == 'draft'">Draft</t>
+                                    <t t-if="o.state == 'posted'">Posted</t>
+                                    <t t-if="o.state == 'cancelled'">Cancelled</t>
+                                    <t t-if="o.state == 'closed'">Closed</t>
+                                </td>
+                            </tr>
+                            <tr><td /><td /><td/><td/><td /><td /><td/><td /><td/></tr>
+                            <t t-set="princi_interest" t-value="o.cal_princi_inter_form_report(o)"/>
+                            <tr style="text-align:left">
+                                <td><b>Paid Principal Balance</b></td>
+                                <td style="text-align:right"><span t-esc="'%.2f'% princi_interest[0]"/></td>
+                                <td/><td/>
+                                <td><b>Paid Interest Balance</b></td>
+                                <td style="text-align:right"><span t-esc="'%.2f'% princi_interest[1]"/></td>
+                                <td/><td /><td />
+                            </tr>
+                            <!-- <t t-if="o.is_leasing and (o.tax_product_id or o.insurance_product_id)"> -->
+                                <tr style="text-align:left">
+                                    <td><b>Monthly Tax</b></td>
+                                    <td style="text-align:right">
+                                        <t t-if="o.tax_product_id">
+                                            <span t-esc="o.tax_product_id.lst_price"/>
+                                        </t>
+                                    </td><td/><td/>
+                                    <td><b>Monthly Insurance</b></td>
+                                    <td style="text-align:right"> <t t-if="o.insurance_product_id">
+                                            <span t-esc="o.insurance_product_id.lst_price"/>
+                                        </t></td>
+                                    <td /><td /><td/>
+                                </tr>
+                            <!-- </t> -->
+                            <!-- <t t-if="o.is_leasing"> -->
+                                <tr style="text-align:left">
+                                    <t t-set="ins_tax" t-value="o.cal_ins_tax_from_report(o)"/>
+                                    <td><b>Paid Insurance Balance</b></td>
+                                    <td style="text-align:right"><span t-esc="'%.2f'% ins_tax[0]"/></td>
+                                    <td/><td/>
+                                    <td><b>Paid Insurance Balance</b></td>
+                                    <td style="text-align:right"> <span t-esc="'%.2f'% ins_tax[1]"/></td>
+                                    <td /><td /><td/><td/>
+                                </tr>
+                            <!-- </t> -->
+                        </table>
+                        <br/>
+                        <br/>
+                        <h3>
+                            <center>
+                                <strong>Installments</strong>
+                            </center>
+                        </h3>
+                        <br/>
+                        <table class="table table-striped">
+                            <thead>
+                                <th width="3%">No</th>
+                                <th width="10%" align="left">Due Date</th>
+                                <th width="16%" align="center">Pending Principal</th>
+                                <th width="12%" align="center">Loan Payment</th>
+                                <th width="15%" align="center">Principal Amount</th>
+                                <th width="15%" align="center">Interest Amount</th>
+                                <th width="15%" align="center">Penalty Amount</th>
+                                <th width="8%" align="center">Total</th>
+                                <th width="8%" align="center">Amount Due</th>
+                                <th width="10%" align="center">Paid On</th>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.line_ids" t-as="line" style="page-break-inside: avoid;">
+                                    <td width="3%">
+                                        <span t-esc="line.sequence"/>
+                                    </td>
+                                    <td width="10%" align="left">
+                                            <span t-field="line.date" t-field-options='{"format": "MM-dd-yyyy"}'/>
+                                    </td>
+                                    <td width="16%" align="center">
+                                        <span t-esc="'%.2f'% line.pending_principal_amount"/>
+                                    </td>
+                                    <td width="12%" align="center">
+                                        <span t-esc="'%.2f'% line.payment_amount"/>
+                                    </td>
+                                    <td width="15%" align="center">
+                                        <span t-esc="'%.2f'% line.principal_amount"/>
+                                    </td>
+                                    <td width="15%" align="center">
+                                        <span t-esc="'%.2f'% line.interests_amount"/>
+                                    </td>
+                                    <td width="15%" align="center">
+                                        <span t-esc="'%.2f'% line.penalty_amount"/>
+                                    </td>
+                                    <td width="8%" align="center">
+                                        <span t-esc="'%.2f'% line.total_invoice_amount"/>
+                                    </td>
+                                    <td width="8%" align="center">
+                                        <span t-esc="'%.2f'% line.total_amount_due"/>
+                                    </td>
+                                    <td width="10%" align="center">
+                                        <span t-field="line.paid_on" t-field-options='{"format": "MM-dd-yyyy"}'/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br/>
+                        <t t-if="o.loan_payment_change_ids">
+                            <h3>
+                                <center>
+                                    <strong>Loan Changes</strong>
+                                </center>
+                            </h3>
+
+                            <table class="table table-striped align_center">
+                                <thead>
+                                    <th class="align_center">Date of Change</th>
+                                    <th class="align_center">Action</th>
+                                    <th class="align_center">Days/Month Added</th>
+                                    <th class="align_center">Reason</th>
+                                    <th class="align_center">Initial Due Date</th>
+                                    <th class="align_center">New Due Date</th>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.loan_payment_change_ids" t-as="change">
+                                        <td>
+                                            <span t-field="change.date" t-field-options='{"format": "MM-dd-yyyy"}'/>
+                                        </td>
+                                        <td>
+                                            <t t-if="change.due_date_selection == 'by_days'">
+                                                <span>By Certain Amount of Days</span>
+                                            </t>
+                                            <t t-if="change.due_date_selection == 'by_month'">
+                                                <span>By Certain Number of Months</span>
+                                            </t>
+                                        </td>
+                                        <td>
+                                            <span t-esc="change.data_added"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="change.reason"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="change.old_inv_date"
+                                                  t-field-options='{"format": "MM-dd-yyyy"}' />
+                                        </td>
+                                        <td>
+                                            <span t-field="change.new_inv_date"
+                                                  t-field-options='{"format": "MM-dd-yyyy"}'/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </t>
+                        <br/>
+
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

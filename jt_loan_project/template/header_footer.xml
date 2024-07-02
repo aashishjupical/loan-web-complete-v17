@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="custom_submenu" name="Submenu">
+        <t t-set="show_dropdown" t-value="(submenu.is_mega_menu and submenu.is_visible) or submenu.child_id.filtered(lambda menu: menu.is_visible)"/>
+        <li t-if="submenu.is_visible and not (submenu.child_id or submenu.is_mega_menu)" t-attf-class="#{item_class or ''}">
+            <a t-att-href="submenu.clean_url()"
+                t-attf-class="#{link_class or ''} nav-link  #{'active' if submenu.clean_url() and unslug_url(request.httprequest.path) == unslug_url(submenu.clean_url()) else ''}"
+                role="menuitem"
+                t-ignore="true"
+                t-att-target="'_blank' if submenu.new_window else None">
+                <span t-field="submenu.name"/>
+            </a>
+        </li>
+        <li t-elif="show_dropdown" t-attf-class="#{item_class or ''} dropdown #{
+            (submenu.clean_url() and submenu.clean_url() != '/' and any(request.httprequest.path == child.url for child in submenu.child_id if child.url) or
+             (submenu.clean_url() and request.httprequest.path == submenu.clean_url())) and 'active'
+            } #{submenu.is_mega_menu and 'position-static'}">
+            <a t-attf-class="#{link_class or ''} nav-link  dropdown-toggle #{submenu.is_mega_menu and 'o_mega_menu_toggle'}" data-bs-toggle="dropdown" href="#">
+                <span t-field="submenu.name"/>
+            </a>
+            <div t-if="submenu.is_mega_menu"
+                 t-attf-class="dropdown-menu o_mega_menu #{submenu.mega_menu_classes}"
+                 data-name="Mega Menu"
+                 t-field="submenu.mega_menu_content"/>
+            <ul t-else="" class="dropdown-menu" role="menu">
+                <t t-foreach="submenu.child_id" t-as="submenu">
+                    <t t-call="website.submenu">
+                        <t t-set="item_class" t-value="None"/>
+                        <t t-set="link_class" t-valuef="dropdown-item"/>
+                    </t>
+                </t>
+            </ul>
+        </li>
+    </template>
+
+
+    <template active="False" id="jt_loan_web_header_layout" inherit_id="website.layout"
+        name="Header Theme Layout">
+        <xpath expr="//header" position="replace">
+            <header class="header-main">
+                <div class="container">
+                    <nav class="navbar navbar-expand-lg navbar-ctm bg-white">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#">
+                                <img src="https://elementor.zozothemes.com/lendiz/wp-content/uploads/sites/33/2021/05/logo-larg.png"
+                                    alt="Logo" />
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarScroll">
+                                <ul class="navbar-nav m-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;">
+                                    <t t-foreach="website.menu_id.child_id" t-as="submenu">
+                                        <t t-call="jt_loan_project.custom_submenu">
+                                            <t t-set="link_class" t-value="'active_menu'"/>
+                                        </t>
+                                    </t>
+                                    <li groups="base.group_public"><a class="nav-link" href="/web/login">Login</a></li>
+                                    <li groups="base.group_user" class="dropdown">
+                                        <a href="#" class="active_menu nav-link  dropdown-toggle" id="profile"
+                                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <t t-esc="user_id.name" />
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="profile">
+                                            <li>
+                                                <a class="dropdown-item" href="/my_loan">
+                                                    My Loans
+                                                </a>
+                                            </li>
+                                            <li><a class="dropdown-item" href="/my/home">My Account</a></li>
+                                            <li><a class="dropdown-item" href="/web/session/logout?redirect=/">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                    <li groups="base.group_portal" class="dropdown">
+                                        <a href="#" class="active_menu nav-link  dropdown-toggle" id="profile"
+                                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <t t-esc="user_id.name" />
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="profile">
+                                            <li><a class="dropdown-item" href="/my_loan">My Loans</a></li>
+                                            <li><a class="dropdown-item" href="/my/home">My Account</a></li>
+                                            <li><a class="dropdown-item" href="/web/session/logout?redirect=/">Logout</a></li>
+                                        </ul>
+                                    </li>
+                                </ul> 
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+        </xpath>
+    </template>
+    <template active="False" id="jt_loan_web_footer_layout" inherit_id="website.layout" name="Awesome Theme Layout Footer">
+        <xpath expr="//footer" position="replace">
+            <footer class="bd-footer py-5 text-dark">
+                <div class="container py-5">
+                    <div class="row">
+                        <div class="col-lg-3 mb-3">
+                            <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="index.html"
+                                aria-label="Loan Management">
+                                <img class="img-fluid logo-footer" src="https://elementor.zozothemes.com/lendiz/wp-content/uploads/sites/33/2021/05/logo-larg.png" alt="footer logo" />
+                            </a>
+                            <ul class="list-unstyled small text-muted my-2">
+                                <li class="mb-2">Designed and built with all the love in the world by the <a
+                                        href="/docs/5.0/about/team/">Bootstrap team</a> with the help of <a
+                                        href="https://github.com/twbs/bootstrap/graphs/contributors">our contributors</a>.</li>
+                                <li class="mb-2">Code licensed <a href="https://github.com/twbs/bootstrap/blob/main/LICENSE"
+                                        target="_blank" rel="license noopener">MIT</a>, docs <a
+                                        href="https://creativecommons.org/licenses/by/3.0/" target="_blank"
+                                        rel="license noopener">CC BY 3.0</a>.</li>
+                                <li class="mb-2">Currently v5.0.2.</li>
+                                <li class="mb-2">Analytics by <a href="https://usefathom.com/ref/ADZSBE" target="_blank"
+                                        rel="noopener">Fathom</a>.</li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+                            <h5>Links</h5>
+                            <ul class="list-unstyled">                        
+                                <li class="mb-2"><a href="/docs/5.0/">My Loan</a></li>
+                                <li class="mb-2"><a href="/docs/5.0/examples/">Examples</a></li>
+                                <li class="mb-2"><a href="https://themes.getbootstrap.com/">Themes</a></li>
+                                <li class="mb-2"><a href="https://blog.getbootstrap.com/">Blog</a></li>
+                                <li class="mb-2"><a href="https://cottonbureau.com/people/bootstrap">Swag Store</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-2 mb-3">
+                            <h5>Guides</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="/docs/5.0/getting-started/">Getting started</a></li>
+                                <li class="mb-2"><a href="/docs/5.0/examples/starter-template/">Starter template</a></li>
+                                <li class="mb-2"><a href="/docs/5.0/getting-started/webpack/">Webpack</a></li>
+                                <li class="mb-2"><a href="/docs/5.0/getting-started/parcel/">Parcel</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-2 mb-3">
+                            <h5>Projects</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="https://github.com/twbs/bootstrap">Bootstrap 5</a></li>
+                                <li class="mb-2"><a href="https://github.com/twbs/bootstrap/tree/v4-dev">Bootstrap 4</a></li>
+                                <li class="mb-2"><a href="https://github.com/twbs/icons">Icons</a></li>
+                                <li class="mb-2"><a href="https://github.com/twbs/rfs">RFS</a></li>
+                                <li class="mb-2"><a href="https://github.com/twbs/bootstrap-npm-starter">npm starter</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6 col-lg-2 mb-3">
+                            <h5>Community</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="https://github.com/twbs/bootstrap/issues">Issues</a></li>
+                                <li class="mb-2"><a href="https://github.com/twbs/bootstrap/discussions">Discussions</a></li>
+                                <li class="mb-2"><a href="https://github.com/sponsors/twbs">Corporate sponsors</a></li>
+                                <li class="mb-2"><a href="https://opencollective.com/bootstrap">Open Collective</a></li>
+                                <li class="mb-2"><a href="https://stackoverflow.com/questions/tagged/bootstrap-5">Stack
+                                        Overflow</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </xpath>
+    </template>
+    <template id="snippets_option_inherit" inherit_id="website.snippet_options"
+        name="snippets Options Theme Footer">
+        <xpath expr="//we-select[@data-variable='header-template']" position="inside">
+            <we-button data-customize-website-variable="'Custom Header'"
+                data-customize-website-views="jt_loan_project.jt_loan_web_header_layout"
+                data-img="/jt_loan_project/static/src/img/header.png"
+                data-name="custom_theme_header_opt" title="Custom Theme Header" />
+        </xpath>
+        <xpath expr="//we-select[@data-variable='footer-template']" position="inside">
+            <we-button data-customize-website-variable="'Custom Footer'"
+                data-customize-website-views="jt_loan_project.jt_loan_web_footer_layout"
+                data-img="/jt_loan_project/static/src/img/footer.png"
+                title="Custom Theme Footer" />
+        </xpath>
+    </template>
+</odoo>

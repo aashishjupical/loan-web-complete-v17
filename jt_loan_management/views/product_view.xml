@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="invoice_order_line_tree" model="ir.ui.view">
+        <field name="name">account.move.line.tree</field>
+        <field name="model">account.move.line</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Lines" create="false">
+                <field name="move_id"/>
+                <field name="name"/>
+                <field name="partner_id" string="Customer" />
+                <field name="product_id"/>
+                <field name="price_unit"/>
+                <field name="quantity" sum="Total Quantity"/>
+                <field name="price_subtotal" widget="monetary" sum="Total Amount"/>
+                <!-- <field name="invoice_status"/> -->
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_invoice_line_product_tem">
+        <field name="name">Customer Invoices</field>
+        <field name="res_model">account.move.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="invoice_order_line_tree"/>
+<!--        <field name="view_type">form</field>-->
+        <field name="domain">[('product_id.product_tmpl_id', 'in', active_ids),
+            ('move_id.type', '=', 'out_invoice'), ('move_id.state', '=', 'paid')]</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_vendor_bill_line_product_tem">
+        <field name="name">Vendor Bills</field>
+        <field name="res_model">account.move.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="invoice_order_line_tree"/>
+<!--        <field name="view_type">form</field>-->
+        <field name="domain">[('product_id.product_tmpl_id', 'in', active_ids),
+                 ('move_id.type', '=', 'in_invoice'), ('move_id.state', '=', 'paid')]
+        </field>
+    </record>
+
+     <record model="ir.actions.act_window" id="action_invoice_line_product">
+        <field name="name">Customer Invoices</field>
+        <field name="res_model">account.move.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="invoice_order_line_tree"/>
+<!--        <field name="view_type">form</field>-->
+        <field name="domain">[('product_id', 'in', active_ids),
+            ('move_id.type', '=', 'out_invoice'), ('move_id.state', '=', 'paid')]</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_vendor_bill_line_product">
+        <field name="name">Vendor Bills</field>
+        <field name="res_model">account.move.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="invoice_order_line_tree"/>
+<!--        <field name="view_type">form</field>-->
+        <field name="domain">[('product_id', 'in', active_ids),
+                 ('move_id.type', '=', 'in_invoice'), ('move_id.state', '=', 'paid')]
+        </field>
+    </record>
+
+     <record id="inherit_for_cashed_paid_widget" model="ir.ui.view">
+		<field name="name">inherit.for.cashed.paid.widget</field>
+		<field name="model">product.product</field>
+		<field name="inherit_id" ref="product.product_normal_form_view"/>
+		<field name="arch" type="xml">
+             <div name="button_box" position="before">
+                 <button class="oe_stat_button" name="view_customer_invoice_lines"
+                     type="object" icon="fa-usd">
+                     <field string="Cashed" name="invoice_amount" widget="statinfo"/>
+                 </button>
+                 <button class="oe_stat_button" name="view_vandor_bill_lines"
+                     type="object" icon="fa-usd">
+                     <field string="Paid For" name="bill_amount" widget="statinfo"/>
+                 </button>
+            </div>
+        </field>
+    </record>
+
+    <record id="inherit_tem_for_cashed_paid_widget" model="ir.ui.view">
+		<field name="name">inherit.tem.for.cashed.paid.widget</field>
+		<field name="model">product.template</field>
+		<field name="inherit_id" ref="product.product_template_only_form_view"/>
+		<field name="arch" type="xml">
+            <div name="button_box" position="before">
+               <button class="oe_stat_button" name="view_customer_invoice_lines"
+                   type="object" icon="fa-usd">
+                   <field string="Cashed" name="invoice_amount" widget="statinfo"/>
+               </button>
+               <button class="oe_stat_button" name="view_vandor_bill_lines"
+                   type="object" icon="fa-usd">
+                   <field string="Paid For" name="bill_amount" widget="statinfo"/>
+               </button>
+            </div>
+		</field>
+	</record>
+
+     <record id="loan_property_action" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.product</field>
+        <field name="view_mode">kanban,tree,form</field>
+<!--        <field name="view_type">form</field>-->
+        <field name="view_id" ref="product.product_template_kanban_view"/>
+        <field name="context">{"default_detailed_type": 'property'}</field>
+        <field name="domain">[('detailed_type', '=', 'property')]</field>
+    </record>
+
+    <menuitem id="property_product_menu" name="Products" action="loan_property_action" parent="menu_loans" sequence="2"/>
+</odoo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="calendar_event_template_new" inherit_id="calendar.invitation_page_anonymous">
+        <xpath expr="//table[hasclass('o_event_table')]/tr[last()]" position="after">
+            <tr t-if="event.videocall_location">
+                <th>Meeting Url</th>
+                <td><a t-esc="event.videocall_location"><p t-esc="event.videocall_location"></p></a></td>
+            </tr>
+        </xpath>
+    </template>
+</odoo>

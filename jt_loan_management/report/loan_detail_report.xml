@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+        <data>
+
+            <record id="action_report_loan_details" model="ir.actions.report">
+                <field name="name">Loan Details</field>
+                <field name="model">account.loan</field>
+                <field name="report_type">qweb-pdf</field>
+                <field name="report_name">jt_loan_management.report_loan_detail</field>
+                <field name="report_file">jt_loan_management.report_loan_detail</field>
+                <field name="binding_model_id" ref="model_account_loan"/>
+                <field name="print_report_name">'%s' % (object.name)</field>
+                <field name="binding_type">report</field>
+            </record>
+
+            <record id="action_report_loan_invoice" model="ir.actions.report">
+                <field name="name">Loan Invoice Details</field>
+                <field name="model">account.loan</field>
+                <field name="report_type">qweb-html</field>
+                <field name="report_name">jt_loan_management.report_loan_invoice</field>
+                <field name="report_file">jt_loan_management.report_loan_invoice</field>
+                <field name="binding_model_id" ref="model_account_loan"/>
+                <field name="print_report_name">'%s' % (object.name)</field>
+                <field name="binding_type">report</field>
+            </record>
+
+            <record id="action_report_loan_move_smry" model="ir.actions.report">
+                <field name="name">Loan Summary</field>
+                <field name="model">account.move</field>
+                <field name="report_type">qweb-pdf</field>
+                <field name="report_name">jt_loan_management.account_loan_summary_move</field>
+                <field name="report_file">jt_loan_management.account_loan_summary_move</field>
+                <field name="binding_model_id" ref="model_account_move"/>
+                <field name="print_report_name">'%s' % (object.name)</field>
+                <field name="binding_type">report</field>
+            </record>
+
+            <record id="loan_paper_format" model="report.paperformat">
+                <field name="name">Loan</field>
+                <field name="default" eval="True" />
+                <field name="format">A4</field>
+                <field name="page_height">0</field>
+                <field name="page_width">0</field>
+                <field name="orientation">Landscape</field>
+                <field name="margin_top">55</field>
+                <field name="margin_bottom">20</field>
+                <field name="margin_left">5</field>
+                <field name="margin_right">5</field>
+                <field name="header_line" eval="True" />
+                <field name="header_spacing">50</field>
+                <field name="dpi">90</field>
+                <field name="report_ids" eval="[(4, ref('action_report_loan_details'))]" />
+            </record>
+
+        </data>
+</odoo>

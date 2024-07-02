@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+res_partner_user,res.partner.user,model_res_partner,base.group_user,1,1,1,1
+access_appointment_calendar,access_appointment_calendar,model_appointment_calendar,,1,1,1,1
+access_appointment_calendar_line,access_appointment_calendar_line,model_appointment_calendar_line,,1,1,1,1
+access_appointment_calendar_holidays,access_appointment_calendar_holidays,model_appointment_calendar_holidays,base.group_user,1,1,1,1
+access_appointment_calendar_weekoff,access_appointment_calendar_weekoff,model_appointment_calendar_weekoff,base.group_user,1,1,1,1

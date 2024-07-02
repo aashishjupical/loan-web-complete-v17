@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="active_loan_details" model="ir.ui.view">
+            <field name="name">active loan details</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.active_loan_details</field>
+            <field name="arch" type="xml">
+                <t name="active loan details" priority="18" t-name="jt_loan_project.active_loan_details">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+
+                           <section class="active_loan_details px80">
+                                <div class="container">
+
+                                    <div class="row justify-content-center text-center">
+                                        <div class="py-3">
+                                            <h1>Active loan</h1>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+                                                laboris nisi ut aliquip ex ea commodo consequat..</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row justify-content-center">
+                                        <div class="col-md-12 col-lg-10">
+                                            <form>
+                                                <div class="row list-input justify-content-center">
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <p>Monthly Repayment</p>
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="mr" placeholder="Monthly Repayment" required="" t-att-readonly="'readonly'" t-att-value="monthly_repayment"/>
+                                                        </div>
+                                                    </div>
+
+                                                   
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <p>Principal Sum</p>
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="ps" placeholder="Principal Sum" required="" t-att-readonly="'readonly'" t-att-value="monthly_repayment"/>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <p>Balance To Be Paid</p>
+                                                        <div class="single-get-touch">
+                                                            <input type="email" name="email" placeholder="Balance tobe Paid" required="" t-att-readonly="'readonly'" t-att-value="outstanding_amount"/>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <p>Loan Duration</p>
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="tenure_duration" placeholder="Loan Duration" required="" t-att-readonly="'readonly'" t-att-value="tenure_duration"/>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <p>Total No. of Instalments</p>
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="noi" placeholder="Total No. of Instalments" required="" t-att-readonly="'readonly'" t-att-value="no_of_intallment"/>
+                                                        </div>
+                                                    </div>
+                                                   
+                                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                                        <p>Interest Type</p>
+                                                        <div class="single-get-touch">
+                                                            <input type="text" name="email" placeholder="Type of Interest" required="" t-att-readonly="'readonly'" t-att-value="type_interest"/>
+                                                        </div>
+                                                    </div>
+                                        
+
+                                                    <div class="col-lg-12">
+                                                        <div class="table-responsive loan_statement_table mt-5">
+                                                            <table class="basic-table table-headers table table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Item</th>
+                                                                        <th>Due Date</th>
+                                                                        <th>Total Amount</th>
+                                                                        <th>Due Amount</th>
+                                                                        <th>Status</th>
+                                                                    </tr>
+                                                                    <tr style="height: 1rem; border: none; box-shadow: none;"></tr>
+                                                                </thead>
+                                                                <tbody>
+                                                                    <t t-foreach="loan_statement" t-as="statement">
+                                                                        <tr>
+                                                                            <td class="table-border-dark item-text"><t t-esc="statement.name"/></td>
+                                                                            
+                                                                            <td class="table-border-dark text-date"><t t-esc="statement.date"/></td>
+                                                                            
+                                                                            <t t-if="statement.total_invoice_amount">
+                                                                                <td class="text-reddies"><span t-esc="statement.currency_id.symbol"/> <span class="amnt">
+                                                                                <t t-esc="statement.total_invoice_amount"/></span></td>
+                                                                            </t>
+                                                                            <t t-else="">
+                                                                                 <td class="text-reddies"><span t-esc="statement.currency_id.symbol"/><span class="amnt">00</span></td>
+                                                                            </t>
+
+                                                                            <t t-if="statement.total_amount_due">
+                                                                                <td class="text-reddies"><span t-esc="statement.currency_id.symbol"/> <span class="amnt"><t t-esc="statement.total_amount_due"/></span></td>
+                                                                            </t>
+                                                                            <t t-else="">
+                                                                                 <td class="text-reddies"><span t-esc="statement.currency_id.symbol"/> <span class="amnt">00</span></td>
+                                                                            </t>
+                                                                            <td class="table-border-dark">
+                                                                                <div class="table-btn-block" t-if="statement.paid_on">Paid On
+                                                                                   <t t-esc="statement.paid_on"/>                
+                                                                                </div>
+                                                                                <div class="table-btn-block" t-if="not statement.paid_on">
+                                                                                    <button type="button" class="btn-not-paid btn btn-primary">Pay Now</button>
+                                                                                  
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </t>
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Create invoice from cron job -->
+        <record model="ir.cron" id="loan_invoice_auto">
+            <field name="name">Loan Auto Invoice Generation</field>
+            <field name="interval_number">1</field>
+            <field name="interval_type">days</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model_id" ref="model_account_loan"/>
+            <field name="state">code</field>
+            <field name="code">model.create_invoice()</field>
+            <field name="binding_model_id" ref="jt_loan_management.model_account_loan"/>
+        </record>
+
+        <!-- Generate loan invoice from server action -->
+        <record id="generate_old_loan_invoices" model="ir.actions.server">
+            <field name="name">Generate Loan Invoices</field>
+            <field name="state">code</field>
+            <field name="model_id" ref="model_account_loan"/>
+            <field name="binding_model_id" ref="jt_loan_management.model_account_loan"/>
+            <field name="code">action = model.generate_old_loan_invoices()</field>
+        </record>
+
+        <!-- Reset loan invoices sequence -->
+        <!-- <record id="reset_invoice_sequence" model="ir.actions.server">
+            <field name="name">Reset Old Loan invoices sequence</field>
+            <field name="model_id" ref="jt_loan_management.model_account_loan"/>
+            <field name="binding_model_id" ref="jt_loan_management.model_account_loan"/>
+            <field name="state">code</field>
+            <field name="code">records.reset_old_loan_invoices_sequence()</field>
+        </record> -->
+
+    </data>
+</odoo>

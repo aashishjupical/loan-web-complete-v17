@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="identity_success" model="ir.ui.view">
+            <field name="name">Identity Success</field>
+            <field name="type">qweb</field>
+            <field name="key">jt_loan_project.identity_success</field>
+            <field name="arch" type="xml">
+                <t name="Identity Success Page" priority="19" t-name="jt_loan_project.identity_success">
+                    <t t-call="website.layout">
+                        <div class="oe_structure" id="wrap">
+                            <div class="oe_structure"/>
+                            <section class="progress-area">
+                                <div class="container">
+                                    <ul class="list-unstyled multi-steps pt80 pb80">
+                                            <li id="step-1" >Verify Info<div
+                                                    class="progress-bar progress-bar__success">
+                                                </div>
+                                            </li>
+                                            <li id="step-2" >Upload Front ID <div
+                                                    class="progress-bar progress-bar__success">
+                                                </div>
+                                            </li>
+                                            <li id="step-3" >Upload Back ID<div
+                                                    class="progress-bar progress-bar__success">
+                                                </div>
+                                            </li> 
+                                            <li id="step-4" >Upload Photo<div
+                                                    class="progress-bar progress-bar__success">
+                                                </div>
+                                            </li>                                           
+                                            <li id="step-5" >Review &amp; Agree<div
+                                                    class="progress-bar progress-bar__success">
+                                                </div>
+                                            </li>                                       
+                                            <li id="step-6" class="is-active">Success</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <section class="loan-submit-area px80">
+                                <div class="container">
+                                    <div class="row flx9">
+                                        <div class="col-lg-5 col-md-6">
+                                            <form enctype="multipart/form-data" method="post">
+                                                <div class="lsa-content">
+                                                    <h3>Lorem, ipsum.</h3>
+                                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque, expedita ab. Dolore
+                                                        doloremque repudiandae, iure unde quidem excepturi molestiae, et ad provident rerum mollitia
+                                                        delectus dolores, deserunt repellat natus perferendis.</p>
+
+                                                        <button class="btn btn-ctm-blue" type="submit">Submit Documents</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        <div class="offset-lg-1 col-lg-6 col-md-6">
+                                            <img class="img-fluid" src="/jt_loan_project/static/src/img/sucess.jpg" alt="Loan"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

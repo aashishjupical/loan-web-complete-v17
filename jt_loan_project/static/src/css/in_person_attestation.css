@@ -1,0 +1,142 @@
+.Review-Agree {
+    padding: 100px 0;
+}
+
+.time-box {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 30px 20px;
+    border-radius: 20px;
+}
+
+.time-box li {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #ffffff;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    text-align: center;
+    list-style: none;
+}
+
+.time-box h4 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.time-box p {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.time-disable {
+    color: rgba(0, 0, 0, 0.7);
+    pointer-events: none;
+    background-color: #fff;
+    opacity: 0.3;
+}
+
+.time-box li {
+    transition: all .1s ease;
+}
+
+.time-box li:hover {
+    background: rgba(0, 181, 219, 0.4);
+    transition: all .1s ease-in;
+}
+
+.time-box li:hover .time-disable {
+    background: transparent;
+    transition: all .1s ease-in;
+}
+
+.time-box li a {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.time-box li a:hover {
+    text-decoration: none;
+}
+
+.Attestation-btn {
+    background-color: rgba(0, 0, 0, 0.2);
+    background-image: none;
+    color: rgba(0, 0, 0, 0.7);
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 26px;
+    display: inline-block;
+    text-align: center;
+    padding: 15px 20px;
+    margin-top: 40px;
+    max-width: 600px;
+    width: 561px;
+    transition: all .1s ease;
+    border: 0;
+}
+.attestation-btn-color {
+    background: linear-gradient(130.35deg, #300C46 22.97%, #00B5DB 109.43%);
+    color : white;
+}
+/*.Attestation-btn:hover {
+    
+    background: linear-gradient(130.35deg, #300C46 22.97%, #00B5DB 109.43%);
+    transition: all .1s ease-in;
+    color: #FFF;
+    text-decoration: none;
+}*/
+
+.border-button {
+    background-color: transparent;
+    border: 1px solid;
+}
+
+/*.border-button:hover {
+    border: 1px solid transparent;
+}*/
+
+.mb-25 {
+    margin-bottom: 25px;
+}
+
+.mb-52 {
+    margin-bottom: 52px;
+}
+.calendar_sty .active{
+    background: rgba(0, 181, 219, 0.4);
+    transition: all .1s ease-in;
+
+}
+.calendar_sty .active a {
+    font-weight: 700;
+}
+.slot_li_tag{
+    width: 120px !important;
+}
+.hide_slot{
+    display: none;
+}
+
+@media screen and (max-width: 991px) {
+    .time-box {
+        margin-top: 30px;
+    }
+
+    .user-will-be .titles .sub-text {
+        max-width: 90%;
+    }
+}
+
+@media (max-width:767px) {
+    .Attestation-btn {
+        width: 100%;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width:575px) {
+    .mb-52 {
+        margin-bottom: 22px;
+    }
+}

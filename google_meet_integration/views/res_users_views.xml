@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_simple_modif_inherit" model="ir.ui.view">
+        <field name="name">res.users.view.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form_simple_modif"/>
+        <field name="arch" type="xml">
+            <xpath expr="//*[@name='email']/parent::group" position="after"
+                string="Google Meet Integration">
+                <group string="Google Meet Integration">
+                    <field name="calendar_token" string="Calendar Token"/>
+                    <field name="calendar_refresh_token" string="Calendar Refresh Token"/>
+                    <field name="calendar_token_validity" string="Token Validity" invisible="1"/>
+                </group>
+                <group>
+                    <div class="col-sm text-center">
+                    <button class="btn-primary"
+                            name="action_redirect_setup_token"
+                            type="object"><i class="fa fa-arrow-right"></i>Generate Token</button>
+                    </div>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_users_form_inherit" model="ir.ui.view">
+        <field name="name">res.users.view.form</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook/page[last()]" position="after">
+                <page string="Google API">
+                    <group string="Google API Configs">                    
+                        <field name="client_id"/>
+                        <field name="client_secret"/>
+                        <field name="google_notify_checkbox"/>     
+                        <field name="is_generate_meet"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

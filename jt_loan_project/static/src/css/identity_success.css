@@ -1,0 +1,55 @@
+.navbar-expand-lg .navbar-nav .nav-link {
+    margin: 0 12px;
+}
+
+.navbar-ctm .nav-link {
+    color: #000;
+    transition: all .2s ease-in;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.navbar-ctm .nav-link:hover {
+    color: #f59019;
+    transition: all .2s ease;
+}
+
+/* end header */
+
+/* lonan submit start */
+.px80 {
+    padding: 80px 0;
+}
+
+.btn-ctm-blue {
+    background-color: #2759ab;
+    color: #fff;
+    transition: all .3s ease;
+    width: 150px;
+}
+
+.btn-ctm-blue:hover {
+    background-color: #f59019;
+    color: #000;
+    transition: all .3s ease;
+}
+
+.lsa-content h3 {
+    font-size: 42px;
+    font-weight: 700;
+    padding-top: 18px;
+    line-height: 1.238;
+    color: #000;
+}
+
+.lsa-content p{
+    padding: 12px 0;
+}
+
+
+@media (max-width:991px) {
+    .flx9 {
+        flex-direction: column-reverse;
+    }
+}

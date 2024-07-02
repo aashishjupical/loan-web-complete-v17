@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="move_due_date_of_loan_wizard" model="ir.ui.view">
+        <field name="name">Change Installment Dates</field>
+        <field name="model">move.due.date</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group colspan="4">
+                        <field name="due_date_selection" required="1" widget="radio"/>
+                        <field name="move_invoices_since"
+                        attrs="{'invisible': [('due_date_selection','=','reset')], 'required': [('due_date_selection','!=','reset')]}"/>
+                        <field name="days_to_add" attrs="{'invisible': ['|', ('due_date_selection','=','by_month'),
+                            ('due_date_selection','=','reset')]}"/>
+                    </group>
+                    <group colspan="1" attrs="{'invisible': ['|', ('due_date_selection','=','by_days'),
+                            ('due_date_selection','=','reset')]}">
+                        <!-- <span><b>Items to be Pushed</b></span> -->
+                        <separator string="Please select the item which you want to postpone. Rest selected items you need to pay for."/>
+                    </group>
+                    <group colspan="3" attrs="{'invisible': ['|', ('due_date_selection','=','by_days'),
+                            ('due_date_selection','=','reset')]}">
+                        <field name="property_tax"/>
+                        <field name="property_ins"/>
+                        <field name="loan_principal"/>
+                        <field name="loan_interest"/>
+                    </group>
+                    <group colspan="4">
+                        <field name="months_to_add" attrs="{'invisible': ['|', ('due_date_selection','=','by_days'),
+                                ('due_date_selection','=','reset')]}"/>
+                        <field name="reason" attrs="{'required': ['|', ('due_date_selection','=','by_days'),
+                                ('due_date_selection','=','by_month')],
+                                'invisible': [('due_date_selection','=', 'reset')]}"/>
+                        <field name="penalty" attrs="{'invisible': [('due_date_selection','=', 'reset')]}"/>
+                        <field name="penalty_type" widget="radio" attrs="{'invisible': [('penalty','=', False)]}"/>
+                        <field name="charge" attrs="{'invisible': [('penalty','=', False)]}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="postpone_invoices" string="Postpone"
+                        type="object" class="oe_highlight"/> or
+                    <button special="cancel" string="Cancel" type="object" class="oe_link"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+</odoo>

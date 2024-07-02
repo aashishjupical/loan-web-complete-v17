@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inherit_pro_temp_view_form_stamp_duty" model="ir.ui.view">
+        <field name="name">inherit.pro.temp.view.form.stamp.duty</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//page[@name='general_information']/group/group[@name='group_standard_price']/label[1]" position="inside">
+                <field name="stamp_duty_type"/>
+                <field name="stamp_duty_percentage" attrs="{'required':[('stamp_duty_type','=','percentage')],'invisible':[('stamp_duty_type','!=','percentage')]}"/>
+            </xpath>
+            <xpath expr="//field[@name='categ_id']" position="after">
+                <label for="interest_rate"/>
+                <div class="o_row">
+                    <field digits="[12,2]" name="interest_rate"/>%</div>
+                <field name="interest_type"/>
+            </xpath>
+            <xpath expr="//field[@name='detailed_type']" position="after">
+                <field name="start_date"/>
+                <field name="inst_due_date"/>
+                <field name="installment_time"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

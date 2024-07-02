@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Tree view for loan -->
+    <record id="account_loan_tree" model="ir.ui.view">
+        <field name="name">account.loan.tree</field>
+        <field name="model">account.loan</field>
+        <field name="arch" type="xml">
+            <tree string="Loans">
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="partner_id"/>
+                <field name="total_principal_balance"/>
+                <field name="insurance_sale_price"/>
+                <field name="tax_sale_price"/>
+                <field name="state"/>
+                <field name="amount_due"/>
+                <field name="days_past_due"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for loan -->
+    <record id="account_loan_form" model="ir.ui.view">
+        <field name="name">account.loan.form</field>
+        <field name="model">account.loan</field>
+        <field name="arch" type="xml">
+            <form string="Loan">
+                <header>
+                    <field name="is_compute_items" invisible="1"/>
+                     <button name="%(account_loan_pay_amount_action)d"
+                            attrs="{'invisible': [('state', '!=', 'posted')]}"
+                            type="action" string="Extra Payment" class="oe_inline"/>
+                     <button name="due_date_selection" type="object" string="Postpone Installments"
+                        class="oe_inline o_invoice_send" attrs="{'invisible': [('state','!=','posted')]}"
+                     groups="jt_loan_management.group_loan_manager"/>
+                     <button name="cancel_loan" type="object" confirm="Cancelling the loan is irreversible action.
+                          Once you confirm that, All Open and Draft invoice will be cancelled and Partial Invoices
+                           will be paid with Write-off account! "
+                            string="Cancel Loan" attrs="{'invisible': [('state','!=','posted')]}"
+                            groups="jt_loan_management.group_loan_manager"/>
+                    <button name="close_loan" type="object"
+                            string="Close Loan" attrs="{'invisible': [('state','!=','posted')]}"
+                            groups="jt_loan_management.group_loan_manager" confirm="Closing the loan is irreversible action.
+                            Once you confirm that, All Open and Draft invoice will be cancelled!"/>
+                     <button name="compute_lines" type="object"
+                            string="Compute items" attrs="{'invisible': [('is_compute_items','!=',False)]}"/>
+                     <button name="post_loan" type="object" states="draft"  string="Validate"
+                            confirm="Do you really want to validate the loan? After that no  changes to the accounts or
+                             amounts are allowed!"
+                            attrs="{'invisible': ['|', ('is_compute_items','!=',True), ('state','!=','draft')]}"/>
+                    <field name="state" widget="statusbar"/>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!-- <button name="view_disbursement_entries"
+                                class="oe_stat_button"
+                                icon="fa-bars"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                                <field name="outstanding_bal" widget="statinfo" string="Outstanding Balanace"/>
+                        </button> -->
+                        <button name="view_account_invoices"
+                                class="oe_stat_button"
+                                icon="fa-file-text"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                                <field name="invoice_count" widget="statinfo" string="Invoices"/>
+                        </button>
+                        <!-- <button name="view_account_agent_invoices"
+                                class="oe_stat_button"
+                                icon="fa-file-text"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                                <field name="agent_count" widget="statinfo" string="Agent Bill"/>
+                        </button> -->
+                        <button name="view_principal_balance"
+                                class="oe_stat_button"
+                                icon="fa-usd"
+                                    attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                            <field name="total_principal_balance" widget="statinfo" string="Principal Pending"/>
+                        </button>
+                        <button name="view_principal_balance_received"
+                                class="oe_stat_button"
+                                icon="fa-usd"
+                                    attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                            <field name="total_received_principal_balance" widget="statinfo" string="Principal Received"/>
+                        </button>
+                        <button name="view_interest_balance"
+                                class="oe_stat_button"
+                                icon="fa-usd"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                            <field name="total_interest_balance" widget="statinfo" string="Interest Pending"/>
+                        </button>
+                        <button name="view_interest_balance_received"
+                                class="oe_stat_button"
+                                icon="fa-usd"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                            <field name="total_received_interest_balance" widget="statinfo" string="Interest Received"/>
+                        </button>
+                        <button name="%(action_report_loan_invoice)d"
+                                class="oe_stat_button"
+                                icon="fa-file-text"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="action" string="Loan Summary">
+                        </button>
+                        <button name="view_loan_transactions"
+                                class="oe_stat_button"
+                                icon="fa-bars"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                            <field name="transaction_balance" widget="statinfo" string="Transactions"/>
+                        </button>
+                        <button name="view_payments"
+                                icon="fa-usd"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object" class="oe_stat_button">
+                            <field name="total_payments" widget="statinfo" string="Payments"/>
+                        </button>
+                        <button name="view_pending_penalty_invoice"
+                            icon="fa-usd"
+                            attrs="{'invisible': [('state', '=', 'draft')]}"
+                            type="object" class="oe_stat_button">
+                            <field name="penalty_pending" widget="statinfo" string="Penalty Pending"/>
+                        </button>
+                        <button name="view_received_penalty_invoice"
+                            icon="fa-usd"
+                            attrs="{'invisible': [('state', '=', 'draft')]}"
+                            type="object" class="oe_stat_button">
+                            <field name="penalty_received" widget="statinfo" string="Penalty Received"/>
+                        </button>
+                        <button name="view_insurance_balance"
+                                class="oe_stat_button"
+                                icon="fa-usd"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                            <field name="insurance_balance" widget="statinfo" string="Insurance Paid"/>
+                        </button>
+                        <button name="view_tax_balance"
+                                class="oe_stat_button"
+                                icon="fa-usd"
+                                attrs="{'invisible': [('state', '=', 'draft')]}"
+                                type="object">
+                            <field name="tax_balance" widget="statinfo" string="Tax Paid"/>
+                        </button>
+                    </div>
+                     <group>
+                        <group>
+                            <field name="name" readonly="1"/>
+                            <field name="partner_id"
+                                   attrs="{'readonly':[('state','!=','draft')]}" required="1"/>
+                            <field name="company_id" invisible="1" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="loan_amount" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="ln_processing_fee" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="down_payment_show" invisible="1"/>
+                            <field name="down_payment" attrs="{'readonly':[('state','!=','draft')],'invisible':[('down_payment_show','=', False)]}"/>
+                            <field name="rate_type" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="rate_period" attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                            <label for="rate"/>
+                            <div>
+                                <field name="rate" attrs="{'readonly':[('state','!=','draft')]}" class="oe_inline" force_save="1"/>
+                                <button name="%(action_update_rate)d" class="fa fa-refresh oe_inline" type="action" attrs="{'invisible':[('rate_type','!=','variable'),('state','!=','posted')]}"/>
+                            </div>
+                            <field name="interest_type" attrs="{'readonly':[('state','!=','draft')]}" required="1"/>
+                        </group>
+                        <group>
+                             <field name="product_id" required='1' context="{'default_type': 'property'}"
+                                domain="[('type', '=', 'property')]"/>
+                            <field name="currency_id" invisible="1"/>
+                            <field name="rate_period_day" invisible="1"/>
+                            <field name="prcessing_fee_amt" invisible="1"/>
+                            <field name="ttl_interest_amt" invisible="1"/>
+                            <field name="round_on_end" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="start_date" required="1"
+                                   attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="first_payment_due" required="1"
+                                   attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="expected_end_date"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="inv_counter" readonly="1" invisible="1"/>
+                            <field name="close_date" attrs="{'invisible':[('state', 'in',['draft','posted'])]}"/>
+                            <field name="no_month" attrs="{'readonly':[('state','!=','draft')]}" required="1"/>
+                            <field name="periods" attrs="{'readonly':[('state','!=','draft')]}" force_save="1"/>
+                            <field name="ln_payment_mode" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="method_period" attrs="{'readonly':[('state','!=','draft')],'invisible':[('ln_payment_mode','!=','monthly')]}"/>
+                            <field name="inv_create_date" invisible="1"/>
+                            <field name="payment_day" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="ln_consultant_id" attrs="{'readonly':[('state','!=','draft')],'required':[('ln_agent_fee','=', True)]}"/>
+                            <field name="ln_agent_fee" attrs="{'readonly':[('state','!=','draft')]}"/>
+                            <field name="total_invoice_amount" readonly="1"/>
+                            <field name="processing_fee_inv_id" readonly="1"
+                                   attrs="{'invisible': [('state', '=', 'draft')]}"/>
+                            <field name="is_down_payment"
+                                   attrs="{'readonly':[('state','!=','draft')]}" invisible="1"/>
+                            <field name="amount_due"/>
+                            <field name="days_past_due"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Installments" id="items">
+                            <field name="line_ids">
+                                <tree string="Loan items" create="0" editable="bottom">
+                                    <!-- <field name="sequence" string="Seq"/> -->
+                                    <field name="date" string="Due Date"/>
+                                    <field name="pending_principal_amount" string="Pending Principal"/>
+                                    <field name="payment_amount" sum="Total payments" string="Loan Payment"/>
+                                    <field name="principal_amount" sum="Total principal" string="Principal"/>
+                                    <field name="interests_amount" sum="Total interests" string="Interests"/>
+                                    <field name="penalty_amount" sum="Total Penalty"/>
+                                    <field name="postpone_penalty" invisible="1"/>
+                                    <field name="all_lines_has_invoice" invisible="1"/>
+                                    <field name="total_invoice_amount" attrs="{'invisible': [('all_lines_has_invoice', '=', False)]}"
+                                        sum="Total Amount"/>
+                                    <field name="total_amount_due" attrs="{'invisible': [('all_lines_has_invoice', '=', False)]}"
+                                        sum="Amount Due"/>
+                                    <field name="paid_on"/>
+                                    <field name="has_invoices" invisible="1"/>
+                                    <field name="emi" invisible="1"/>
+                                    <field name="is_down_payment" invisible="1"/>
+                                    <field name="currency_id" invisible="1"/>
+                                    <button name="view_account_values"
+                                            type="object" icon="fa-eye" title="View invoice"
+                                            attrs="{'invisible': [('has_invoices', '=', False)]}"/>
+                                    <button name="view_process_values"
+                                            type="object" icon="fa-cogs" title="Generate Invoice"
+                                            attrs="{'invisible': [('has_invoices', '=', True)]}"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Tax and Insurance" id="extra_fess">
+                            <group>
+                                <group>
+                                    <field name="insurance_product_id"/>
+
+                                    <field name="tax_product_id"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Installment's Changes" id="loan_changes">
+                            <field name="loan_payment_change_ids">
+                                <tree>
+                                    <field name="date"/>
+                                    <field name="due_date_selection"/>
+                                    <field name="data_added"/>
+                                    <field name="reason"/>
+                                    <field name="old_inv_date"/>
+                                    <field name="new_inv_date"/>
+                                    <field name="loan_id" invisible="1"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page name="internal_notes" string="Note">
+                            <field name="comment" placeholder="Note..."/>
+                        </page>
+
+                        <page name="loan_invoices" string="Loan Invoices" invisible="1">
+                            <field name="loan_inv_ids">
+                                <tree>
+                                    <field name="name"/>
+                                    <field name="sequence_number"/>
+                                    <field name="date_invoice"/>
+                                    <field name="move_id"/>
+                                    <field name="loan_id"/>
+                                    <field name="month"/>
+                                    <field name="year"/>
+                                </tree>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_follower_ids"
+                           widget="mail_followers"/>
+                    <field name="activity_ids" widget="mail_activity"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </div>
+            </form>
+        </field>
+    </record>
+
+    <!--Search view for loan-->
+    <record id="account_loan_view_search" model="ir.ui.view">
+        <field name="name">account.loan.search</field>
+        <field name="model">account.loan</field>
+        <field name="arch" type="xml">
+            <search string="Search Loan For">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="state"/>
+                <field name="rate"/>
+                <field name="start_date" filter_domain="[('start_date','=',self)]"/>
+                <field name="first_payment_due" filter_domain="[('first_payment_due','=',self)]"/>
+                <field name="expected_end_date" filter_domain="[('expected_end_date','=',self)]"/>
+                <field name="loan_amount"/>
+                <field name="product_id"/>
+                <filter string="Draft" name="draft" domain="[('state','=','draft')]"/>
+                <filter string="Posted" name="posted" domain="[('state','=','posted')]"/>
+                <filter string="Cancelled" name="cancelled" domain="[('state','=','cancelled')]"/>
+                <filter string="Close" name="draft" domain="[('state','=','closed')]"/>
+                <group expand="1" string="Group By">
+                    <filter name="partner_id" context="{'group_by' : 'partner_id'}" string="Customer"/>
+                    <filter name="state" context="{'group_by' : 'state'}" string="Status"/>
+                </group>
+           </search>
+        </field>
+    </record>
+
+    <!-- Tree view for loan line -->
+    <record id="account_loan_line_tree" model="ir.ui.view">
+        <field name="name">account.loan.line.tree</field>
+        <field name="model">account.loan.line</field>
+        <field name="arch" type="xml">
+            <tree string="Loan items" create="0">
+                <!-- <field name="sequence" string="Seq"/> -->
+                <field name="date" string="Due Date"/>
+                <field name="pending_principal_amount" string="Pending Principal"/>
+                <field name="payment_amount" sum="Total payments" string="Loan Payment"/>
+                <field name="principal_amount" sum="Total principal" string="Principal"/>
+                <field name="interests_amount" sum="Total interests" string="Interests"/>
+                <field name="penalty_amount" sum="Total Penalty"/>
+                <field name="postpone_penalty" invisible="1"/>
+                <field name="all_lines_has_invoice" invisible="1"/>
+                <field name="total_invoice_amount" attrs="{'invisible':[('all_lines_has_invoice','=', False)]}" sum="Total Amount"/>
+                <field name="total_amount_due" attrs="{'invisible':[('all_lines_has_invoice','=', False)]}" sum="Amount Due"/>
+                <field name="paid_on"/>
+                <field name="has_invoices" invisible="1"/>
+                <field name="emi" invisible="1"/>
+                <field name="is_down_payment" invisible="1"/>
+                <field name="currency_id" invisible="1"/>
+                <button name="view_account_values"
+                        type="object" icon="fa-eye" title="View invoice"
+                        attrs="{'invisible': [('has_invoices', '=', False)]}"/>
+                <button name="view_process_values"
+                        type="object" icon="fa-cogs" title="Generate Invoice"
+                        attrs="{'invisible': [('has_invoices', '=', True)]}"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="account_loan_line_tree_new_smt" model="ir.ui.view">
+        <field name="name">account.loan.line.tree</field>
+        <field name="model">account.loan.line</field>
+        <field name="arch" type="xml">
+            <tree string="Loan items" create="0">
+                <!-- <field name="sequence" string="Seq"/> -->
+                <field name="date" string="Due Date"/>
+                <field name="pending_principal_amount" string="Pending Principal"/>
+                <field name="payment_amount" sum="Total payments" string="Loan Payment"/>
+                <field name="principal_amount" sum="Total principal" string="Principal"/>
+                <field name="interests_amount" sum="Total interests" string="Interests"/>
+                <field name="invoice_ids" widget="many2many_tags"/>
+                <field name="interests_inv_amt" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_loan_line_smt" model="ir.actions.act_window">
+        <field name="name">Account line</field>
+        <field name="res_model">account.loan.line</field>
+        <field name="view_id" ref="account_loan_line_tree_new_smt"/>
+    </record>
+
+    <!-- Form view for loan line -->
+    <record id="account_loan_line_form" model="ir.ui.view">
+        <field name="name">account.loan.line.form</field>
+        <field name="model">account.loan.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="sequence"/>
+                    <field name="date"/>
+                </group>
+                <group>
+                    <group>
+                        <field name="pending_principal_amount"/>
+                        <field name="payment_amount"/>
+                        <field name="principal_amount"/>
+                        <field name="interests_amount"/>
+                        <field name="final_pending_principal_amount"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree view to display insurance and tax invoice line from Insurance and Tax widget of loan -->
+    <record id="loan_view_invoice_line_tree" model="ir.ui.view">
+        <field name="name">account.move.line.tree</field>
+        <field name="model">account.move.line</field>
+        <field name="arch" type="xml">
+            <tree string="Invoice Line">
+                <field name="move_id"/>
+                <field name="name"/>
+                <field name="account_id" groups="account.group_account_user"/>
+                <field name="quantity"/>
+                <field name="price_unit"/>
+                <field name="discount" groups="product.group_discount_per_so_line"/>
+                <field name="currency_id" invisible="1"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action to display insurance and tax invoice line from Insurance and Tax widget of loan -->
+    <record model="ir.actions.act_window" id="loan_invoice_line_action">
+        <field name="name">Account Invoice Line</field>
+        <field name="res_model">account.move.line</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="loan_view_invoice_line_tree"/>
+    </record>
+
+    <!-- Tree view for Loan Payments History -->
+    <record id="loan_payment_history_tree_view" model="ir.ui.view">
+        <field name="name">loan.payment.history.tree.view</field>
+        <field name="model">account.payment.history</field>
+        <field name="arch" type="xml">
+            <tree string="Payments">
+                <field name="loan_id"/>
+                <field name="partner_id"/>
+                <field name="payment_method"/>
+                <field name="journal_id"/>
+                <field name="description"/>
+                <field name="payment_date"/>
+                <field name="payment_ids" widget="many2many_tags"/>
+                <field name="invoice_ids" widget="many2many_tags"/>
+                <field name="amount" sum="Total Payment"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Form view for Loan Payments History -->
+    <record id="loan_payment_history_form_view" model="ir.ui.view">
+        <field name="name">loan.payment.history.form.view</field>
+        <field name="model">account.payment.history</field>
+        <field name="arch" type="xml">
+            <form string="Payments">
+                <group>
+                    <field name="loan_id"/>
+                    <field name="partner_id"/>
+                    <field name="payment_method"/>
+                    <field name="journal_id"/>
+                    <field name="description"/>
+                    <field name="payment_date"/>
+                    <field name="payment_ids" widget="many2many_tags"/>
+                    <field name="invoice_ids" widget="many2many_tags"/>
+                     <field name="amount"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action for Loan Payments History -->
+    <record model="ir.actions.act_window" id="view_payments">
+        <field name="name">Payments</field>
+        <field name="res_model">account.payment.history</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="loan_payment_history_tree_view"/>
+        <field name="domain">[('loan_id', '=', active_id)]</field>
+    </record>
+
+    <!-- Tree view for loan Transaction History -->
+    <record id="transaction_history_for_loan" model="ir.ui.view">
+        <field name="name">transaction.history.for.loan</field>
+        <field name="model">loan.transaction.history</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="date"/>
+                <field name="reference"/>
+                <field name="move_id" invisible="1"/>
+                <field name="payment_ids" invisible="1"/>
+                <field name="description"/>
+                <field name="debit" sum="Debit"/>
+                <field name="credit" sum="Credit"/>
+                <field name="balance"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Action for loan Transaction History -->
+    <record id="action_loan_transaction" model="ir.actions.act_window">
+        <field name="name">Transactions</field>
+        <field name="res_model">loan.transaction.history</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="transaction_history_for_loan"/>
+    </record>
+
+    <!-- Server action to send multiple recovery email-->
+    <record id="ir_actions_server_send_loan_detail_email" model="ir.actions.server">
+        <field name="name">Loan: Send Loan Detail Email</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_account_loan"/>
+        <field name="state">code</field>
+        <field name="code">
+            if records:
+                action = records.action_loan_detail_send()
+        </field>
+        <field name="binding_model_id" ref="jt_loan_management.model_account_loan"/>
+    </record>
+
+    <record model="ir.actions.act_window" id="account_loan_action">
+        <field name="name">Loans</field>
+        <field name="res_model">account.loan</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="account_loan_tree"/>
+        <field name="search_view_id" ref="account_loan_view_search"/>
+    </record>
+
+    <menuitem id="menu_loans" name="Loans"
+    		 web_icon="jt_loan_management,static/description/icon.png"
+              sequence="100" groups="jt_loan_management.group_loan_user,jt_loan_management.group_loan_manager"/>
+
+
+    <menuitem id="account_loan_menu"
+              parent="menu_loans" sequence="1"
+              name="Loan"
+              action="account_loan_action"/>
+
+</odoo>

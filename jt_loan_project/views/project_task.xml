@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="project_task_view_form_inh" model="ir.ui.view">
+        <field name="name">project.task.view.form.inh</field>
+        <field name="model">project.task</field>
+        <field name="inherit_id" ref="project.view_task_form2"/>
+        <field name="arch" type="xml">            
+            <xpath expr="//header" position="inside">
+                <button name="pass_ekyc" string="Pass" class="oe_highlight" type="object" attrs="{'invisible':[('stage_loan','!=','ekyc')]}"/>
+
+
+                <button name="%(terminate_wizard_action)d" string="Fail" class="oe_highlight" type="action" attrs="{'invisible':[('stage_loan','!=','ekyc')]}"/>
+
+                <button name="confirm_documents" string="Confirmed Documents" class="oe_highlight" type="object" 
+                    attrs="{'invisible':[('stage_loan','!=','submit_doc')]}"/>
+
+                <button name="recommend_approval" string="Recommend Approval" class="oe_highlight" type="object" 
+                    attrs="{'invisible':['|',('stage_loan','!=', 'to_approve'),('is_recommend','=', True)]}"/> 
+                <button name="approved" string="Approve" class="oe_highlight" type="object" 
+                    attrs="{'invisible':['|',('stage_loan','!=', 'to_approve'),('is_recommend','=', False)]}"/>
+                <button name="%(terminate_wizard_action)d" string="Reject" class="oe_highlight" type="action" 
+                    attrs="{'invisible':['|',('stage_loan','!=', 'to_approve'),('is_recommend','=', False)]}"/>
+
+                <button name="approved_attestation" string="Approve Video verification" class="oe_highlight" type="object" 
+                    attrs="{'invisible':[('stage_loan','!=','sch_att')]}"/>
+                <button name="%(terminate_wizard_action)d" string="Reject" class="oe_highlight" type="action" attrs="{'invisible':[('stage_loan','!=','sch_att')]}"/>
+                <button name="%(upload_video_action)d" string="Upload Video" class="oe_highlight" type="action" attrs="{'invisible':[('stage_loan','!=','sch_att')]}"/> 
+                <button name="send_stamped_agreement" string="SEND STAMPED AGREEMENT" class="oe_highlight" type="object" attrs="{'invisible':[('stage_loan','!=','esign')]}"/>
+
+                <button name="esignature_done" string="Esignature" class="oe_highlight" type="object" attrs="{'invisible':[('stage_loan','!=','esign')]}"/>
+
+                <button name="disbursement_done" string="Disbursement Done" class="oe_highlight" type="object" attrs="{'invisible':['|',('stage_loan','!=','disbursed'),('is_disbursed','=',True)]}"/>
+            </xpath>
+            <xpath expr="//field[@name='parent_id']" position="after">
+                <field name="video_attestation_expiry_date" attrs="{'invisible':[('stage_loan','!=','sch_att')]}"/>
+                <field name="video_inperson_expiry_date" attrs="{'invisible':[('stage_loan','!=','sch_att')]}"/>
+                <field name="expiry_to_sign_agreement_expiry_date" attrs="{'invisible':[('stage_loan','!=','esign')]}"/>
+            </xpath>
+            <xpath expr="//page[@name='extra_info']" position="after">
+                <page name="ekyc_info" string="Ekyc">
+                    <group>
+                        <group>
+                            <field name="stage_loan"/>
+                            <field name="date_ekyc"/>
+                            <field name="ekyc_ip"/>
+                            <field invisible="1" name="front_id_file"/>
+                            <field filename="front_id_file" name="front_id"/>
+                            <field invisible="1" name="back_id_file"/>
+                            <field filename="back_id_file" name="back_id"/>
+                            <field invisible="1" name="face_verify_file"/>
+                            <field filename="face_verify_file" name="face_verify"/>
+                            <field name="is_recommend"/>
+
+                        </group>
+                    </group>
+                </page>
+                <page name="app_form" string="Application Form">
+                    <group string="Loan Details">
+                        <group >
+                            <field name="salary_amt"/>
+                            <field name="loan_amt"/>
+                            <field name="monthly_repayment"/>
+                            <field name="stamping_fee"/>
+                            <field name="interest_rate"/>
+                        </group>
+                        <group>
+                            <field name="total_int_get"/>
+                            <field name="total_repayment"/>
+                            <label for="month_id"/>
+                            <div>
+                                <style>
+                                    .o_form_editable .ml_edit{
+                                        margin-left: 25px;
+                                    }
+                                </style>
+                                <field name="month_id" class="oe_inline"/>
+                                <span class="ml_edit"> Months</span>
+                            </div>
+                            <field name="app_form_date" readonly="1"/>
+                            <field name="app_form_ip" readonly="1"/>
+                        </group>
+                    </group>
+                    <group>
+                                           
+                        <group string="Personal Information">
+                            <field invisible="1" name="payslips_pdf_file"/>
+                            <field filename="payslips_pdf_file" name="payslips_pdf"/>
+
+                            <field invisible="1" name="payslip_2_pdf_file" />
+                            <field filename="payslip_2_pdf_file" name="payslip_2_pdf"/>
+
+                            <field invisible="1" name="payslip_3_pdf_file" />
+                            <field filename="payslip_3_pdf_file" name="payslip_3_pdf"/>
+
+                            <field invisible="1" name="bank_statement_pdf_file"/>
+                            <field filename="bank_statement_pdf_file" name="bank_statement_pdf"/>
+                            
+                            <field invisible="1" name="lst_utility_bill_file" />
+                            <field filename="lst_utility_bill_file" name="lst_utility_bill"/>
+
+                            <field invisible="1" name="bank_statement_1_pdf_file"/>
+                            <field filename="bank_statement_1_pdf_file" name="bank_statement_1_pdf"/>
+
+                            <field invisible="1" name="bank_statement_2_pdf_file"/>
+                            <field filename="bank_statement_2_pdf_file" name="bank_statement_2_pdf"/>
+
+                            <field invisible="1" name="bank_statement_3_pdf_file"/>
+                            <field filename="bank_statement_3_pdf_file" name="bank_statement_3_pdf"/>
+                        </group>
+                        <group string="Company Information">
+
+                            <field invisible="1" name="self_employed_ssm_register_1_pdf_file"/>
+                            <field filename="self_employed_ssm_register_1_pdf_file" name="self_employed_ssm_register_1_pdf"/>
+
+                            <field invisible="1" name="self_employed_latest_utility_bill_pdf_file"/>
+                            <field filename="self_employed_latest_utility_bill_pdf_file" name="self_employed_latest_utility_bill_pdf"/>
+
+                            <field invisible="1" name="personal_bank_statement_pdf_file"/>
+                            <field filename="personal_bank_statement_pdf_file" name="personal_bank_statement_pdf"/>
+
+                            <field invisible="1" name="company_bank_statement_pdf_file"/>
+                            <field filename="company_bank_statement_pdf_file" name="company_bank_statement_pdf"/>
+
+                            <field invisible="1" name="comp_info_bank_statement_1_pdf_file"/>
+                            <field filename="comp_info_bank_statement_1_pdf_file" name="comp_info_bank_statement_1_pdf"/>
+
+                            <field invisible="1" name="comp_info_bank_statement_2_pdf_file"/>
+                            <field filename="comp_info_bank_statement_2_pdf_file" name="comp_info_bank_statement_2_pdf"/>
+
+                            <field invisible="1" name="comp_info_bank_statement_3_pdf_file"/>
+                            <field filename="comp_info_bank_statement_3_pdf_file" name="comp_info_bank_statement_3_pdf"/>
+                            
+                        </group>
+                        
+                    </group>
+                </page>
+                <page name="approval_loan" string="Approval Loan">
+                    <group>
+                        <group>
+                            <field name="loan_approval_date" readonly="1"/>
+                            <field name="loan_approval_ip" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
+                <page name="attestation" string="Attestation">
+                    <group>
+                        <group>
+                            <field name="attestation_method" widget="radio"/>
+                            <field name="meeting_link" widget="url" readonly="1"/>
+                            <field name="attestation_video_file" invisible="1"/>
+                            <field name="attestation_video" filename="attestation_video_file"/>
+                            <field name="cale_event_id" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="accept_attestation_date" readonly="1"/>
+                            <field name="accept_attestation_ip" readonly="1"/>
+
+                            <field name="attestation_date" readonly="1"/>
+                            <field name="attestation_ip" readonly="1"/>
+                        </group>
+                    </group>
+                </page>
+                <page name="esignature" string="Esignature">
+                    <!-- <group>
+                        <button name="get_enroll_cert_info" type="object" string="EnrollCertificateWithEKYC" class="oe_highlight"/>
+                        <button name="get_certif_info" type="object" string="GetCertInfo" class="oe_highlight"/>
+                        <button name="get_sign_pdf_vals" type="object" string="SignPDF" class="oe_highlight"/>
+                         <button name="get_verifypdf_sign" type="object" string="VerifyPDFSignature" class="oe_highlight"/>
+                         <button name="get_revoke_certif" type="object" string="RevokeCert" class="oe_highlight"/>
+
+                    </group> -->
+
+                    <group>
+                        <field name="esign_date" readonly="1"/>
+                        <field name="esign_ip" readonly="1"/>
+                        <field name="current_ip" invisible="1"/>
+                        <field name="esign_pdf_file" invisible="1"/>
+                        <field name="esign_pdf" filename="esign_pdf_file"/><!-- 
+                        <field name="esign_sign_file" invisible="1"/>
+                        <field name="esign_sign" filename="esign_sign_file"/> -->
+                        <!-- <field name="sign_file_name" invisible="1"/> -->
+                        <!-- <field name="res_binary" filename="sign_file_name"/>                      -->
+                    </group>
+                </page>
+                 <page name="loan_disburs" string="Loan Disbursement">
+                    <group>
+                        <group>
+                            <field name="loan_disbused_ip" invisible="1"/>
+                            <field name="disbursment_date" readonly="1"/>
+                            <field name="disbursment_ip" readonly="1"/>
+                            <field name="is_disbursed"/>
+                            <field name="loan_pro_id" readonly="1"/>
+                            <field name="disbursment_amount"/>
+                            <field name="currency_id" invisible='1'/>
+                        </group>
+                    </group>
+                </page>
+                 <page name="terminated" string="Terminated">
+                    <group>
+                        <group>
+                            <field name="terminate_reason_id"/>
+                            <field name="terminate_user_id"/>
+                            <field name="terminate_date"/>
+                            <field name="terminate_ip"/>
+                        </group>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

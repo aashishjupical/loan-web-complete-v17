@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account_loan_pay_amount_form" model="ir.ui.view">
+        <field name="name">Extra Payment</field>
+        <field name="model">account.loan.pay.amount</field>
+        <field name="arch" type="xml">
+            <form string="Pay amount">
+                <group>
+                    <field name="loan_id" readonly="True"/>
+                    <field name="date"/>
+                    <field name="extra_payment"/>
+                    <field name="cancel_loan"/>
+                    <field name="residual_amount" readonly="1" attrs="{'invisible':[('cancel_loan','=', False)]}"/>
+                    <field name="remaining_principal_amount" readonly="1"
+                           attrs="{'invisible':[('cancel_loan','=', False)]}"/>
+                    <field name="amount"/>
+                    <field name="journal_id" required="True" domain="[('type', 'in', ('bank', 'cash'))]" />
+                    <field name="currency_id"/>
+                </group>
+                <footer>
+                    <button name="run" string="Pay" context="{'paid_amount_from_loan': True}"
+                            type="object" class="oe_highlight" />
+                    or
+                    <button string="Cancel" class="oe_link" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+
+
+    <record id="account_loan_pay_amount_action" model="ir.actions.act_window">
+        <field name="name">Extra Payment</field>
+        <field name="res_model">account.loan.pay.amount</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{'default_loan_id': active_id}</field>
+    </record>
+
+</odoo>
